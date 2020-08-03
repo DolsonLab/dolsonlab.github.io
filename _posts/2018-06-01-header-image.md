@@ -2,6 +2,7 @@
 title: Post with Header Image
 tags: TeXt
 author: Emily
+show_author_profile: true
 article_header:
   type: cover
   image:
