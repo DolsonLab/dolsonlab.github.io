@@ -1,7 +1,7 @@
 ---
 title: Post with Header Image
 tags: TeXt
-author: Emily Dolson
+author: Emily
 article_header:
   type: cover
   image:
