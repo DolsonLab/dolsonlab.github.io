@@ -1,7 +1,5 @@
 header:
-  - titles:
-      # @start locale config
-    en: People
+  - title: People
     url: /people.md
 
   - titles:
