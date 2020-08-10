@@ -1,3 +1,6 @@
+---
+permalink: /people/
+---
 
 # People
 
