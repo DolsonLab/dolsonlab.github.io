@@ -193,6 +193,9 @@ exclude:
   - /test
   - /vendor
 
+includes:
+  - _pages
+
 defaults:
   - scope:
       path: ""
