@@ -25,6 +25,7 @@
       <a class="button button--circle mail-button" itemprop="email" href="mailto:{{ _author.email }}" target="_blank">
         <i class="fas fa-envelope"></i>
       </a>
+      </li>
     {%- endif -%}
 
 
@@ -115,6 +116,23 @@
         </a>
       </li>
     {%- endif -%}
+
+    {%- if _author.googlescholar -%}
+      <li title="{{ _locale_string_follow | replace: '[NAME]', 'Google Scholar' }}">
+        <a class="button button--circle mail-button" style="position:relative; top:5px;" itemprop="sameAs" href="https://scholar.google.com/citations?user={{ _author.googlescholar }}" target="_blank">
+            <i class="ai ai-google-scholar-square ai-3x"></i>
+        </a>
+      </li>
+    {%- endif -%}
+
+    {%- if _author.orcid -%}
+      <li title="{{ _locale_string_follow | replace: '[NAME]', 'orcid' }}">
+        <a class="button button--circle mail-button" style="position:relative; top:5px;" itemprop="sameAs" href="https://orcid.org/{{ _author.orcid }}" target="_blank">
+            <i class="ai ai-orcid-square ai-3x"></i>
+        </a>
+      </li>
+    {%- endif -%}
+
 
   </ul>
 </div>

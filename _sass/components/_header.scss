@@ -3,7 +3,7 @@
   a {
     font-weight: map-get($base, font-weight);
     text-decoration: none !important;
-    @include link-colors($header-text-color, $main-color-1);
+    @include link-colors($header-text-color, $nav-color-1);
   }
   .main {
     @include flexbox();
