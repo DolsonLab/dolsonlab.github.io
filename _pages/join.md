@@ -82,8 +82,37 @@ Within the lab, we can pretty easily put together a piece of software designed t
 
 ## Prospective graduate students
 
+The ECODE lab studies techniques for controlling evolution in the context of a variety of ecological communities. Because this problem can be really abstract, we often ground our research in specific instances of it. These instances include: improving evolution-inspired machine learning algorithms, preventing the evolution of drug resistance in cancer and bacteria, and controlling the evolution of gut microbiota. Because these questions span the full spectrum from computer science to biology, we strive to have a mix of graduate students in the lab at any given time. Depending on interests, graduate students in the lab may choose to focus on one of these instances or pursue a cross-cutting question across multiple contexts.
+
+Because our home department is [Computer Science and Engineering](https://www.cse.msu.edu) (CSE), it is easiest for us to take students through this program. The CSE department does not require that you have a formal degree in computer science, but it does require some background in computer science (not just programming). For more information, see the [CSE department's instructions on how to apply](https://www.cse.msu.edu/Students/Future_Grad/HowToApply.php). If you are particularly excited about the idea of joining the lab but do not have a formal computer science background, feel free to reach out anyway to discuss options - we might be able to figure something out.
+
+Most graduate students in the lab are also part of MSU's interdisciplinary [Ecology, Evolution, and Behavior](https://eeb.msu.edu/) program. This program offers a great way to be part of a larger community on campus that is asking the same sorts of questions that we do. It also gives students the opportunity to graduate with a dual PhD in Computer Science & Engineering and Ecology, Evolution, & Behavior.
+
+### General advice on finding a good PhD advisor for you
+
+Choosing a lab to do your PhD in is a huge choice and you should think about it carefully. On the off chance that you haven't already come across lots of advice on how to make the right choice, check out this article from PLoS Comp. Bio.'s 10 simple rules series: ["Ten simple rules for choosing a PhD supervisor"](https://journals.plos.org/ploscompbiol/article%3Fid%3D10.1371/journal.pcbi.1009330).
+
+Many aspects of fit require an actual conversation to assess, but here is some information to help you figure out whether the ECODE lab might be a good fit for you:
+
+#### Lab size
+
+As of 2021, the ECODE lab has two PhD students. We plan to grow by approximately one PhD student per year until we reach a steady state of ~5 students. The hope is that this will strike a balance between ensuring that all students receive adequate personalized mentoring from Emily and ensuring that the lab is big enough to provide community and collaboration opportunities.
+
+#### Emily's mentoring philosophy
+
+As a new PI, I'm still figuring out how to be the best mentor I can be, but here are my guiding principles:
+
+- I view my primary job as a mentor as being to help you achieve your overarching goals. We are on the same team, trying to learn new things about ecology and evolution while also doing what we need to to continue having jobs (and also doing stuff to improve the scientific communities in which we do this research). This works best if you are excited about the research we're doing (although it is natural for everyone's excitement over research to have ups and downs - science is frustrating sometimes and that's normal).
+  - Corollary: if your goals change at any point I'll still support you in doing what is best for you, whether that means changing your long term career plans, switching labs, or leaving grad school all together.
+- Part of being successful in grad school (and beyond) is figuring out how you work best. I will provide advice about what has worked for me and for others, but with the understanding that everyone is different and what worked for me might not work for you. That said, I do impose some minimal levels of structure (semesterly goal-setting, weekly check-ins, etc.) on the lab so that I can keep track of everything that needs my attention and be a more effective mentor. I can also theoretically provide more structure if you desire it, but I haven't tried that yet.
+- Relatedly, I trust you to set whatever schedule is best for you. I do encourage everyone to come to lab for some minimal set of core hours (noon - 3ish) so that we overlap with each other and can collaborate, but beyond that what matters to me is that you are making progress towards achieving your goals, not how many hours you spend sitting in front of your computer. While I will send you messages during my normal working hours (which skew late; I have an atypical circadian rhythm), I will only expect you to respond to them during whatever your normal working hours are. There is always more science you could do; learning how to set boundaries is important.
+- Ideally, I want to let you study whatever research questions you are most excited about. In practice, there can be some constraints on this: 1) I'm not qualified to advise you on projects that are too far outside my skill set - if you want to pick up a completely new technique (e.g. bioinformatics, wet lab experiments, etc.) we'll probably need to enlist the help of a collaborator, 2) if your funding is coming from a grant, you will need to actually do the work we are funded to do (we'll talk about the specifics of what this might look like when you interview), and 3) in order to get tenure and thus continue being able to advise you, I need to show that I have a somewhat coherent research program; since the research that we do together is the driver of my research program, I do need to keep it somewhat on theme. I've carved out a pretty broad research focus, so I'm hoping this won't be an issue.
+- Typically, I try to have a weekly meeting with all my graduate students, just to make sure we have a chance to check in and make sure everything is going smoothly. This can always be cancelled if there's nothing important to discuss (particularly if classes are eating up all your time during your first couple years), but the default is to meet. The reason for this default is that it can be tempting to not meet if you're not making progress, but this is actually often when it is most important to meet so we can figure out why you're feeling stuck. We also have a weekly lab meeting as an opportunity for the group collectively to check in.
+
+### How to apply
+
 We are actively seeking applications from PhD students. If you are interested in doing your PhD with us,
-[e-mail Emily Dolson](mailto:emilyldolson@gmail.com) and include the following information:
+[e-mail Emily Dolson](mailto:emilyldolson@gmail.com) and include your CV and the following information:
 
 - Why you are interested in working in this lab. Which part of our research are you excited about contributing to?
 
