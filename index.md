@@ -32,15 +32,19 @@ data:
       - title: Evolutionary Computation
         image:
           src: /assets/images/General_EC_Diagram.png
+        excerpt: We use this class of evolution-inspired machine learning algorithms as a model system for testing out new eco-evolutionary theory, while simultaneously using what we learn to build evolutionary algorithms that solve problems better.
       - title: Microbiome Communities
         image:
-          src: /assets/images/symbulation.png  
+          src: /assets/images/symbulation.png
+        excerpt: In collaboration with <a href="https://anyaevostinar.github.io/">the Symbulab</a> we study what factors influence evolution along the mutualism-parasitism spectrum in the context of communities in which many symbionts inhabit a single host.
       - title: Cancer
         image:
           src: /assets/images/memic.png 
+        excerpt: In collaboration with <a href="https://www.lerner.ccf.org/thor/scott/lab/">the Theory Division</a> we study ways to control the trajectory of evolution in cancer to prevent the evolution of therapy resistance.
       - title: Data Analysis Tools
         image:
           src: /assets/images/Phylogenyschematic.png
+        excerpt: A lot of the questions that we ask are challenging to answer and require us to develop new mathematical and statistical tools for asking evolutionary questions. We are particularly interested in metrics based on phylogenetic trees.
       # - title: Climate Change
       #   image:
       #     src: /assets/images/symbulation.png            
