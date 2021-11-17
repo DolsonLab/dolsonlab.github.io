@@ -109,6 +109,20 @@ As a new PI, I'm still figuring out how to be the best mentor I can be, but here
 - Ideally, I want to let you study whatever research questions you are most excited about. In practice, there can be some constraints on this: 1) I'm not qualified to advise you on projects that are too far outside my skill set - if you want to pick up a completely new technique (e.g. bioinformatics, wet lab experiments, etc.) we'll probably need to enlist the help of a collaborator, 2) if your funding is coming from a grant, you will need to actually do the work we are funded to do (we'll talk about the specifics of what this might look like when you interview), and 3) in order to get tenure and thus continue being able to advise you, I need to show that I have a somewhat coherent research program; since the research that we do together is the driver of my research program, I do need to keep it somewhat on theme. I've carved out a pretty broad research focus, so I'm hoping this won't be an issue.
 - Typically, I try to have a weekly meeting with all my graduate students, just to make sure we have a chance to check in and make sure everything is going smoothly. This can always be cancelled if there's nothing important to discuss (particularly if classes are eating up all your time during your first couple years), but the default is to meet. The reason for this default is that it can be tempting to not meet if you're not making progress, but this is actually often when it is most important to meet so we can figure out why you're feeling stuck. We also have a weekly lab meeting as an opportunity for the group collectively to check in.
 
+#### Papers to check out
+
+To get a feel for whether the research we do appeals to you, here are some papers to take a look at:
+
+
+**General:**
+- [Digital Evolution for Ecology Research: A review](https://www.frontiersin.org/articles/10.3389/fevo.2021.750779/full) (coming soon!): This review covers the primary technique that we use in this lab for asking general questions about evolutionary theory.
+- [Interpreting the Tape of Life: Ancestry-Based Analyses Provide Insights and Intuition about Evolutionary Dynamics](https://direct.mit.edu/artl/article/26/1/58/93272/Interpreting-the-Tape-of-Life-Ancestry-Based): An introduction to the kinds of metrics we often work with
+
+**Evolutionary Computation:**
+- [Ecological theory provides insights about evolutionary computation](https://peerj.com/preprints/27315/): This preprint lays out the general directions we're thinking about taking our evolutionary computation research in.
+- [Characterizing the effects of random subsampling on lexicase selection](https://scholar.google.com/citations?view_op=view_citation&hl=en&user=OE2Ay_gAAAAJ&authuser=1&citation_for_view=OE2Ay_gAAAAJ:5Ul4iDaHHb8C): An example of how this general approach to evolutionary computation has lead to us discovering improvements on the current state of the art.
+- [What can phylogenetic metrics tell us about useful diversity in evolutionary algorithms?](https://arxiv.org/abs/2108.12586): A good example of how we're thinking about using phylogenetic metrics to learn more about evolutionary algorithms. Alternatively, check out [Emily's talk on this work](https://youtu.be/IT4O9oSAkUU?t=1011).
+
 ### How to apply
 
 We are actively seeking applications from PhD students. If you are interested in doing your PhD with us,
