@@ -12,7 +12,7 @@ layout: article
     <div class="cell cell--12 cell--md-4 cell--lg-4">
         <div class="card">
             {%- if person.avatar -%}
-                <div class="card__image"><img src="{{ person.avatar }}" /></div>
+                <div class="card__image person_image"><img src="{{ person.avatar }}" /></div>
             {%- endif -%}
             <div class="card__content">
                 <header>
@@ -43,7 +43,7 @@ layout: article
     <div class="cell cell--12 cell--md-4 cell--lg-4">
         <div class="card">
             {%- if person.avatar -%}
-                <div class="card__image"><img src="{{ person.avatar }}" /></div>
+                <div class="card__image person_image"><img src="{{ person.avatar }}" /></div>
             {%- endif -%}
             <div class="card__content">
                 <header>

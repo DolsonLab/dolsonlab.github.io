@@ -27,3 +27,20 @@
     text-align: right;
   }
 }
+
+.person_image {
+  position: relative;
+}
+
+.person_image::after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+
+.person_image > img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
