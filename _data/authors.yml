@@ -34,6 +34,15 @@
    github    : shakiba_shb
    startdate : 2021-08-01
    affiliation: Michigan State University
+   
+-  name      : Max Foreback 
+   avatar    : assets/images/people/Max.jpg
+   bio       : Max is a PhD student in the department of Computer Science & Engineering at Michigan State. He is also a member of the Ecology, Evolution, & Behavior program. His current research focuses on the emergence of evolutionary dynamics in simulated ecological communities.   
+   role      : PhD Student
+   email     : 4backsspace@gmail.com
+   linkedin  : max-foreback
+   startdate : 2022-08-01
+   affiliation: Michigan State University
 
 -  name      : Austin Mills
    role      : Undergraduate Researcher
@@ -71,12 +80,4 @@
    startdate : 2021-06-01
    enddate   : 2021-09-01
    affiliation: Carleton College
-   
--  name      : Max Foreback 
-   avatar    : assets/images/people/Max.JPG
-   bio       : Max is a PhD student in the department of Computer Science & Engineering at Michigan State. He is also a member of the Ecology, Evolution, & Behavior program. His current research focuses on the emergence of evolutionary dynamics in simulated ecological communities.   
-   role      : PhD Student
-   email     : 4backsspace@gmail.com
-   linkedin  : max-foreback
-   startdate : 2022-08-01
-   affiliation: Michigan State University
+  
