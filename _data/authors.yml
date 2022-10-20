@@ -44,6 +44,16 @@
    startdate : 2022-08-01
    affiliation: Michigan State University
 
+-  name      : Sydney Leither
+   avatar    : assets/images/people/sydney.png
+   bio       : Sydney is a PhD student in Computer Science & Engineering at Michigan State University.
+   role      : PhD Student
+   email     : leithers@msu.edu
+   linkedin  : sydney-leither-b7274014b
+   github    : sydleither
+   startdate : 2021-08-01
+   affiliation: Michigan State University
+
 -  name      : Austin Mills
    role      : Undergraduate Researcher
    startdate : 2020-08-01
