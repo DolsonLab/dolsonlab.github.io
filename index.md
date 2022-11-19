@@ -71,3 +71,5 @@ data:
     #     - text: Learn More
     #       url: /docs/en/configuration
 ---
+
+<a rel="me" href="https://ecoevo.social/@emilydolson"></a>
