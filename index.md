@@ -58,7 +58,7 @@ data:
         is_row: true
         full_width: true
         style: "max-width: 960px;"
-        src: /assets/images/lab_photo_corn_maze_2021.jpg
+        src: /assets/images/group_photo.jpg
       actions:
         - text: People
           url: /people.html
