@@ -92,8 +92,9 @@
    affiliation: Carleton College
 
 -  name      : Logan Bergler
+   avatar    : assets/images/people/Logan.jpg
    role      : Undergraduate Researcher
-   bio       : To be decided
-   email     : add email
+   bio       : Logan is an undergraduate student planning to major in Computer Science at Michigan State University. He is interested in the science and technology behind simulating evolution and how to effectively utilize it. In his free time, he likes to listen to music, play tennis, and do things with his close friends.
+   email     : berglerl@msu.edu
    startdate : 2023-09-01
    affiliation: Michigan State University
