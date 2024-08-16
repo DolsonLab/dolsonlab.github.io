@@ -57,6 +57,7 @@
 -  name      : Austin Mills
    role      : Undergraduate Researcher
    startdate : 2020-08-01
+   enddate   : 2023-05-01
    affiliation: Michigan State University
    
 -  name      : Anna Catenacci
@@ -64,6 +65,7 @@
    email     : catenaccian@gmail.com
    github    : catenaccianna
    startdate : 2022-01-01
+   enddate   : 2024-05-01
    affiliation: Michigan State University
    
 -  name      : Connor Croft
@@ -97,4 +99,5 @@
    bio       : Logan is an undergraduate student planning to major in Computer Science at Michigan State University. He is interested in the science and technology behind simulating evolution and how to effectively utilize it. In his free time, he likes to listen to music, play tennis, and do things with his close friends.
    email     : berglerl@msu.edu
    startdate : 2023-09-01
+   enddate   : 2023-12-01
    affiliation: Michigan State University

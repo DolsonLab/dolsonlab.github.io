@@ -4,3 +4,5 @@ source "https://rubygems.org"
 gemspec
 gem "jekyll"
 gem "jekyll-scholar"
+
+gem "webrick", "~> 1.7"
