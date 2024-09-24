@@ -121,3 +121,16 @@
    github    : joeymsu
    startdate : 2024-08-26
    affiliation: Michigan State University
+
+-  name      : Ankit Gupta
+   url       : https://ankiitgupta7.github.io/about/
+   avatar    : assets/images/people/gupta-in-hollywoo.jpg
+   role      : PhD Student
+   bio       : Ankit is a PhD student in Computer Science & Engineering and also part of MSU's Dual PhD program in Ecology, Evolutionary Biology, & Behavior (EEB). He is interested in the synthesis and evolution of open-ended intelligent systems within digital environments, guided by insights from natural intelligence. Outside of research, he enjoys playing chess, cooking, and making digital art.
+   email     : guptaa23@msu.edu
+   twitter   : ankiitgupta7 # "user_name" the last part of your profile url, e.g. https://twitter.com/user_name
+   linkedin  : ankiitgupta7 # "user_name" the last part of your profile url, e.g. https://www.linkedin.com/in/user_name
+   github    : ankiitgupta7 # "user_name" the last part of your profile url, e.g. https://github.com/user_name
+   googlescholar: FTCbGjoAAAAJ
+   startdate : 2023-08-16
+   affiliation: Michigan State University
