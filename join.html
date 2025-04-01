@@ -1,0 +1,1212 @@
+<!DOCTYPE html><html lang="en">
+  <head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"><title>Join us - ECODE Lab</title>
+
+<meta name="description" content="The Evolutionary Control of Digital Ecologies (ECODE) Lab
+">
+<link rel="canonical" href="https://www.ecodelab.com/join"><link rel="alternate" type="application/rss+xml" title="ECODE Lab" href="/feed.xml"><!-- start favicons snippet, use https://realfavicongenerator.net/ --><link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png"><link rel="manifest" href="/assets/site.webmanifest"><link rel="mask-icon" href="/assets/safari-pinned-tab.svg" color="#fc4d50"><link rel="shortcut icon" href="/assets/favicon.ico">
+
+<meta name="msapplication-TileColor" content="#ffc40d"><meta name="msapplication-config" content="/assets/browserconfig.xml">
+
+<meta name="theme-color" content="#ffffff">
+<!-- end favicons snippet --><link rel="stylesheet" href="/assets/css/main.css"><link rel="stylesheet" href="/assets/css/academicons.min.css"><link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.15.1/css/all.css" ><!-- start custom head snippets -->
+<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> -->
+<!-- end custom head snippets -->
+<script>(function() {
+  window.isArray = function(val) {
+    return Object.prototype.toString.call(val) === '[object Array]';
+  };
+  window.isString = function(val) {
+    return typeof val === 'string';
+  };
+
+  window.hasEvent = function(event) {
+    return 'on'.concat(event) in window.document;
+  };
+
+  window.isOverallScroller = function(node) {
+    return node === document.documentElement || node === document.body || node === window;
+  };
+
+  window.isFormElement = function(node) {
+    var tagName = node.tagName;
+    return tagName === 'INPUT' || tagName === 'SELECT' || tagName === 'TEXTAREA';
+  };
+
+  window.pageLoad = (function () {
+    var loaded = false, cbs = [];
+    window.addEventListener('load', function () {
+      var i;
+      loaded = true;
+      if (cbs.length > 0) {
+        for (i = 0; i < cbs.length; i++) {
+          cbs[i]();
+        }
+      }
+    });
+    return {
+      then: function(cb) {
+        cb && (loaded ? cb() : (cbs.push(cb)));
+      }
+    };
+  })();
+})();
+(function() {
+  window.throttle = function(func, wait) {
+    var args, result, thisArg, timeoutId, lastCalled = 0;
+
+    function trailingCall() {
+      lastCalled = new Date;
+      timeoutId = null;
+      result = func.apply(thisArg, args);
+    }
+    return function() {
+      var now = new Date,
+        remaining = wait - (now - lastCalled);
+
+      args = arguments;
+      thisArg = this;
+
+      if (remaining <= 0) {
+        clearTimeout(timeoutId);
+        timeoutId = null;
+        lastCalled = now;
+        result = func.apply(thisArg, args);
+      } else if (!timeoutId) {
+        timeoutId = setTimeout(trailingCall, remaining);
+      }
+      return result;
+    };
+  };
+})();
+(function() {
+  var Set = (function() {
+    var add = function(item) {
+      var i, data = this._data;
+      for (i = 0; i < data.length; i++) {
+        if (data[i] === item) {
+          return;
+        }
+      }
+      this.size ++;
+      data.push(item);
+      return data;
+    };
+
+    var Set = function(data) {
+      this.size = 0;
+      this._data = [];
+      var i;
+      if (data.length > 0) {
+        for (i = 0; i < data.length; i++) {
+          add.call(this, data[i]);
+        }
+      }
+    };
+    Set.prototype.add = add;
+    Set.prototype.get = function(index) { return this._data[index]; };
+    Set.prototype.has = function(item) {
+      var i, data = this._data;
+      for (i = 0; i < data.length; i++) {
+        if (this.get(i) === item) {
+          return true;
+        }
+      }
+      return false;
+    };
+    Set.prototype.is = function(map) {
+      if (map._data.length !== this._data.length) { return false; }
+      var i, j, flag, tData = this._data, mData = map._data;
+      for (i = 0; i < tData.length; i++) {
+        for (flag = false, j = 0; j < mData.length; j++) {
+          if (tData[i] === mData[j]) {
+            flag = true;
+            break;
+          }
+        }
+        if (!flag) { return false; }
+      }
+      return true;
+    };
+    Set.prototype.values = function() {
+      return this._data;
+    };
+    return Set;
+  })();
+
+  window.Lazyload = (function(doc) {
+    var queue = {js: [], css: []}, sources = {js: {}, css: {}}, context = this;
+    var createNode = function(name, attrs) {
+      var node = doc.createElement(name), attr;
+      for (attr in attrs) {
+        if (attrs.hasOwnProperty(attr)) {
+          node.setAttribute(attr, attrs[attr]);
+        }
+      }
+      return node;
+    };
+    var end = function(type, url) {
+      var s, q, qi, cbs, i, j, cur, val, flag;
+      if (type === 'js' || type ==='css') {
+        s = sources[type], q = queue[type];
+        s[url] = true;
+        for (i = 0; i < q.length; i++) {
+          cur = q[i];
+          if (cur.urls.has(url)) {
+            qi = cur, val = qi.urls.values();
+            qi && (cbs = qi.callbacks);
+            for (flag = true, j = 0; j < val.length; j++) {
+              cur = val[j];
+              if (!s[cur]) {
+                flag = false;
+              }
+            }
+            if (flag && cbs && cbs.length > 0) {
+              for (j = 0; j < cbs.length; j++) {
+                cbs[j].call(context);
+              }
+              qi.load = true;
+            }
+          }
+        }
+      }
+    };
+    var load = function(type, urls, callback) {
+      var s, q, qi, node, i, cur,
+        _urls = typeof urls === 'string' ? new Set([urls]) : new Set(urls), val, url;
+      if (type === 'js' || type ==='css') {
+        s = sources[type], q = queue[type];
+        for (i = 0; i < q.length; i++) {
+          cur = q[i];
+          if (_urls.is(cur.urls)) {
+            qi = cur;
+            break;
+          }
+        }
+        val = _urls.values();
+        if (qi) {
+          callback && (qi.load || qi.callbacks.push(callback));
+          callback && (qi.load && callback());
+        } else {
+          q.push({
+            urls: _urls,
+            callbacks: callback ? [callback] : [],
+            load: false
+          });
+          for (i = 0; i < val.length; i++) {
+            node = null, url = val[i];
+            if (s[url] === undefined) {
+              (type === 'js' ) && (node = createNode('script', { src: url }));
+              (type === 'css') && (node = createNode('link', { rel: 'stylesheet', href: url }));
+              if (node) {
+                node.onload = (function(type, url) {
+                  return function() {
+                    end(type, url);
+                  };
+                })(type, url);
+                (doc.head || doc.body).appendChild(node);
+                s[url] = false;
+              }
+            }
+          }
+        }
+      }
+    };
+    return {
+      js: function(url, callback) {
+        load('js', url, callback);
+      },
+      css: function(url, callback) {
+        load('css', url, callback);
+      }
+    };
+  })(this.document);
+})();
+</script><script>
+  (function() {
+    var TEXT_VARIABLES = {
+      version: '2.2.6',
+      sources: {
+        font_awesome: 'https://cdn.bootcdn.net/ajax/libs/font-awesome/5.15.1/css/all.css',
+        jquery: 'https://cdn.bootcss.com/jquery/3.1.1/jquery.min.js',
+        leancloud_js_sdk: '//cdn.jsdelivr.net/npm/leancloud-storage@3.13.2/dist/av-min.js',
+        chart: 'https://cdn.bootcss.com/Chart.js/2.7.2/Chart.bundle.min.js',
+        gitalk: {
+          js: 'https://cdn.bootcss.com/gitalk/1.2.2/gitalk.min.js',
+          css: 'https://cdn.bootcss.com/gitalk/1.2.2/gitalk.min.css'
+        },
+        valine: 'https://unpkg.com/valine/dist/Valine.min.js',
+        mathjax: 'https://cdn.bootcss.com/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML',
+        mermaid: 'https://cdn.bootcss.com/mermaid/8.0.0-rc.8/mermaid.min.js'
+      },
+      site: {
+        toc: {
+          selectors: 'h1,h2,h3'
+        }
+      },
+      paths: {
+        search_js: '/assets/search.js'
+      }
+    };
+    window.TEXT_VARIABLES = TEXT_VARIABLES;
+  })();
+</script>
+</head>
+  <body>
+    <div class="root" data-is-touch="false">
+      <div class="layout--page js-page-root"><div class="page__main js-page-main page__viewport has-aside cell cell--auto">
+
+      <div class="page__main-inner"><div class="page__header d-print-none"><header class="header"><div class="main">
+      <div class="header__title">
+        <div class="header__brand"><!-- <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="24px" height="24px" viewBox="0 0 24 24">
+<style type="text/css">
+	.st0{fill:#515151;}
+</style>
+<path class="st0" d="M1.7,22.3c5.7-5.7,11.3-5.7,17,0c3.3-3.3,3.5-5.3,0.8-6c2.7,0.7,3.5-1.1,2.3-5.6s-3.3-5.2-6.3-2.1
+	c3-3,2.3-5.2-2.1-6.3S7,1.8,7.7,4.6C7,1.8,5,2.1,1.7,5.3C7.3,11,7.3,16.7,1.7,22.3"/>
+</svg> -->
+<a title="The Evolutionary Control of Digital Ecologies (ECODE) Lab
+" href="/">ECODE Lab</a></div><button class="button button--secondary button--circle search-button js-search-toggle"><i class="fas fa-search"></i></button></div><nav class="navigation">
+        <ul><li class="navigation__item"><a href="/people.html">People</a></li><li class="navigation__item"><a href="/join.html">Join</a></li><li><button class="button button--secondary button--circle search-button js-search-toggle"><i class="fas fa-search"></i></button></li></ul>
+      </nav></div>
+  </header>
+</div><div class="page__content"><div class ="main"><div class="grid grid--reverse">
+
+              <div class="col-aside d-print-none js-col-aside"><aside class="page__aside js-page-aside"><div class="toc-aside js-toc-root"></div>
+</aside></div>
+
+              <div class="col-main cell cell--auto"><!-- start custom main top snippet -->
+
+<!-- end custom main top snippet -->
+<article itemscope itemtype="http://schema.org/Article"><div class="article__header"><header><h1>Join us</h1></header></div><meta itemprop="headline" content="Join us"><meta itemprop="author" content="Emily Dolson"/><div class="js-article-content"><div class="layout--article"><!-- start custom article top snippet -->
+
+<!-- end custom article top snippet -->
+<div class="article__content" itemprop="articleBody"><h2 id="general-information">General information</h2>
+
+<p>Welcome! We’re so glad you’re interested in working with us. To learn more about how to apply to the lab, see the section for your career stage below.</p>
+
+<h3 id="expectations-of-all-lab-members">Expectations of all lab members</h3>
+
+<p>Before applying, make sure that you are all right with the following expectations:</p>
+
+<ul>
+  <li>
+    <p>Make an honest and good faith effort to accomplish the work you commit to.</p>
+  </li>
+  <li>
+    <p>Contribute to a positive lab environment. This means treating all other lab members with respect and following the <a href="wiki/code_of_conduct">code of conduct</a>.</p>
+  </li>
+  <li>
+    <p>Be committed to practicing open science to the best of your ability while you are in the lab. This includes (inspired by the <a href="http://ivory.idyll.org/lab/philosophy.html#open-science">DIB lab</a>): 1) making all research code available under an open source license (our default is the MIT License, but we’re open to others), 2) submitting all papers to preprint servers unless there is a compelling reason not to, 3) making data and/or configuration files for your projects publicly available, and 4) erring on the side of collaborating with others rather than competing.</p>
+  </li>
+</ul>
+
+<h2 id="prospective-undergraduate-students">Prospective undergraduate students</h2>
+
+<p>The number of undergraduate students that our lab can accommodate depends on the capacity of our other lab members to mentor them. As we build up the number of experienced graduate students in the lab, we will start more actively searching for undergraduate lab members. For now, we still welcome applications from interested students, but will likely have to turn a number down.</p>
+
+<p>If you are interested in applying for an undergraduate research position in our lab, <a href="mailto:emilyldolson@gmail.com">e-mail Emily Dolson</a> and include the following information:</p>
+
+<ul>
+  <li>
+    <p>Why you are interested in working in this lab?</p>
+  </li>
+  <li>
+    <p>Why are you interested in doing research in general? What are you career plans for after you graduate?</p>
+  </li>
+  <li>
+    <p>What is your level of programming experience?</p>
+  </li>
+  <li>
+    <p>What is your level of biology experience? (it’s okay if the answer is none as long as you’re open to learning some!)</p>
+  </li>
+  <li>
+    <p>Do you have experience in other areas of science?</p>
+  </li>
+  <li>
+    <p>Have you done research before? If so, describe it.</p>
+  </li>
+  <li>
+    <p>Which track (see below) are you interested in?</p>
+  </li>
+</ul>
+
+<p>There are three different tracks for undergraduate students in this lab (although the boundaries between them are fuzzy and you can absolutely switch):</p>
+
+<h3 id="computational-research">Computational research</h3>
+
+<p>Qualifications: In most cases, students seeking to do this kind of research should be competent at programming in C++. For MSU students, this usually means having taken CSE 232.</p>
+
+<p>This is the standard research track, and is most similar to what graduate students in the lab do. Undergraduate students
+on this track will choose a bite-sized research project (often a chunk of a larger project that another lab member
+is working on). They will then (assuming all goes well) take that project through its full life cycle: 1) writing any code necessary to run the digital experiments for that project, 2) running those experiments, 3) analyzing the data, and 4) writing the paper. Over the course of this work, the student will receive help and mentorship from whichever lab member is assigned to be their mentor.</p>
+
+<h3 id="research-software-development">Research software development</h3>
+
+<p>Qualifications: In most cases, students seeking to do this kind of research should be competent at programming in C++. For MSU students, this usually means having taken CSE 232.</p>
+
+<p>Because we are in the Computer Science and Engineering department, we often get students who are more interested in software development than research. Conveniently, scientific software development is a very important part of what we do, and often one that other lab members don’t have the bandwidth to take on. So we very much welcome undergraduate students who are interested in focusing on this area!</p>
+
+<p>The general process for participating in software development in our lab is as follows:</p>
+
+<ol>
+  <li>
+    <p>Start out by writing tests for parts of our code that are currently missing them. This will give you a chance to familiarize yourself with our codebase in a gentle way while also making a valuable contribution.</p>
+  </li>
+  <li>
+    <p>Once you’re ready, we’ll choose a specific open software development problem that you’re interested in working on and you’ll work on it.</p>
+  </li>
+</ol>
+
+<h3 id="low-code-biology-research">Low-code biology research</h3>
+
+<p>Qualifications: Students interested in this track do not need to be competent in any programming language, but must be open to learning one (and experience with Python or R is a major plus). Additionally, students interested in this track should have some biology background.</p>
+
+<p>We haven’t actually tried this one yet, so whenever we actually do it will be a bit of an experiment. The idea is that it is designed for biology students without much programming experience. For these students, the amount of up front technical skills that many projects in the lab require learning can be overwhelming (a typical project requires coding in a combination of C++, python, bash, and R). These projects should only require writing code (probably in R) to analyze the data. This is a much more manageable amount of learning to do in the context of undergraduate research.</p>
+
+<p>Within the lab, we can pretty easily put together a piece of software designed to address a specific question about ecological and/or evolutionary theory. We can also fairly easily give it a user-friendly interface that doesn’t require programming to interact with. The bottleneck is more often generating and analyzing the data. So if you want to work on one of these types of projects, we will follow the following process:</p>
+
+<ol>
+  <li>
+    <p>Discuss possible project ideas and identify one that everyone involved seems excited about.</p>
+  </li>
+  <li>
+    <p>The student will read papers to familiarize themself with the chosen topic while a different lab member puts together the code to run the experiment.</p>
+  </li>
+  <li>
+    <p>The student will run the code (probably through a graphical interface on a web browser) to generate all of the data they need.</p>
+  </li>
+  <li>
+    <p>The student will analyze the data (with guidance from other lab members).</p>
+  </li>
+  <li>
+    <p>Assuming it makes sense based on the specifics of the project, the results, and the student’s interest and time, the student will have the opportunity to take the lead on writing any resulting paper. They will be supported in this endeavor by the other lab members they are working with. We will talk more about the specifics of this once we get to this point in a project.</p>
+  </li>
+</ol>
+
+<h2 id="prospective-graduate-students">Prospective graduate students</h2>
+
+<p>The ECODE lab studies techniques for controlling evolution in the context of a variety of ecological communities. Because this problem can be really abstract, we often ground our research in specific instances of it. These instances include: improving evolution-inspired machine learning algorithms, preventing the evolution of drug resistance in cancer and bacteria, and controlling the evolution of gut microbiota. Because these questions span the full spectrum from computer science to biology, we strive to have a mix of graduate students in the lab at any given time. Depending on interests, graduate students in the lab may choose to focus on one of these instances or pursue a cross-cutting question across multiple contexts.</p>
+
+<p>Because our home department is <a href="https://www.cse.msu.edu">Computer Science and Engineering</a> (CSE), it is easiest for us to take students through this program. The CSE department does not require that you have a formal degree in computer science, but it does require some background in computer science (not just programming). For more information, see the <a href="https://www.cse.msu.edu/Students/Future_Grad/HowToApply.php">CSE department’s instructions on how to apply</a>. If you are particularly excited about the idea of joining the lab but do not have a formal computer science background, feel free to reach out anyway to discuss options - we might be able to figure something out.</p>
+
+<p>Most graduate students in the lab are also part of MSU’s interdisciplinary <a href="https://eeb.msu.edu/">Ecology, Evolution, and Behavior</a> program. This program offers a great way to be part of a larger community on campus that is asking the same sorts of questions that we do. It also gives students the opportunity to graduate with a dual PhD in Computer Science &amp; Engineering and Ecology, Evolution, &amp; Behavior.</p>
+
+<h3 id="are-we-the-right-fit">Are we the right fit?</h3>
+
+<p>Choosing a lab to do your PhD in is a huge choice and you should think about it carefully. On the off chance that you haven’t already come across lots of advice on how to make the right choice, check out this article from PLoS Comp. Bio.’s 10 simple rules series: <a href="https://journals.plos.org/ploscompbiol/article%3Fid%3D10.1371/journal.pcbi.1009330">“Ten simple rules for choosing a PhD supervisor”</a>.</p>
+
+<p>Many aspects of fit require an actual conversation to assess, but here is some information to help you figure out whether the ECODE lab might be a good fit for you:</p>
+
+<h4 id="lab-size">Lab size</h4>
+
+<p>As of 2021, the ECODE lab has two PhD students. We plan to grow by approximately one PhD student per year until we reach a steady state of ~5 students. The hope is that this will strike a balance between ensuring that all students receive adequate personalized mentoring from Emily and ensuring that the lab is big enough to provide community and collaboration opportunities.</p>
+
+<h4 id="emilys-mentoring-philosophy">Emily’s mentoring philosophy</h4>
+
+<p>As a new PI, I’m still figuring out how to be the best mentor I can be, but here are my guiding principles:</p>
+
+<ul>
+  <li>As I see it, my primary job as a mentor is to help you achieve your goals. We are on the same team, trying to learn new things about ecology, evolution, and computer science while also doing what is necessary to continue having jobs.
+    <ul>
+      <li>Corollary: if your goals change at any point I’ll still support you in doing what is best for you, whether that means changing your long term career plans, switching research projects, switching labs, or leaving grad school all together.</li>
+    </ul>
+  </li>
+  <li>Your physical and mental well-being comes first. Those are A) more important than your research, and B) necessary for doing good research.</li>
+  <li>Part of being successful in grad school (and beyond) is figuring out how you work best. I will provide advice about what has worked for me and for others, but with the understanding that everyone is different and what worked for me might not work for you. That said, I do impose some minimal levels of structure (semesterly goal-setting, weekly check-ins, etc.) on the lab so that I can keep track of everything that needs my attention and be a more effective mentor. I can also theoretically provide more structure if you desire it.</li>
+  <li>Relatedly, I trust you to set whatever schedule is best for you. I encourage everyone to come to lab for some minimal set of core hours (noon - 3ish) so that we overlap with each other and collaborate, but beyond that what matters to me is that you are making progress towards achieving your goals, not how many hours you spend sitting in front of your computer. While I will send you messages during my normal working hours (which skew late; I have an atypical circadian rhythm), I will only expect you to respond to them during whatever your normal working hours are. There is always more science you could do; learning how to set boundaries is important.</li>
+  <li>Ideally, I want to let you study whatever research questions you are most excited about. In practice, there can be some constraints: 1) I’m not qualified to advise you on projects that are too far outside my skill set - if you want to pick up a completely new technique (e.g. bioinformatics, wet lab experiments, etc.) we’ll probably need to enlist the help of a collaborator, 2) if your funding is coming from a grant, you will need to actually do the work we are funded to do (we’ll talk about the specifics of what this might look like when you interview), and 3) in order to get tenure and thus continue being able to advise you, I need to show that I have a somewhat coherent research program; since the research that we do together is the driver of my overall research program, I do need to keep it somewhat on theme. I’ve carved out a pretty broad research focus, so I’m hoping this won’t be an issue.</li>
+  <li>Typically, I try to have a weekly meeting with all my graduate students, just to make sure we have a chance to check in and make sure everything is going smoothly. This can always be cancelled if there’s nothing important to discuss (particularly if classes are eating up all your time during your first couple years), but the default is to meet. It can be tempting to not meet if you’re not making progress, but often those times are when it is most important to meet so we can figure out why you’re feeling stuck. We also have a weekly lab meeting as an opportunity for the group collectively to check in.</li>
+</ul>
+
+<h4 id="what-being-a-grad-student-in-the-ecode-lab-is-like">What being a grad student in the ECODE lab is like</h4>
+
+<ul>
+  <li>
+    <p><strong>First two years</strong>: The CSE department has a relatively heavy course requirement, so your first two years you’ll probably be fairly busy with classes. Emily will encourage you to also start easing into doing research. You and she will talk through a variety of project ideas, and choose one that sounds good to both of you. Your first project will be a chance for you to start learning all of the skills that go into the kind of research we do and understanding how they all fit together. You will collaborate closely on it with Emily and/or a more senior grad student in the lab. Publications will depend on the specifics of the project, but a likely goal will be to submit a paper on your first project by the end of your second year.</p>
+  </li>
+  <li>
+    <p><strong>Third year</strong>: If you’re still feeling excited about the topic that you started with, at this point you might start working on a follow-up project. If you’re not, you can try out some other topics; Emily is always happy to provide research ideas, but you might also start coming up with your own ideas by this point. You’ll probably be feeling more comfortable with the mechanics of doing experiments by this point, and will be starting to learn how to design a sequence of experiments to answer the questions you’re interested in.</p>
+  </li>
+  <li>
+    <p><strong>Fourth year</strong>: By this point you should be well on your way to nailing down a topic for your dissertation. You’ll probably feel like you’re starting to hit your stride when it comes to research, and you’ll also be starting to come up with longer-term research strategy (although Emily will always be there to help!).</p>
+  </li>
+  <li>
+    <p><strong>Fifth year</strong>: This is most likely your last year (although there is some variation in how long it takes to graduate), so you’ll be planning out your next steps in addition to finishing up your dissertation and trying to get papers out. It will probably feel like a lot, but you’ll have developed the skills to handle it.</p>
+  </li>
+</ul>
+
+<h4 id="papers-to-check-out">Papers to check out</h4>
+
+<p>To get a feel for whether the research we do appeals to you, here are some papers to take a look at:</p>
+
+<p><strong>General:</strong></p>
+<ul>
+  <li><a href="https://www.frontiersin.org/articles/10.3389/fevo.2021.750779/full">Digital Evolution for Ecology Research: A review</a> (coming soon!): This review covers the primary technique that we use in this lab for asking general questions about evolutionary theory.</li>
+  <li><a href="https://direct.mit.edu/artl/article/26/1/58/93272/Interpreting-the-Tape-of-Life-Ancestry-Based">Interpreting the Tape of Life: Ancestry-Based Analyses Provide Insights and Intuition about Evolutionary Dynamics</a>: An introduction to the kinds of metrics we often work with</li>
+</ul>
+
+<p><strong>Evolutionary Computation:</strong></p>
+<ul>
+  <li><a href="https://peerj.com/preprints/27315/">Ecological theory provides insights about evolutionary computation</a>: This preprint lays out the general directions we’re thinking about taking our evolutionary computation research in.</li>
+  <li><a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=OE2Ay_gAAAAJ&amp;authuser=1&amp;citation_for_view=OE2Ay_gAAAAJ:5Ul4iDaHHb8C">Characterizing the effects of random subsampling on lexicase selection</a>: An example of how this general approach to evolutionary computation has lead to us discovering improvements on the current state of the art.</li>
+  <li><a href="https://arxiv.org/abs/2108.12586">What can phylogenetic metrics tell us about useful diversity in evolutionary algorithms?</a>: A good example of how we’re thinking about using phylogenetic metrics to learn more about evolutionary algorithms. Alternatively, check out <a href="https://youtu.be/IT4O9oSAkUU?t=1011">Emily’s talk on this work</a>.</li>
+</ul>
+
+<h3 id="how-to-apply">How to apply</h3>
+
+<p>We are actively seeking applications from PhD students. If you are interested in doing your PhD with us,
+<a href="mailto:emilyldolson@gmail.com">e-mail Emily Dolson</a> and include your CV and the following information:</p>
+
+<ul>
+  <li>
+    <p>Why you are interested in working in this lab. Which part of our research are you excited about contributing to?</p>
+  </li>
+  <li>
+    <p>Why are you interested in doing a PhD in general? What are you career plans for after you graduate?</p>
+  </li>
+  <li>
+    <p>What is your level of programming experience? What is your level of computer science experience? Note that these are two subtly different things. Some ability to write code is necessary to be a successful graduate student in this lab (although obviously you’ll learn a lot over the course of graduate school - we don’t expect you to be an expert at the beginning). Formal training in computer science is less critical, although it is helpful as our home department is <a href="https://cse.msu.edu">Computer Science and Engineering</a>. If you have some programming experience but no formal computer science background there are a range of options we can discuss.</p>
+  </li>
+  <li>
+    <p>What is your level of biology experience? (it’s okay if the answer is none as long as you’re open to learning some!)</p>
+  </li>
+  <li>
+    <p>Do you have experience in other areas of science?</p>
+  </li>
+  <li>
+    <p>Have you done research before? If so, describe it.</p>
+  </li>
+</ul>
+
+<h2 id="prospective-post-docs">Prospective post-docs</h2>
+
+<p>While we do not currently have funding available for any post-doctoral positions,
+we are very much open adding post-docs to the lab if their expertise is the right
+fit. Most likely, this would take the form of applying for funding together. Because
+of the timeline for most funding applications, we recommend that you contact us at
+least a year before you are hoping to start a postdoctoral position. We’re happy to
+discuss options on a tighter time scale as well - there will just likely be fewer options.</p>
+
+<p>Some funding opportunities that may be a good fit for post-docs interested in joining the ECODE lab include the following. Some of these require an explicit mentor and others do not:</p>
+
+<ul>
+  <li>
+    <p><a href="https://eeb.msu.edu/initiatives/postdoctoral-fellowship/">The MSU Presidential Postdoctoral Fellowship in Ecology, Evolution, and Behavior</a></p>
+  </li>
+  <li>
+    <p><a href="https://www.jsmf.org/apply/fellowship/">JSMF Postdoctoral Fellowship Awards</a> (this is not intended for people who have definitively identified a postdoc advisor, but if you’re still exploring your options and are the sort of person who might be a good fit for the ECODE lab it is likely one that you should be aware of)</p>
+  </li>
+  <li>
+    <p><a href="https://researchtraining.nih.gov/programs/fellowships/f32">NIH F32</a> (if you’re interested in the more medically-oriented applications of our research)</p>
+  </li>
+  <li>
+    <p><a href="https://beta.nsf.gov/funding/opportunities/postdoctoral-research-fellowships-biology-prfb">NSF Biology Postdoctoral Fellowships</a> (the topics for a given year can be hit or miss, but are sometimes a good fit)</p>
+  </li>
+  <li>
+    <p><a href="https://foundation.mozilla.org/en/what-we-fund/fellowships/">Mozilla Fellowships</a> (these are generally more about improving the infrastructure for open science and technology than about doing research, but I very much support those goals and am happy to serve as a mentor on such projects where appropriate)</p>
+  </li>
+</ul>
+
+<p>The other option for securing funding is that we can potentially write you into a larger grant. As a new lab, we’re writing a lot of grants, so this is a real option. <a href="mailto:emilyldolson@gmail.com">E-mail Emily Dolson</a> to discuss this further.</p>
+
+<p>Emails from prospective post-docs should include a fairly detailed description of why you are interested in this lab specifically and what type of research question you would be interested in persuing.</p>
+</div><div class="d-print-none"><footer class="article__footer"><!-- start custom article footer snippet -->
+
+<!-- end custom article footer snippet -->
+</footer>
+</div>
+
+</div>
+
+<script>(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    $(function() {
+      var $this ,$scroll;
+      var $articleContent = $('.js-article-content');
+      var hasSidebar = $('.js-page-root').hasClass('layout--page--sidebar');
+      var scroll = hasSidebar ? '.js-page-main' : 'html, body';
+      $scroll = $(scroll);
+
+      $articleContent.find('.highlight').each(function() {
+        $this = $(this);
+        $this.attr('data-lang', $this.find('code').attr('data-lang'));
+      });
+      $articleContent.find('h1[id], h2[id], h3[id], h4[id], h5[id], h6[id]').each(function() {
+        $this = $(this);
+        $this.append($('<a class="anchor d-print-none" aria-hidden="true"></a>').html('<i class="fas fa-anchor"></i>'));
+      });
+      $articleContent.on('click', '.anchor', function() {
+        $scroll.scrollToAnchor('#' + $(this).parent().attr('id'), 400);
+      });
+    });
+  });
+})();
+</script>
+</div><section class="page__comments d-print-none"></section></article><!-- start custom main bottom snippet -->
+
+<!-- end custom main bottom snippet -->
+</div>
+            </div></div></div><div class="page__footer d-print-none">
+<footer class="footer py-4 js-page-footer">
+  <div class="main"><div itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Emily Dolson"><meta itemprop="url" content="https://emilyldolson.com"><meta itemprop="description" content="PI"><div class="footer__author-links"><div class="author-links">
+  <ul class="menu menu--nowrap menu--inline"><link itemprop="url" href="https://emilyldolson.com"><li title="Send me an Email.">
+      <a class="button button--circle mail-button" itemprop="email" href="mailto:emilyldolson@gmail.com" target="_blank">
+        <i class="fas fa-envelope"></i>
+      </a>
+      </li><li title="Follow me on Twitter.">
+        <a class="button button--circle twitter-button" itemprop="sameAs" href="https://twitter.com/emilyldolson" target="_blank">
+          <div class="icon"><svg fill="#000000" width="24px" height="24px" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M1024.032 194.432c-37.664 16.704-78.176 28-120.672 33.088 43.36-26.016 76.672-67.168 92.384-116.224-40.608 24.064-85.568 41.568-133.408 50.976-38.336-40.832-92.928-66.336-153.344-66.336-116.032 0-210.08 94.048-210.08 210.08 0 16.48 1.856 32.512 5.44 47.872-174.592-8.768-329.408-92.416-433.024-219.52-18.08 31.04-28.448 67.104-28.448 105.632 0 72.896 37.088 137.184 93.472 174.88-34.432-1.088-66.816-10.528-95.168-26.272-0.032 0.864-0.032 1.76-0.032 2.656 0 101.792 72.416 186.688 168.512 205.984-17.632 4.8-36.192 7.36-55.36 7.36-13.536 0-26.688-1.312-39.52-3.776 26.72 83.456 104.32 144.192 196.256 145.888-71.904 56.352-162.496 89.92-260.928 89.92-16.96 0-33.664-0.992-50.112-2.944 92.96 59.616 203.392 94.4 322.048 94.4 386.432 0 597.728-320.128 597.728-597.76 0-9.12-0.192-18.176-0.608-27.168 41.056-29.632 76.672-66.624 104.832-108.736z" />
+</svg>
+</div>
+        </a>
+      </li><li title="Follow me on Linkedin.">
+        <a class="button button--circle linkedin-button" itemprop="sameAs" href="https://www.linkedin.com/in/dolsonemily" target="_blank">
+          <div class="icon"><svg fill="#000000" width="24px" height="24px" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M260.096 155.648c0 27.307008-9.899008 50.516992-29.696 69.632-19.796992 19.115008-45.396992 28.672-76.8 28.672-30.036992 0-54.612992-9.556992-73.728-28.672-19.115008-19.115008-28.672-42.324992-28.672-69.632 0-28.672 9.556992-52.224 28.672-70.656 19.115008-18.432 44.372992-27.648 75.776-27.648 31.403008 0 56.32 9.216 74.752 27.648 18.432 18.432 28.331008 41.984 29.696 70.656 0 0 0 0 0 0m-202.752 808.96c0 0 0-632.832 0-632.832 0 0 196.608 0 196.608 0 0 0 0 632.832 0 632.832 0 0-196.608 0-196.608 0 0 0 0 0 0 0m313.344-430.08c0-58.708992-1.364992-126.292992-4.096-202.752 0 0 169.984 0 169.984 0 0 0 10.24 88.064 10.24 88.064 0 0 4.096 0 4.096 0 40.96-68.267008 105.812992-102.4 194.56-102.4 68.267008 0 123.220992 22.868992 164.864 68.608 41.643008 45.739008 62.464 113.664 62.464 203.776 0 0 0 374.784 0 374.784 0 0-196.608 0-196.608 0 0 0 0-350.208 0-350.208 0-91.476992-33.451008-137.216-100.352-137.216-47.787008 0-81.236992 24.576-100.352 73.728-4.096 8.192-6.144 24.576-6.144 49.152 0 0 0 364.544 0 364.544 0 0-198.656 0-198.656 0 0 0 0-430.08 0-430.08 0 0 0 0 0 0" />
+</svg>
+</div>
+        </a>
+      </li><li title="Follow me on Github.">
+        <a class="button button--circle github-button" itemprop="sameAs" href="https://github.com/dolsonlab" target="_blank">
+          <div class="icon"><svg fill="#000000" width="24px" height="24px" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path class="svgpath" data-index="path_0" fill="#272636" d="M0 525.2c0 223.6 143.3 413.7 343 483.5 26.9 6.8 22.8-12.4 22.8-25.4l0-88.7c-155.3 18.2-161.5-84.6-172-101.7-21.1-36-70.8-45.2-56-62.3 35.4-18.2 71.4 4.6 113.1 66.3 30.2 44.7 89.1 37.2 119 29.7 6.5-26.9 20.5-50.9 39.7-69.6C248.8 728.2 181.7 630 181.7 513.2c0-56.6 18.7-108.7 55.3-150.7-23.3-69.3 2.2-128.5 5.6-137.3 66.5-6 135.5 47.6 140.9 51.8 37.8-10.2 80.9-15.6 129.1-15.6 48.5 0 91.8 5.6 129.8 15.9 12.9-9.8 77-55.8 138.8-50.2 3.3 8.8 28.2 66.7 6.3 135 37.1 42.1 56 94.6 56 151.4 0 117-67.5 215.3-228.8 243.7 26.9 26.6 43.6 63.4 43.6 104.2l0 128.8c0.9 10.3 0 20.5 17.2 20.5C878.1 942.4 1024 750.9 1024 525.3c0-282.9-229.3-512-512-512C229.1 13.2 0 242.3 0 525.2L0 525.2z" />
+</svg>
+</div>
+        </a>
+      </li></ul>
+</div>
+</div>
+    </div><div class="site-info mt-2">
+      <div>© ECODE Lab 2021,
+        Powered by <a title="Jekyll is a simple, blog-aware, static site generator." href="http://jekyllrb.com/">Jekyll</a> & <a
+        title="TeXt is a super customizable Jekyll theme." href="https://github.com/kitian616/jekyll-TeXt-theme">TeXt Theme</a>.
+      </div>
+    </div>
+  </div>
+</footer>
+</div></div>
+    </div><script>(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    var $body = $('body'), $window = $(window);
+    var $pageRoot = $('.js-page-root'), $pageMain = $('.js-page-main');
+    var activeCount = 0;
+    function modal(options) {
+      var $root = this, visible, onChange, hideWhenWindowScroll = false;
+      var scrollTop;
+      function setOptions(options) {
+        var _options = options || {};
+        visible = _options.initialVisible === undefined ? false : show;
+        onChange = _options.onChange;
+        hideWhenWindowScroll = _options.hideWhenWindowScroll;
+      }
+      function init() {
+        setState(visible);
+      }
+      function setState(isShow) {
+        if (isShow === visible) {
+          return;
+        }
+        visible = isShow;
+        if (visible) {
+          activeCount++;
+          scrollTop = $(window).scrollTop() || $pageMain.scrollTop();
+          $root.addClass('modal--show');
+          $pageMain.scrollTop(scrollTop);
+          activeCount === 1 && ($pageRoot.addClass('show-modal'), $body.addClass('of-hidden'));
+          hideWhenWindowScroll && window.hasEvent('touchstart') && $window.on('scroll', hide);
+          $window.on('keyup', handleKeyup);
+        } else {
+          activeCount > 0 && activeCount--;
+          $root.removeClass('modal--show');
+          $window.scrollTop(scrollTop);
+          activeCount === 0 && ($pageRoot.removeClass('show-modal'), $body.removeClass('of-hidden'));
+          hideWhenWindowScroll && window.hasEvent('touchstart') && $window.off('scroll', hide);
+          $window.off('keyup', handleKeyup);
+        }
+        onChange && onChange(visible);
+      }
+      function show() {
+        setState(true);
+      }
+      function hide() {
+        setState(false);
+      }
+      function handleKeyup(e) {
+        // Char Code: 27  ESC
+        if (e.which ===  27) {
+          hide();
+        }
+      }
+      setOptions(options);
+      init();
+      return {
+        show: show,
+        hide: hide,
+        $el: $root
+      };
+    }
+    $.fn.modal = modal;
+  });
+})();
+</script><div class="modal modal--overflow page__search-modal d-print-none js-page-search-modal"><script>
+(function () {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    // search panel
+    var search = (window.search || (window.search = {}));
+    var useDefaultSearchBox = window.useDefaultSearchBox === undefined ?
+      true : window.useDefaultSearchBox ;
+
+    var $searchModal = $('.js-page-search-modal');
+    var $searchToggle = $('.js-search-toggle');
+    var searchModal = $searchModal.modal({ onChange: handleModalChange, hideWhenWindowScroll: true });
+    var modalVisible = false;
+    search.searchModal = searchModal;
+
+    var $searchBox = null;
+    var $searchInput = null;
+    var $searchClear = null;
+
+    function getModalVisible() {
+      return modalVisible;
+    }
+    search.getModalVisible = getModalVisible;
+
+    function handleModalChange(visible) {
+      modalVisible = visible;
+      if (visible) {
+        search.onShow && search.onShow();
+        useDefaultSearchBox && $searchInput[0] && $searchInput[0].focus();
+      } else {
+        search.onShow && search.onHide();
+        useDefaultSearchBox && $searchInput[0] && $searchInput[0].blur();
+        setTimeout(function() {
+          useDefaultSearchBox && ($searchInput.val(''), $searchBox.removeClass('not-empty'));
+          search.clear && search.clear();
+          window.pageAsideAffix && window.pageAsideAffix.refresh();
+        }, 400);
+      }
+    }
+
+    $searchToggle.on('click', function() {
+      modalVisible ? searchModal.hide() : searchModal.show();
+    });
+    // Char Code: 83  S, 191 /
+    $(window).on('keyup', function(e) {
+      if (!modalVisible && !window.isFormElement(e.target || e.srcElement) && (e.which === 83 || e.which === 191)) {
+        modalVisible || searchModal.show();
+      }
+    });
+
+    if (useDefaultSearchBox) {
+      $searchBox = $('.js-search-box');
+      $searchInput = $searchBox.children('input');
+      $searchClear = $searchBox.children('.js-icon-clear');
+      search.getSearchInput = function() {
+        return $searchInput.get(0);
+      };
+      search.getVal = function() {
+        return $searchInput.val();
+      };
+      search.setVal = function(val) {
+        $searchInput.val(val);
+      };
+
+      $searchInput.on('focus', function() {
+        $(this).addClass('focus');
+      });
+      $searchInput.on('blur', function() {
+        $(this).removeClass('focus');
+      });
+      $searchInput.on('input', window.throttle(function() {
+        var val = $(this).val();
+        if (val === '' || typeof val !== 'string') {
+          search.clear && search.clear();
+        } else {
+          $searchBox.addClass('not-empty');
+          search.onInputNotEmpty && search.onInputNotEmpty(val);
+        }
+      }, 400));
+      $searchClear.on('click', function() {
+        $searchInput.val(''); $searchBox.removeClass('not-empty');
+        search.clear && search.clear();
+      });
+    }
+  });
+})();
+</script><div class="search search--dark">
+  <div class="main">
+    <div class="search__header">Search</div>
+    <div class="search-bar">
+      <div class="search-box js-search-box">
+        <div class="search-box__icon-search"><i class="fas fa-search"></i></div>
+        <input type="text" />
+        <div class="search-box__icon-clear js-icon-clear">
+          <a><i class="fas fa-times"></i></a>
+        </div>
+      </div>
+      <button class="button button--theme-dark button--pill search__cancel js-search-toggle">
+        Cancel</button>
+    </div>
+    <div class="search-result js-search-result"></div>
+  </div>
+</div>
+<script>var SOURCES = window.TEXT_VARIABLES.sources;
+var PAHTS = window.TEXT_VARIABLES.paths;
+window.Lazyload.js([SOURCES.jquery, PAHTS.search_js], function() {
+  var search = (window.search || (window.search = {}));
+  var searchData = window.TEXT_SEARCH_DATA || {};
+
+  function memorize(f) {
+    var cache = {};
+    return function () {
+      var key = Array.prototype.join.call(arguments, ',');
+      if (key in cache) return cache[key];
+      else return cache[key] = f.apply(this, arguments);
+    };
+  }
+
+  /// search
+  function searchByQuery(query) {
+    var i, j, key, keys, cur, _title, result = {};
+    keys = Object.keys(searchData);
+    for (i = 0; i < keys.length; i++) {
+      key = keys[i];
+      for (j = 0; j < searchData[key].length; j++) {
+        cur = searchData[key][j], _title = cur.title;
+        if ((result[key] === undefined || result[key] && result[key].length < 4 )
+          && _title.toLowerCase().indexOf(query.toLowerCase()) >= 0) {
+          if (result[key] === undefined) {
+            result[key] = [];
+          }
+          result[key].push(cur);
+        }
+      }
+    }
+    return result;
+  }
+
+  var renderHeader = memorize(function(header) {
+    return $('<p class="search-result__header">' + header + '</p>');
+  });
+
+  var renderItem = function(index, title, url) {
+    return $('<li class="search-result__item" data-index="' + index + '"><a class="button" href="' + url + '">' + title + '</a></li>');
+  };
+
+  function render(data) {
+    if (!data) { return null; }
+    var $root = $('<ul></ul>'), i, j, key, keys, cur, itemIndex = 0;
+    keys = Object.keys(data);
+    for (i = 0; i < keys.length; i++) {
+      key = keys[i];
+      $root.append(renderHeader(key));
+      for (j = 0; j < data[key].length; j++) {
+        cur = data[key][j];
+        $root.append(renderItem(itemIndex++, cur.title, cur.url));
+      }
+    }
+    return $root;
+  }
+
+  // search box
+  var $result = $('.js-search-result'), $resultItems;
+  var lastActiveIndex, activeIndex;
+
+  function clear() {
+    $result.html(null);
+    $resultItems = $('.search-result__item'); activeIndex = 0;
+  }
+  function onInputNotEmpty(val) {
+    $result.html(render(searchByQuery(val)));
+    $resultItems = $('.search-result__item'); activeIndex = 0;
+    $resultItems.eq(0).addClass('active');
+  }
+
+  search.clear = clear;
+  search.onInputNotEmpty = onInputNotEmpty;
+
+  function updateResultItems() {
+    lastActiveIndex >= 0 && $resultItems.eq(lastActiveIndex).removeClass('active');
+    activeIndex >= 0 && $resultItems.eq(activeIndex).addClass('active');
+  }
+
+  function moveActiveIndex(direction) {
+    var itemsCount = $resultItems ? $resultItems.length : 0;
+    if (itemsCount > 1) {
+      lastActiveIndex = activeIndex;
+      if (direction === 'up') {
+        activeIndex = (activeIndex - 1 + itemsCount) % itemsCount;
+      } else if (direction === 'down') {
+        activeIndex = (activeIndex + 1 + itemsCount) % itemsCount;
+      }
+      updateResultItems();
+    }
+  }
+
+  // Char Code: 13  Enter, 37  ⬅, 38  ⬆, 39  ➡, 40  ⬇
+  $(window).on('keyup', function(e) {
+    var modalVisible = search.getModalVisible && search.getModalVisible();
+    if (modalVisible) {
+      if (e.which === 38) {
+        modalVisible && moveActiveIndex('up');
+      } else if (e.which === 40) {
+        modalVisible && moveActiveIndex('down');
+      } else if (e.which === 13) {
+        modalVisible && $resultItems && activeIndex >= 0 && $resultItems.eq(activeIndex).children('a')[0].click();
+      }
+    }
+  });
+
+  $result.on('mouseover', '.search-result__item > a', function() {
+    var itemIndex = $(this).parent().data('index');
+    itemIndex >= 0 && (lastActiveIndex = activeIndex, activeIndex = itemIndex, updateResultItems());
+  });
+});
+</script>
+</div></div>
+
+
+<script>(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    function scrollToAnchor(anchor, duration, callback) {
+      var $root = this;
+      $root.animate({ scrollTop: $(anchor).position().top }, duration, function() {
+        window.history.replaceState(null, '', window.location.href.split('#')[0] + anchor);
+        callback && callback();
+      });
+    }
+    $.fn.scrollToAnchor = scrollToAnchor;
+  });
+})();
+(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    function affix(options) {
+      var $root = this, $window = $(window), $scrollTarget, $scroll,
+        offsetBottom = 0, scrollTarget = window, scroll = window.document, disabled = false, isOverallScroller = true,
+        rootTop, rootLeft, rootHeight, scrollBottom, rootBottomTop,
+        hasInit = false, curState;
+
+      function setOptions(options) {
+        var _options = options || {};
+        _options.offsetBottom && (offsetBottom = _options.offsetBottom);
+        _options.scrollTarget && (scrollTarget = _options.scrollTarget);
+        _options.scroll && (scroll = _options.scroll);
+        _options.disabled !== undefined && (disabled = _options.disabled);
+        $scrollTarget = $(scrollTarget);
+        isOverallScroller = window.isOverallScroller($scrollTarget[0]);
+        $scroll = $(scroll);
+      }
+      function preCalc() {
+        top();
+        rootHeight = $root.outerHeight();
+        rootTop = $root.offset().top + (isOverallScroller ? 0 :  $scrollTarget.scrollTop());
+        rootLeft = $root.offset().left;
+      }
+      function calc(needPreCalc) {
+        needPreCalc && preCalc();
+        scrollBottom = $scroll.outerHeight() - offsetBottom - rootHeight;
+        rootBottomTop = scrollBottom - rootTop;
+      }
+      function top() {
+        if (curState !== 'top') {
+          $root.removeClass('fixed').css({
+            left: 0,
+            top: 0
+          });
+          curState = 'top';
+        }
+      }
+      function fixed() {
+        if (curState !== 'fixed') {
+          $root.addClass('fixed').css({
+            left: rootLeft + 'px',
+            top: 0
+          });
+          curState = 'fixed';
+        }
+      }
+      function bottom() {
+        if (curState !== 'bottom') {
+          $root.removeClass('fixed').css({
+            left: 0,
+            top: rootBottomTop + 'px'
+          });
+          curState = 'bottom';
+        }
+      }
+      function setState() {
+        var scrollTop = $scrollTarget.scrollTop();
+        if (scrollTop >= rootTop && scrollTop <= scrollBottom) {
+          fixed();
+        } else if (scrollTop < rootTop) {
+          top();
+        } else {
+          bottom();
+        }
+      }
+      function init() {
+        if(!hasInit) {
+          var interval, timeout;
+          calc(true); setState();
+          // run calc every 100 millisecond
+          interval = setInterval(function() {
+            calc();
+          }, 100);
+          timeout = setTimeout(function() {
+            clearInterval(interval);
+          }, 45000);
+          window.pageLoad.then(function() {
+            setTimeout(function() {
+              clearInterval(interval);
+              clearTimeout(timeout);
+            }, 3000);
+          });
+          $scrollTarget.on('scroll', function() {
+            disabled || setState();
+          });
+          $window.on('resize', function() {
+            disabled || (calc(true), setState());
+          });
+          hasInit = true;
+        }
+      }
+
+      setOptions(options);
+      if (!disabled) {
+        init();
+      }
+      $window.on('resize', window.throttle(function() {
+        init();
+      }, 200));
+      return {
+        setOptions: setOptions,
+        refresh: function() {
+          calc(true, { animation: false }); setState();
+        }
+      };
+    }
+    $.fn.affix = affix;
+  });
+})();
+(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    function toc(options) {
+      var $root = this, $window = $(window), $scrollTarget, $scroller, $tocUl = $('<ul class="toc toc--ellipsis"></ul>'), $tocLi, $headings, $activeLast, $activeCur,
+        selectors = 'h1,h2,h3', container = 'body', scrollTarget = window, scroller = 'html, body', disabled = false,
+        headingsPos, scrolling = false, hasRendered = false, hasInit = false;
+
+      function setOptions(options) {
+        var _options = options || {};
+        _options.selectors && (selectors = _options.selectors);
+        _options.container && (container = _options.container);
+        _options.scrollTarget && (scrollTarget = _options.scrollTarget);
+        _options.scroller && (scroller = _options.scroller);
+        _options.disabled !== undefined && (disabled = _options.disabled);
+        $headings = $(container).find(selectors).filter('[id]');
+        $scrollTarget = $(scrollTarget);
+        $scroller = $(scroller);
+      }
+      function calc() {
+        headingsPos = [];
+        $headings.each(function() {
+          headingsPos.push(Math.floor($(this).position().top));
+        });
+      }
+      function setState(element, disabled) {
+        var scrollTop = $scrollTarget.scrollTop(), i;
+        if (disabled || !headingsPos || headingsPos.length < 1) { return; }
+        if (element) {
+          $activeCur = element;
+        } else {
+          for (i = 0; i < headingsPos.length; i++) {
+            if (scrollTop >= headingsPos[i]) {
+              $activeCur = $tocLi.eq(i);
+            } else {
+              $activeCur || ($activeCur = $tocLi.eq(i));
+              break;
+            }
+          }
+        }
+        $activeLast && $activeLast.removeClass('active');
+        ($activeLast = $activeCur).addClass('active');
+      }
+      function render() {
+        if(!hasRendered) {
+          $root.append($tocUl);
+          $headings.each(function() {
+            var $this = $(this);
+            $tocUl.append($('<li></li>').addClass('toc-' + $this.prop('tagName').toLowerCase())
+              .append($('<a></a>').text($this.text()).attr('href', '#' + $this.prop('id'))));
+          });
+          $tocLi = $tocUl.children('li');
+          $tocUl.on('click', 'a', function(e) {
+            e.preventDefault();
+            var $this = $(this);
+            scrolling = true;
+            setState($this.parent());
+            $scroller.scrollToAnchor($this.attr('href'), 400, function() {
+              scrolling = false;
+            });
+          });
+        }
+        hasRendered = true;
+      }
+      function init() {
+        var interval, timeout;
+        if(!hasInit) {
+          render(); calc(); setState(null, scrolling);
+          // run calc every 100 millisecond
+          interval = setInterval(function() {
+            calc();
+          }, 100);
+          timeout = setTimeout(function() {
+            clearInterval(interval);
+          }, 45000);
+          window.pageLoad.then(function() {
+            setTimeout(function() {
+              clearInterval(interval);
+              clearTimeout(timeout);
+            }, 3000);
+          });
+          $scrollTarget.on('scroll', function() {
+            disabled || setState(null, scrolling);
+          });
+          $window.on('resize', window.throttle(function() {
+            if (!disabled) {
+              render(); calc(); setState(null, scrolling);
+            }
+          }, 100));
+        }
+        hasInit = true;
+      }
+
+      setOptions(options);
+      if (!disabled) {
+        init();
+      }
+      $window.on('resize', window.throttle(function() {
+        init();
+      }, 200));
+      return {
+        setOptions: setOptions
+      };
+    }
+    $.fn.toc = toc;
+  });
+})();
+/*(function () {
+
+})();*/
+</script><script>
+  /* toc must before affix, since affix need to konw toc' height. */(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  var TOC_SELECTOR = window.TEXT_VARIABLES.site.toc.selectors;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    var $window = $(window);
+    var $articleContent = $('.js-article-content');
+    var $tocRoot = $('.js-toc-root'), $col2 = $('.js-col-aside');
+    var toc;
+    var tocDisabled = false;
+    var hasSidebar = $('.js-page-root').hasClass('layout--page--sidebar');
+    var hasToc = $articleContent.find(TOC_SELECTOR).length > 0;
+
+    function disabled() {
+      return $col2.css('display') === 'none' || !hasToc;
+    }
+
+    tocDisabled = disabled();
+
+    toc = $tocRoot.toc({
+      selectors: TOC_SELECTOR,
+      container: $articleContent,
+      scrollTarget: hasSidebar ? '.js-page-main' : null,
+      scroller: hasSidebar ? '.js-page-main' : null,
+      disabled: tocDisabled
+    });
+
+    $window.on('resize', window.throttle(function() {
+      tocDisabled = disabled();
+      toc && toc.setOptions({
+        disabled: tocDisabled
+      });
+    }, 100));
+
+  });
+})();
+(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    var $window = $(window), $pageFooter = $('.js-page-footer');
+    var $pageAside = $('.js-page-aside');
+    var affix;
+    var tocDisabled = false;
+    var hasSidebar = $('.js-page-root').hasClass('layout--page--sidebar');
+
+    affix = $pageAside.affix({
+      offsetBottom: $pageFooter.outerHeight(),
+      scrollTarget: hasSidebar ? '.js-page-main' : null,
+      scroller: hasSidebar ? '.js-page-main' : null,
+      scroll: hasSidebar ? $('.js-page-main').children() : null,
+      disabled: tocDisabled
+    });
+
+    $window.on('resize', window.throttle(function() {
+      affix && affix.setOptions({
+        disabled: tocDisabled
+      });
+    }, 100));
+
+    window.pageAsideAffix = affix;
+  });
+})();
+</script><script>
+  window.Lazyload.js(['https://cdn.bootcss.com/jquery/3.1.1/jquery.min.js', 'https://cdn.bootcss.com/Chart.js/2.7.2/Chart.bundle.min.js'], function() {
+    var $canvas = null, $this = null, _ctx = null, _text = '';
+    $('.language-chart').each(function(){
+      $this = $(this);
+      $canvas = $('<canvas></canvas>');
+      _text = $this.text();
+      $this.text('').append($canvas);
+      _ctx = $canvas.get(0).getContext('2d');
+      (_ctx && _text) && (new Chart(_ctx, JSON.parse(_text)) && $this.attr('data-processed', true));
+    });
+  });
+</script>
+<script type="text/x-mathjax-config">
+	var _config = { tex2jax: {
+		inlineMath: [['$','$'], ['\\(','\\)']]
+	}};MathJax.Hub.Config(_config);
+</script>
+<script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+<script>
+  window.Lazyload.js('https://cdn.bootcss.com/mermaid/8.0.0-rc.8/mermaid.min.js', function() {
+    mermaid.initialize({
+      startOnLoad: true
+    });
+    mermaid.init(undefined, '.language-mermaid');
+  });
+</script>
+
+    </div>
+    <script>(function () {
+  var $root = document.getElementsByClassName('root')[0];
+  if (window.hasEvent('touchstart')) {
+    $root.dataset.isTouch = true;
+    document.addEventListener('touchstart', function(){}, false);
+  }
+})();
+</script>
+  </body>
+</html>
+

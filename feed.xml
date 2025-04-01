@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://www.ecodelab.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://www.ecodelab.com/" rel="alternate" type="text/html" /><updated>2025-04-01T20:44:21+00:00</updated><id>https://www.ecodelab.com/feed.xml</id><title type="html">ECODE Lab</title><subtitle>The Evolutionary Control of Digital Ecologies (ECODE) Lab
+</subtitle><author><name>Emily Dolson</name><email>emilyldolson@gmail.com</email></author><entry><title type="html">Welcome</title><link href="https://www.ecodelab.com/2018/07/01/welcome.html" rel="alternate" type="text/html" title="Welcome" /><published>2018-07-01T00:00:00+00:00</published><updated>2018-07-01T00:00:00+00:00</updated><id>https://www.ecodelab.com/2018/07/01/welcome</id><content type="html" xml:base="https://www.ecodelab.com/2018/07/01/welcome.html"><![CDATA[<p>If you see this page, that means you have setup your site. enjoy! :ghost: :ghost: :ghost:</p>
+
+<p>You may want to <a href="https://tianqi.name/jekyll-TeXt-theme/docs/en/configuration">config the site</a> or <a href="https://tianqi.name/jekyll-TeXt-theme/docs/en/writing-posts">writing a post</a> next. Please feel free to <a href="https://github.com/kitian616/jekyll-TeXt-theme/issues">create an issue</a> or <a href="mailto:kitian616@outlook.com">send me email</a> if you have any questions.</p>
+
+<!--more-->
+
+<hr />
+
+<p>If you like TeXt, don’t forget to give me a star. :star2:</p>
+
+<p><a href="https://github.com/kitian616/jekyll-TeXt-theme/"><img src="https://img.shields.io/github/stars/kitian616/jekyll-TeXt-theme.svg?label=Stars&amp;style=social" alt="Star This Project" /></a></p>]]></content><author><name>Emily Dolson</name><email>emilyldolson@gmail.com</email></author><category term="TeXt" /><summary type="html"><![CDATA[If you see this page, that means you have setup your site. enjoy! :ghost: :ghost: :ghost: You may want to config the site or writing a post next. Please feel free to create an issue or send me email if you have any questions.]]></summary></entry><entry><title type="html">Post with Header Image</title><link href="https://www.ecodelab.com/2018/06/01/header-image.html" rel="alternate" type="text/html" title="Post with Header Image" /><published>2018-06-01T00:00:00+00:00</published><updated>2018-06-01T00:00:00+00:00</updated><id>https://www.ecodelab.com/2018/06/01/header-image</id><content type="html" xml:base="https://www.ecodelab.com/2018/06/01/header-image.html"><![CDATA[<p>A Post with Header Image, See <a href="https://tianqi.name/jekyll-TeXt-theme/samples.html#page-layout">Page layout</a> for more examples.</p>
+
+<!--more-->]]></content><author><name>Emily</name></author><category term="TeXt" /><summary type="html"><![CDATA[A Post with Header Image, See Page layout for more examples.]]></summary></entry></feed>
