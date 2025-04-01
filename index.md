@@ -58,7 +58,7 @@ data:
         is_row: true
         full_width: true
         style: "max-width: 960px;"
-        src: /assets/images/group_photo.jpg
+        src: /assets/images/group_photo2.jpg
       actions:
         - text: People
           url: /people.html
