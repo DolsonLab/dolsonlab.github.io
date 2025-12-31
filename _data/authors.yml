@@ -124,14 +124,15 @@
    affiliation: Michigan State University
 
 -  name      : Ankit Gupta
-   url       : https://ankiitgupta7.github.io/about/
+   url       : https://sites.google.com/msu.edu/guptaa23/
    avatar    : assets/images/people/gupta-in-hollywoo.jpg
    role      : PhD Student
-   bio       : Ankit is a PhD student in Computer Science & Engineering and also part of MSU's Dual PhD program in Ecology, Evolutionary Biology, & Behavior (EEB). He is interested in the synthesis and evolution of open-ended intelligent systems within digital environments, guided by insights from natural intelligence. Outside of research, he enjoys playing chess, cooking, and making digital art.
+   bio       : Ankit is a CS PhD student at MSU. His research focuses on identifying failure modes in machine perception systems relative to human perception and analyzing their root causes, with the goal of building more robust learning models. He is also interested in evolutionary computation for studying open-ended AI systems, leveraging evolutionary dynamics that drive emergent complexity in natural and artificial systems.
    email     : guptaa23@msu.edu
-   twitter   : ankiitgupta7 # "user_name" the last part of your profile url, e.g. https://twitter.com/user_name
-   linkedin  : ankiitgupta7 # "user_name" the last part of your profile url, e.g. https://www.linkedin.com/in/user_name
-   github    : ankiitgupta7 # "user_name" the last part of your profile url, e.g. https://github.com/user_name
+   twitter   : ankiitgupta7 
+   linkedin  : ankiitgupta7 
+   github    : ankiitgupta7
    googlescholar: FTCbGjoAAAAJ
    startdate : 2023-08-16
    affiliation: Michigan State University
+
