@@ -1,0 +1,1308 @@
+<!DOCTYPE html><html lang="en">
+  <head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"><title>Publications - ECODE Lab</title>
+
+<meta name="description" content="The Evolutionary Control of Digital Ecologies (ECODE) Lab
+">
+<link rel="canonical" href="https://www.ecodelab.com/publications/"><link rel="alternate" type="application/rss+xml" title="ECODE Lab" href="/feed.xml"><!-- start favicons snippet, use https://realfavicongenerator.net/ --><link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png"><link rel="manifest" href="/assets/site.webmanifest"><link rel="mask-icon" href="/assets/safari-pinned-tab.svg" color="#fc4d50"><link rel="shortcut icon" href="/assets/favicon.ico">
+
+<meta name="msapplication-TileColor" content="#ffc40d"><meta name="msapplication-config" content="/assets/browserconfig.xml">
+
+<meta name="theme-color" content="#ffffff">
+<!-- end favicons snippet --><link rel="stylesheet" href="/assets/css/main.css"><link rel="stylesheet" href="/assets/css/academicons.min.css"><link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.15.1/css/all.css" ><!-- start custom head snippets -->
+<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> -->
+<!-- end custom head snippets -->
+<script>(function() {
+  window.isArray = function(val) {
+    return Object.prototype.toString.call(val) === '[object Array]';
+  };
+  window.isString = function(val) {
+    return typeof val === 'string';
+  };
+
+  window.hasEvent = function(event) {
+    return 'on'.concat(event) in window.document;
+  };
+
+  window.isOverallScroller = function(node) {
+    return node === document.documentElement || node === document.body || node === window;
+  };
+
+  window.isFormElement = function(node) {
+    var tagName = node.tagName;
+    return tagName === 'INPUT' || tagName === 'SELECT' || tagName === 'TEXTAREA';
+  };
+
+  window.pageLoad = (function () {
+    var loaded = false, cbs = [];
+    window.addEventListener('load', function () {
+      var i;
+      loaded = true;
+      if (cbs.length > 0) {
+        for (i = 0; i < cbs.length; i++) {
+          cbs[i]();
+        }
+      }
+    });
+    return {
+      then: function(cb) {
+        cb && (loaded ? cb() : (cbs.push(cb)));
+      }
+    };
+  })();
+})();
+(function() {
+  window.throttle = function(func, wait) {
+    var args, result, thisArg, timeoutId, lastCalled = 0;
+
+    function trailingCall() {
+      lastCalled = new Date;
+      timeoutId = null;
+      result = func.apply(thisArg, args);
+    }
+    return function() {
+      var now = new Date,
+        remaining = wait - (now - lastCalled);
+
+      args = arguments;
+      thisArg = this;
+
+      if (remaining <= 0) {
+        clearTimeout(timeoutId);
+        timeoutId = null;
+        lastCalled = now;
+        result = func.apply(thisArg, args);
+      } else if (!timeoutId) {
+        timeoutId = setTimeout(trailingCall, remaining);
+      }
+      return result;
+    };
+  };
+})();
+(function() {
+  var Set = (function() {
+    var add = function(item) {
+      var i, data = this._data;
+      for (i = 0; i < data.length; i++) {
+        if (data[i] === item) {
+          return;
+        }
+      }
+      this.size ++;
+      data.push(item);
+      return data;
+    };
+
+    var Set = function(data) {
+      this.size = 0;
+      this._data = [];
+      var i;
+      if (data.length > 0) {
+        for (i = 0; i < data.length; i++) {
+          add.call(this, data[i]);
+        }
+      }
+    };
+    Set.prototype.add = add;
+    Set.prototype.get = function(index) { return this._data[index]; };
+    Set.prototype.has = function(item) {
+      var i, data = this._data;
+      for (i = 0; i < data.length; i++) {
+        if (this.get(i) === item) {
+          return true;
+        }
+      }
+      return false;
+    };
+    Set.prototype.is = function(map) {
+      if (map._data.length !== this._data.length) { return false; }
+      var i, j, flag, tData = this._data, mData = map._data;
+      for (i = 0; i < tData.length; i++) {
+        for (flag = false, j = 0; j < mData.length; j++) {
+          if (tData[i] === mData[j]) {
+            flag = true;
+            break;
+          }
+        }
+        if (!flag) { return false; }
+      }
+      return true;
+    };
+    Set.prototype.values = function() {
+      return this._data;
+    };
+    return Set;
+  })();
+
+  window.Lazyload = (function(doc) {
+    var queue = {js: [], css: []}, sources = {js: {}, css: {}}, context = this;
+    var createNode = function(name, attrs) {
+      var node = doc.createElement(name), attr;
+      for (attr in attrs) {
+        if (attrs.hasOwnProperty(attr)) {
+          node.setAttribute(attr, attrs[attr]);
+        }
+      }
+      return node;
+    };
+    var end = function(type, url) {
+      var s, q, qi, cbs, i, j, cur, val, flag;
+      if (type === 'js' || type ==='css') {
+        s = sources[type], q = queue[type];
+        s[url] = true;
+        for (i = 0; i < q.length; i++) {
+          cur = q[i];
+          if (cur.urls.has(url)) {
+            qi = cur, val = qi.urls.values();
+            qi && (cbs = qi.callbacks);
+            for (flag = true, j = 0; j < val.length; j++) {
+              cur = val[j];
+              if (!s[cur]) {
+                flag = false;
+              }
+            }
+            if (flag && cbs && cbs.length > 0) {
+              for (j = 0; j < cbs.length; j++) {
+                cbs[j].call(context);
+              }
+              qi.load = true;
+            }
+          }
+        }
+      }
+    };
+    var load = function(type, urls, callback) {
+      var s, q, qi, node, i, cur,
+        _urls = typeof urls === 'string' ? new Set([urls]) : new Set(urls), val, url;
+      if (type === 'js' || type ==='css') {
+        s = sources[type], q = queue[type];
+        for (i = 0; i < q.length; i++) {
+          cur = q[i];
+          if (_urls.is(cur.urls)) {
+            qi = cur;
+            break;
+          }
+        }
+        val = _urls.values();
+        if (qi) {
+          callback && (qi.load || qi.callbacks.push(callback));
+          callback && (qi.load && callback());
+        } else {
+          q.push({
+            urls: _urls,
+            callbacks: callback ? [callback] : [],
+            load: false
+          });
+          for (i = 0; i < val.length; i++) {
+            node = null, url = val[i];
+            if (s[url] === undefined) {
+              (type === 'js' ) && (node = createNode('script', { src: url }));
+              (type === 'css') && (node = createNode('link', { rel: 'stylesheet', href: url }));
+              if (node) {
+                node.onload = (function(type, url) {
+                  return function() {
+                    end(type, url);
+                  };
+                })(type, url);
+                (doc.head || doc.body).appendChild(node);
+                s[url] = false;
+              }
+            }
+          }
+        }
+      }
+    };
+    return {
+      js: function(url, callback) {
+        load('js', url, callback);
+      },
+      css: function(url, callback) {
+        load('css', url, callback);
+      }
+    };
+  })(this.document);
+})();
+</script><script>
+  (function() {
+    var TEXT_VARIABLES = {
+      version: '2.2.6',
+      sources: {
+        font_awesome: 'https://cdn.bootcdn.net/ajax/libs/font-awesome/5.15.1/css/all.css',
+        jquery: 'https://cdn.bootcss.com/jquery/3.1.1/jquery.min.js',
+        leancloud_js_sdk: '//cdn.jsdelivr.net/npm/leancloud-storage@3.13.2/dist/av-min.js',
+        chart: 'https://cdn.bootcss.com/Chart.js/2.7.2/Chart.bundle.min.js',
+        gitalk: {
+          js: 'https://cdn.bootcss.com/gitalk/1.2.2/gitalk.min.js',
+          css: 'https://cdn.bootcss.com/gitalk/1.2.2/gitalk.min.css'
+        },
+        valine: 'https://unpkg.com/valine/dist/Valine.min.js',
+        mathjax: 'https://cdn.bootcss.com/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML',
+        mermaid: 'https://cdn.bootcss.com/mermaid/8.0.0-rc.8/mermaid.min.js'
+      },
+      site: {
+        toc: {
+          selectors: 'h1,h2,h3'
+        }
+      },
+      paths: {
+        search_js: '/assets/search.js'
+      }
+    };
+    window.TEXT_VARIABLES = TEXT_VARIABLES;
+  })();
+</script>
+</head>
+  <body>
+    <div class="root" data-is-touch="false">
+      <div class="layout--page js-page-root"><div class="page__main js-page-main page__viewport has-aside cell cell--auto">
+
+      <div class="page__main-inner"><div class="page__header d-print-none"><header class="header"><div class="main">
+      <div class="header__title">
+        <div class="header__brand"><!-- <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="24px" height="24px" viewBox="0 0 24 24">
+<style type="text/css">
+	.st0{fill:#515151;}
+</style>
+<path class="st0" d="M1.7,22.3c5.7-5.7,11.3-5.7,17,0c3.3-3.3,3.5-5.3,0.8-6c2.7,0.7,3.5-1.1,2.3-5.6s-3.3-5.2-6.3-2.1
+	c3-3,2.3-5.2-2.1-6.3S7,1.8,7.7,4.6C7,1.8,5,2.1,1.7,5.3C7.3,11,7.3,16.7,1.7,22.3"/>
+</svg> -->
+<a title="The Evolutionary Control of Digital Ecologies (ECODE) Lab
+" href="/">ECODE Lab</a></div><button class="button button--secondary button--circle search-button js-search-toggle"><i class="fas fa-search"></i></button></div><nav class="navigation">
+        <ul><li class="navigation__item"><a href="/research/">Research</a></li><li class="navigation__item navigation__item--active"><a href="/publications/">Publications</a></li><li class="navigation__item"><a href="/people.html">People</a></li><li class="navigation__item"><a href="/join.html">Join</a></li><li><button class="button button--secondary button--circle search-button js-search-toggle"><i class="fas fa-search"></i></button></li></ul>
+      </nav></div>
+  </header>
+</div><div class="page__content"><div class ="main"><div class="grid grid--reverse">
+
+              <div class="col-aside d-print-none js-col-aside"><aside class="page__aside js-page-aside"><div class="toc-aside js-toc-root"></div>
+</aside></div>
+
+              <div class="col-main cell cell--auto"><!-- start custom main top snippet -->
+
+<!-- end custom main top snippet -->
+<article itemscope itemtype="http://schema.org/Article"><div class="article__header"><header><h1>Publications</h1></header></div><meta itemprop="headline" content="Publications"><meta itemprop="author" content="Emily Dolson"/><div class="js-article-content"><div class="layout--article"><!-- start custom article top snippet -->
+
+<!-- end custom article top snippet -->
+<div class="article__content" itemprop="articleBody"><div class="publication-intro">
+  <div>
+    <p>Publications are listed in reverse chronological order. Lab members are <strong>bold</strong>
+ed, and the
+tags after each entry link to the associated <a href="/research/">research project(s)</a>.
+Hover over a title (when available) for an informal summary of the paper.
+A complete and current list is also available on
+<a href="https://scholar.google.com/citations?user=OE2Ay_gAAAAJ">Google Scholar</a>.</p>
+  </div>
+
+  <div>
+Note: Are you a co-author and want this page to link to your website (or want it to stop linking to your website)? Send us a pull request! https://github.com/DolsonLab/dolsonlab.github.io/edit/master/_data/coauthors.yml
+</div>
+
+  <table class="publication-legend">
+  <thead><tr><th>Icon</th><th>Meaning</th></tr></thead>
+  <tr><td><span class="venue-icon venue-icon--journal" title="Journal publication" role="img" aria-label="Journal publication"><svg viewBox="0 0 576 512" aria-hidden="true"><path d="M542.22 32.05c-54.8 3.11-163.72 14.43-230.96 55.59-4.64 2.84-7.27 7.89-7.27 13.17v363.87c0 11.55 12.63 18.85 23.28 13.49 69.18-34.82 169.23-44.32 218.7-46.92 16.89-.89 30.02-14.43 30.02-30.66V62.75c.01-17.71-15.35-31.74-33.77-30.7zM264.73 87.64C197.5 46.48 88.58 35.17 33.78 32.05 15.36 31.01 0 45.04 0 62.75V400.6c0 16.24 13.13 29.78 30.02 30.66 49.49 2.6 149.59 12.11 218.77 46.95 10.62 5.35 23.21-1.94 23.21-13.46V100.63c0-5.29-2.62-10.14-7.27-12.99z" /></svg></span>
+</td><td>Journal publication</td></tr>
+  <tr><td><span class="venue-icon venue-icon--conference" title="Conference publication" role="img" aria-label="Conference publication"><svg viewBox="0 0 640 512" aria-hidden="true"><path d="M208 352c-2.39 0-4.78.35-7.06 1.09C187.98 357.3 174.35 360 160 360c-14.35 0-27.98-2.7-40.95-6.91-2.28-.74-4.66-1.09-7.05-1.09C49.94 352-.33 402.48 0 464.62.14 490.88 21.73 512 48 512h224c26.27 0 47.86-21.12 48-47.38.33-62.14-49.94-112.62-112-112.62zm-48-32c53.02 0 96-42.98 96-96s-42.98-96-96-96-96 42.98-96 96 42.98 96 96 96zM592 0H208c-26.47 0-48 22.25-48 49.59V96c23.42 0 45.1 6.78 64 17.8V64h352v288h-64v-64H384v64h-76.24c19.1 16.69 33.12 38.73 39.69 64H592c26.47 0 48-22.25 48-49.59V49.59C640 22.25 618.47 0 592 0z" /></svg></span>
+</td><td>Conference publication</td></tr>
+  <tr><td><span class="venue-icon venue-icon--workshop" title="Workshop publication" role="img" aria-label="Workshop publication"><svg viewBox="0 0 512 512" aria-hidden="true"><path d="M501.1 395.7L384 278.6c-23.1-23.1-57.6-27.6-85.4-13.9L192 158.1V96L64 0 0 64l96 128h62.1l106.6 106.6c-13.6 27.8-9.2 62.3 13.9 85.4l117.1 117.1c14.6 14.6 38.2 14.6 52.7 0l52.7-52.7c14.5-14.6 14.5-38.2 0-52.7zM331.7 225c28.3 0 54.9 11 74.9 31l19.4 19.4c15.8-6.9 30.8-16.5 43.8-29.5 37.1-37.1 49.7-89.3 37.9-136.7-2.2-9-13.5-12.1-20.1-5.5l-74.4 74.4-67.9-11.3L334 98.9l74.4-74.4c6.6-6.6 3.4-17.9-5.7-20.2-47.4-11.7-99.6.9-136.6 37.9-28.5 28.5-41.9 66.1-41.2 103.6l82.1 82.1c8.1-1.9 16.5-2.9 24.7-2.9zm-103.9 82l-56.7-56.7L18.7 402.8c-25 25-25 65.5 0 90.5s65.5 25 90.5 0l123.6-123.6c-7.6-19.9-9.9-41.6-5-62.7zM64 472c-13.2 0-24-10.8-24-24 0-13.3 10.7-24 24-24s24 10.7 24 24c0 13.2-10.7 24-24 24z" /></svg></span>
+</td><td>Workshop publication</td></tr>
+  <tr><td><span class="venue-icon venue-icon--chapter" title="Book chapter" role="img" aria-label="Book chapter"><svg viewBox="0 0 448 512" aria-hidden="true"><path d="M448 360V24c0-13.3-10.7-24-24-24H96C43 0 0 43 0 96v320c0 53 43 96 96 96h328c13.3 0 24-10.7 24-24v-16c0-7.5-3.5-14.3-8.9-18.7-4.2-15.4-4.2-59.3 0-74.7 5.4-4.3 8.9-11.1 8.9-18.6zM128 134c0-3.3 2.7-6 6-6h212c3.3 0 6 2.7 6 6v20c0 3.3-2.7 6-6 6H134c-3.3 0-6-2.7-6-6v-20zm0 64c0-3.3 2.7-6 6-6h212c3.3 0 6 2.7 6 6v20c0 3.3-2.7 6-6 6H134c-3.3 0-6-2.7-6-6v-20zm253.4 250H96c-17.7 0-32-14.3-32-32 0-17.6 14.4-32 32-32h285.4c-1.9 17.1-1.9 46.9 0 64z" /></svg></span>
+</td><td>Book chapter</td></tr>
+  <tr><td><span class="venue-icon venue-icon--preprint" title="Preprint" role="img" aria-label="Preprint"><svg viewBox="0 0 512 512" aria-hidden="true"><path d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z" /></svg></span>
+</td><td>Preprint</td></tr>
+  <tr><td><span class="venue-icon venue-icon--poster" title="Poster presentation" role="img" aria-label="Poster presentation"><svg viewBox="0 0 512 512" aria-hidden="true"><path d="M64 32h384v320H64V32zm64 64v32h256V96H128zm0 80v32h256v-32H128zm0 80v32h176v-32H128zm96 96h64v96h-64v-96zm32 0 112 96H144l112-96z" /></svg></span>
+</td><td>Extended Abstract or Poster</td></tr>
+  <tr><td><span class="venue-icon venue-icon--other" title="Other publication" role="img" aria-label="Other publication"><svg viewBox="0 0 512 512" aria-hidden="true"><path d="M96 208a48 48 0 1 0 0 96 48 48 0 1 0 0-96zm160 0a48 48 0 1 0 0 96 48 48 0 1 0 0-96zm160 0a48 48 0 1 0 0 96 48 48 0 1 0 0-96z" /></svg></span>
+</td><td>Other publication</td></tr>
+  <tr><td><span class="publication__award"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h10v2h3v3a4 4 0 0 1-3.6 4A5 5 0 0 1 13 14.9V17h3v2H8v-2h3v-2.1A5 5 0 0 1 7.6 12 4 4 0 0 1 4 8V5h3V3zm-1 4v1a2 2 0 0 0 1 1.7V7H6zm11 0v2.7A2 2 0 0 0 18 8V7h-1z" /></svg></span></td><td>Award</td></tr>
+</table>
+</div>
+
+<h3 class="publication-year">2026</h3>
+<ul class="publication-list"><li class="publication" id="doi-10-1007-978-981-95-6398-2-17"><span class="venue-icon venue-icon--chapter" title="Book chapter" role="img" aria-label="Book chapter"><svg viewBox="0 0 448 512" aria-hidden="true"><path d="M448 360V24c0-13.3-10.7-24-24-24H96C43 0 0 43 0 96v320c0 53 43 96 96 96h328c13.3 0 24-10.7 24-24v-16c0-7.5-3.5-14.3-8.9-18.7-4.2-15.4-4.2-59.3 0-74.7 5.4-4.3 8.9-11.1 8.9-18.6zM128 134c0-3.3 2.7-6 6-6h212c3.3 0 6 2.7 6 6v20c0 3.3-2.7 6-6 6H134c-3.3 0-6-2.7-6-6v-20zm0 64c0-3.3 2.7-6 6-6h212c3.3 0 6 2.7 6 6v20c0 3.3-2.7 6-6 6H134c-3.3 0-6-2.7-6-6v-20zm253.4 250H96c-17.7 0-32-14.3-32-32 0-17.6 14.4-32 32-32h285.4c-1.9 17.1-1.9 46.9 0 64z" /></svg></span>
+<span class="publication__authors"><a class="publication__author-link" href="https://www.nebulous-design.org/">Julie Anne Rolla</a>, Bryan Reynolds, Jacob Weiler, Dylan Wells, <strong class="publication__author--lab">Max Foreback</strong>, Amy L. Connolly, <a class="publication__author-link" href="http://emilyldolson.com"><strong class="publication__author--lab">Emily Dolson</strong></a>, <a class="publication__author-link" href="https://ofria.com/">Charles Ofria</a>.
+  </span>
+  <span class="publication__title"><a href="https://doi.org/10.1007/978-981-95-6398-2_17">Applications of Evolutionary Algorithms for Instrument Design</a></span>
+  (2026). <em class="publication__venue">Genetic Programming in Theory and Practice XXII</em>.<span class="publication__projects"></span>
+</li>
+<li class="publication" id="doi-10-48550-arxiv-2601-05098"><span class="venue-icon venue-icon--preprint" title="Preprint" role="img" aria-label="Preprint"><svg viewBox="0 0 512 512" aria-hidden="true"><path d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z" /></svg></span>
+<span class="publication__authors"><strong class="publication__author--lab">Max Foreback</strong>, Evan Imata, Vincent R. Ragusa, Jacob Weiler, Jonathan Sy, Christina Shao, <strong class="publication__author--lab">Joey Wagner</strong>, Dylan Wells, Rick Marcusen, Katherine G. Skocelas, Aman Hafez, Amy Conolly, Kyle Helson, Rajiv Ramnath, <a class="publication__author-link" href="https://www.cse.msu.edu/~banzhafw/">Wolfgang Banzhaf</a>, <a class="publication__author-link" href="https://ofria.com/">Charles Ofria</a>, Marcin Dominik Pilinski, Bryan Reynolds, Anselmo C. Pontes, <a class="publication__author-link" href="http://emilyldolson.com"><strong class="publication__author--lab">Emily Dolson</strong></a>, <a class="publication__author-link" href="https://www.nebulous-design.org/">Julie Anne Rolla</a>.
+  </span>
+  <span class="publication__title publication__title--tip" tabindex="0" data-tip="This paper presents ECLIPSE, the framework that we use to evolve astrophysical instruments in our collaboration with NEBULOUS"><a href="https://doi.org/10.48550/arxiv.2601.05098">ECLIPSE: An Evolutionary Computation Library for Instrumentation Prototyping in Scientific Engineering</a></span>
+  (2026). <em class="publication__venue">arXiv (Cornell University)</em>. <a class="publication__link" href="/assets/pdfs/10-48550-arxiv-2601-05098.pdf">[pdf]</a><span class="publication__projects"></span>
+</li>
+<li class="publication" id="doi-10-1162-isal-a-1024"><span class="venue-icon venue-icon--conference" title="Conference publication" role="img" aria-label="Conference publication"><svg viewBox="0 0 640 512" aria-hidden="true"><path d="M208 352c-2.39 0-4.78.35-7.06 1.09C187.98 357.3 174.35 360 160 360c-14.35 0-27.98-2.7-40.95-6.91-2.28-.74-4.66-1.09-7.05-1.09C49.94 352-.33 402.48 0 464.62.14 490.88 21.73 512 48 512h224c26.27 0 47.86-21.12 48-47.38.33-62.14-49.94-112.62-112-112.62zm-48-32c53.02 0 96-42.98 96-96s-42.98-96-96-96-96 42.98-96 96 42.98 96 96 96zM592 0H208c-26.47 0-48 22.25-48 49.59V96c23.42 0 45.1 6.78 64 17.8V64h352v288h-64v-64H384v64h-76.24c19.1 16.69 33.12 38.73 39.69 64H592c26.47 0 48-22.25 48-49.59V49.59C640 22.25 618.47 0 592 0z" /></svg></span>
+<span class="publication__authors">Delaney Kelley, Owen Hillary, Elias Hillman-Emelianoff, Ahmad Khalili, Ruoyu Zhang, <strong class="publication__author--lab">Kiara Johnson</strong>, <a class="publication__author-link" href="http://emilyldolson.com"><strong class="publication__author--lab">Emily Dolson</strong></a>, <a class="publication__author-link" href="https://anyaevostinar.github.io/">Anya E. Vostinar</a>, <a class="publication__author-link" href="https://lalejini.com">Alexander Lalejini</a>.
+  </span>
+  <span class="publication__title publication__title--tip" tabindex="0" data-tip="Using Symbulation, we find that hosts evolved with mutualistic endosymbionts are less able to evolve complex traits"><a href="https://doi.org/10.1162/isal.a.1024">Endosymbiotic mutualism can constrain host diversity and evolved complexity</a></span><span class="publication__award" title="Best Paper at Artificial Life 2026 (awarded to two papers), Best Student Paper at Artificial Life 2026 (awarded to two papers)" aria-label="Best Paper at Artificial Life 2026 (awarded to two papers), Best Student Paper at Artificial Life 2026 (awarded to two papers)">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h10v2h3v3a4 4 0 0 1-3.6 4A5 5 0 0 1 13 14.9V17h3v2H8v-2h3v-2.1A5 5 0 0 1 7.6 12 4 4 0 0 1 4 8V5h3V3zm-1 4v1a2 2 0 0 0 1 1.7V7H6zm11 0v2.7A2 2 0 0 0 18 8V7h-1z" /></svg></span>
+  (2026). <em class="publication__venue">Artificial Life Conference</em>. <a class="publication__link" href="/assets/pdfs/10-1162-isal-a-1024.pdf">[pdf]</a><span class="publication__projects"></span>
+</li>
+<li class="publication" id="title-phyloframe-a-dataframe-based-library-for-fast-flexible-phylogenetic-computation"><span class="venue-icon venue-icon--preprint" title="Preprint" role="img" aria-label="Preprint"><svg viewBox="0 0 512 512" aria-hidden="true"><path d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z" /></svg></span>
+<span class="publication__authors"><a class="publication__author-link" href="https://mmore500.com">Matthew Andres Moreno</a>, <a class="publication__author-link" href="https://sukumaranlab.org/">Jeet Sukumaran</a>, <a class="publication__author-link" href="https://zeeelab.com/">Luis Zaman</a>, <a class="publication__author-link" href="http://emilyldolson.com"><strong class="publication__author--lab">Emily Dolson</strong></a>.
+  </span>
+  <span class="publication__title publication__title--tip" tabindex="0" data-tip="We present a highly efficient library for performing analyis on phylogenies"><a href="https://doi.org/10.48550/arxiv.2605.28545">PhyloFrame: A DataFrame-based Library for Fast, Flexible Phylogenetic Computation</a></span>
+  (2026). <em class="publication__venue">arXiv (Cornell University)</em>. <a class="publication__link" href="/assets/pdfs/phyloframe-a-dataframe-based-library-for-fast-flexible-phylogenetic-computation.pdf">[pdf]</a><span class="publication__projects"></span>
+</li>
+<li class="publication" id="doi-10-1007-978-3-032-16645-6-20"><span class="venue-icon venue-icon--conference" title="Conference publication" role="img" aria-label="Conference publication"><svg viewBox="0 0 640 512" aria-hidden="true"><path d="M208 352c-2.39 0-4.78.35-7.06 1.09C187.98 357.3 174.35 360 160 360c-14.35 0-27.98-2.7-40.95-6.91-2.28-.74-4.66-1.09-7.05-1.09C49.94 352-.33 402.48 0 464.62.14 490.88 21.73 512 48 512h224c26.27 0 47.86-21.12 48-47.38.33-62.14-49.94-112.62-112-112.62zm-48-32c53.02 0 96-42.98 96-96s-42.98-96-96-96-96 42.98-96 96 42.98 96 96 96zM592 0H208c-26.47 0-48 22.25-48 49.59V96c23.42 0 45.1 6.78 64 17.8V64h352v288h-64v-64H384v64h-76.24c19.1 16.69 33.12 38.73 39.69 64H592c26.47 0 48-22.25 48-49.59V49.59C640 22.25 618.47 0 592 0z" /></svg></span>
+<span class="publication__authors"><strong class="publication__author--lab">Sanaz Hasanzadeh Fard</strong>, <a class="publication__author-link" href="http://emilyldolson.com"><strong class="publication__author--lab">Emily Dolson</strong></a>.
+  </span>
+  <span class="publication__title"><a href="https://link.springer.com/chapter/10.1007/978-3-032-16645-6_20">Robustness of Network Structural Metrics Under Incomplete Data</a></span>
+  (2026). <em class="publication__venue">International Conference on Complex Networks and Their Applications</em>. <a class="publication__link" href="/assets/pdfs/10-48550-arxiv-2502-16778.pdf">[pdf]</a><span class="publication__projects"></span>
+</li>
+<li class="publication" id="doi-10-1162-isal-a-1025"><span class="venue-icon venue-icon--conference" title="Conference publication" role="img" aria-label="Conference publication"><svg viewBox="0 0 640 512" aria-hidden="true"><path d="M208 352c-2.39 0-4.78.35-7.06 1.09C187.98 357.3 174.35 360 160 360c-14.35 0-27.98-2.7-40.95-6.91-2.28-.74-4.66-1.09-7.05-1.09C49.94 352-.33 402.48 0 464.62.14 490.88 21.73 512 48 512h224c26.27 0 47.86-21.12 48-47.38.33-62.14-49.94-112.62-112-112.62zm-48-32c53.02 0 96-42.98 96-96s-42.98-96-96-96-96 42.98-96 96 42.98 96 96 96zM592 0H208c-26.47 0-48 22.25-48 49.59V96c23.42 0 45.1 6.78 64 17.8V64h352v288h-64v-64H384v64h-76.24c19.1 16.69 33.12 38.73 39.69 64H592c26.47 0 48-22.25 48-49.59V49.59C640 22.25 618.47 0 592 0z" /></svg></span>
+<span class="publication__authors"><strong class="publication__author--lab">Kiara Johnson</strong>, Camila Mendoza, Daya Tucker, <a class="publication__author-link" href="https://lalejini.com">Alexander Lalejini</a>, <a class="publication__author-link" href="https://anyaevostinar.github.io/">Anya E. Vostinar</a>, <a class="publication__author-link" href="http://emilyldolson.com"><strong class="publication__author--lab">Emily Dolson</strong></a>.
+  </span>
+  <span class="publication__title publication__title--tip" tabindex="0" data-tip="We add a new type of symbiotic interaction (stress) to Symbulation and find that it affects the evolution of complexity similarly to other modes of mutualism/parasitism"><a href="https://doi.org/10.1162/isal.a.1025">Saved by the Symbiont: Environmental Stress Intensity and Endosymbiont-Mediated Stress Response Determine Evolved Host Complexity</a></span><span class="publication__award" title="Student Paper of Distinction at Artificial Life 2026  (awarded to one paper; two other papers were awarded Best Student Paper)" aria-label="Student Paper of Distinction at Artificial Life 2026  (awarded to one paper; two other papers were awarded Best Student Paper)">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h10v2h3v3a4 4 0 0 1-3.6 4A5 5 0 0 1 13 14.9V17h3v2H8v-2h3v-2.1A5 5 0 0 1 7.6 12 4 4 0 0 1 4 8V5h3V3zm-1 4v1a2 2 0 0 0 1 1.7V7H6zm11 0v2.7A2 2 0 0 0 18 8V7h-1z" /></svg></span>
+  (2026). <em class="publication__venue">Artificial Life Conference</em>. <a class="publication__link" href="/assets/pdfs/10-1162-isal-a-1025.pdf">[pdf]</a><span class="publication__projects"></span>
+</li>
+<li class="publication" id="doi-10-48550-arxiv-2607-13377"><span class="venue-icon venue-icon--preprint" title="Preprint" role="img" aria-label="Preprint"><svg viewBox="0 0 512 512" aria-hidden="true"><path d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z" /></svg></span>
+<span class="publication__authors"><strong class="publication__author--lab">Shakiba Shahbandegan</strong>, <a class="publication__author-link" href="https://jgh9094.github.io">Jose Guadalupe Hernandez</a>, <a class="publication__author-link" href="http://emilyldolson.com"><strong class="publication__author--lab">Emily Dolson</strong></a>.
+  </span>
+  <span class="publication__title publication__title--tip" tabindex="0" data-tip="We show that lexicase selection performs well on hugely multi-objective problems, and that the performance of all many objective optimization algorithms tested varies heavily based on the problem landscape"><a href="https://doi.org/10.48550/arxiv.2607.13377">The impact of objective interactions on the performance of massive objective optimization algorithms</a></span>
+  (2026). <em class="publication__venue">arXiv (Cornell University)</em>. <a class="publication__link" href="/assets/pdfs/10-48550-arxiv-2607-13377.pdf">[pdf]</a><span class="publication__projects"></span>
+</li>
+<li class="publication" id="title-trust-but-verify-rigorously-profiling-best-effort-high-performance-computing-for"><span class="venue-icon venue-icon--preprint" title="Preprint" role="img" aria-label="Preprint"><svg viewBox="0 0 512 512" aria-hidden="true"><path d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z" /></svg></span>
+<span class="publication__authors"><a class="publication__author-link" href="https://mmore500.com">Matthew Andres Moreno</a>, Santiago Rodriguez Papa, <a class="publication__author-link" href="https://ofria.com/">Charles Ofria</a>, <a class="publication__author-link" href="https://zeeelab.com/">Luis Zaman</a>, <a class="publication__author-link" href="http://emilyldolson.com"><strong class="publication__author--lab">Emily Dolson</strong></a>.
+  </span>
+  <span class="publication__title"><a href="https://doi.org/10.17605/osf.io/pcu9x">Trust, but Verify: Rigorously Profiling Best-Effort High-Performance Computing for Digital Evolution</a></span>
+  (2026). <em class="publication__venue">arXiv (Cornell University)</em>. <a class="publication__link" href="/assets/pdfs/trust-but-verify-rigorously-profiling-best-effort-high-performance-computing-for.pdf">[pdf]</a><span class="publication__projects"></span>
+</li>
+</ul>
+<h3 class="publication-year">2025</h3>
+<ul class="publication-list"><li class="publication" id="doi-10-1162-isal-a-890"><span class="venue-icon venue-icon--conference" title="Conference publication" role="img" aria-label="Conference publication"><svg viewBox="0 0 640 512" aria-hidden="true"><path d="M208 352c-2.39 0-4.78.35-7.06 1.09C187.98 357.3 174.35 360 160 360c-14.35 0-27.98-2.7-40.95-6.91-2.28-.74-4.66-1.09-7.05-1.09C49.94 352-.33 402.48 0 464.62.14 490.88 21.73 512 48 512h224c26.27 0 47.86-21.12 48-47.38.33-62.14-49.94-112.62-112-112.62zm-48-32c53.02 0 96-42.98 96-96s-42.98-96-96-96-96 42.98-96 96 42.98 96 96 96zM592 0H208c-26.47 0-48 22.25-48 49.59V96c23.42 0 45.1 6.78 64 17.8V64h352v288h-64v-64H384v64h-76.24c19.1 16.69 33.12 38.73 39.69 64H592c26.47 0 48-22.25 48-49.59V49.59C640 22.25 618.47 0 592 0z" /></svg></span>
+<span class="publication__authors">Vivaan Singhvi, Joey Wagner, <a class="publication__author-link" href="http://emilyldolson.com"><strong class="publication__author--lab">Emily Dolson</strong></a>, <a class="publication__author-link" href="https://zeeelab.com/">Luis Zaman</a>, <a class="publication__author-link" href="https://mmore500.com">Matthew Andres Moreno</a>.
+  </span>
+  <span class="publication__title publication__title--tip" tabindex="0" data-tip="Using a naive algorithm to reconstruct phylogenies using our hstrat technique was intractably slow - the new algorithm presented in this paper is a massive speed-up"><a href="https://direct.mit.edu/isal/proceedings-abstract/isal2025/37/134060">A Scalable Trie Building Algorithm for High-Throughput Phyloanalysis of Wafer-Scale Digital Evolution Experiments</a></span>
+  (2025). <em class="publication__venue">Artificial Life Conference</em>. <a class="publication__link" href="/assets/pdfs/isal.a.890.pdf">[pdf]</a><span class="publication__projects"></span>
+</li>
+<li class="publication" id="doi-10-1162-isal-a-842"><span class="venue-icon venue-icon--conference" title="Conference publication" role="img" aria-label="Conference publication"><svg viewBox="0 0 640 512" aria-hidden="true"><path d="M208 352c-2.39 0-4.78.35-7.06 1.09C187.98 357.3 174.35 360 160 360c-14.35 0-27.98-2.7-40.95-6.91-2.28-.74-4.66-1.09-7.05-1.09C49.94 352-.33 402.48 0 464.62.14 490.88 21.73 512 48 512h224c26.27 0 47.86-21.12 48-47.38.33-62.14-49.94-112.62-112-112.62zm-48-32c53.02 0 96-42.98 96-96s-42.98-96-96-96-96 42.98-96 96 42.98 96 96 96zM592 0H208c-26.47 0-48 22.25-48 49.59V96c23.42 0 45.1 6.78 64 17.8V64h352v288h-64v-64H384v64h-76.24c19.1 16.69 33.12 38.73 39.69 64H592c26.47 0 48-22.25 48-49.59V49.59C640 22.25 618.47 0 592 0z" /></svg></span>
+<span class="publication__authors"><strong class="publication__author--lab">Max Foreback</strong>, <a class="publication__author-link" href="http://emilyldolson.com"><strong class="publication__author--lab">Emily Dolson</strong></a>, <a class="publication__author-link" href="https://cliffbohm.weebly.com/"><strong class="publication__author--lab">Clifford Bohm</strong></a>.
+  </span>
+  <span class="publication__title publication__title--tip" tabindex="0" data-tip="Figuring out how evolved algorithms control swarms is hard. In this paper we walk through a case study of using information theoretic techniques to do so, and show that they are quite effective."><a href="https://doi.org/10.1162/isal.a.842">Disentangling Swarm Behavior and Function: Improved Explainability via Information-Flow Diagrams and Controller Activation Patterns</a></span>
+  (2025). <em class="publication__venue">Artificial Life Conference</em>.<span class="publication__projects"></span>
+</li>
+<li class="publication" id="doi-10-48550-arxiv-2506-12975"><span class="venue-icon venue-icon--preprint" title="Preprint" role="img" aria-label="Preprint"><svg viewBox="0 0 512 512" aria-hidden="true"><path d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z" /></svg></span>
+<span class="publication__authors">Connor Yang, Joey Wagner, <a class="publication__author-link" href="http://emilyldolson.com"><strong class="publication__author--lab">Emily Dolson</strong></a>, <a class="publication__author-link" href="https://zeeelab.com/">Luis Zaman</a>, <a class="publication__author-link" href="https://mmore500.com">Matthew Andres Moreno</a>.
+  </span>
+  <span class="publication__title"><a href="https://doi.org/10.48550/arxiv.2506.12975">Downstream: efficient cross-platform algorithms for fixed-capacity stream downsampling</a></span>
+  (2025). <em class="publication__venue">arXiv (Cornell University)</em>. <a class="publication__link" href="/assets/pdfs/10-48550-arxiv-2506-12975.pdf">[pdf]</a><span class="publication__projects"></span>
+</li>
+<li class="publication" id="doi-10-1162-artl-a-00470"><span class="venue-icon venue-icon--journal" title="Journal publication" role="img" aria-label="Journal publication"><svg viewBox="0 0 576 512" aria-hidden="true"><path d="M542.22 32.05c-54.8 3.11-163.72 14.43-230.96 55.59-4.64 2.84-7.27 7.89-7.27 13.17v363.87c0 11.55 12.63 18.85 23.28 13.49 69.18-34.82 169.23-44.32 218.7-46.92 16.89-.89 30.02-14.43 30.02-30.66V62.75c.01-17.71-15.35-31.74-33.77-30.7zM264.73 87.64C197.5 46.48 88.58 35.17 33.78 32.05 15.36 31.01 0 45.04 0 62.75V400.6c0 16.24 13.13 29.78 30.02 30.66 49.49 2.6 149.59 12.11 218.77 46.95 10.62 5.35 23.21-1.94 23.21-13.46V100.63c0-5.29-2.62-10.14-7.27-12.99z" /></svg></span>
+<span class="publication__authors"><a class="publication__author-link" href="https://mmore500.com">Matthew Andres Moreno</a>, Santiago Rodriguez Papa, <a class="publication__author-link" href="http://emilyldolson.com"><strong class="publication__author--lab">Emily Dolson</strong></a>.
+  </span>
+  <span class="publication__title"><a href="https://doi.org/10.1162/artl_a_00470">Ecology, Spatial Structure, and Selection Pressure Induce Strong Signatures in Phylogenetic Structure</a></span>
+  (2025). <em class="publication__venue">Artificial Life</em>. <a class="publication__link" href="/assets/pdfs/10-1162-artl-a-00470.pdf">[pdf]</a><span class="publication__projects"></span>
+</li>
+<li class="publication" id="doi-10-1162-isal-a-863"><span class="venue-icon venue-icon--conference" title="Conference publication" role="img" aria-label="Conference publication"><svg viewBox="0 0 640 512" aria-hidden="true"><path d="M208 352c-2.39 0-4.78.35-7.06 1.09C187.98 357.3 174.35 360 160 360c-14.35 0-27.98-2.7-40.95-6.91-2.28-.74-4.66-1.09-7.05-1.09C49.94 352-.33 402.48 0 464.62.14 490.88 21.73 512 48 512h224c26.27 0 47.86-21.12 48-47.38.33-62.14-49.94-112.62-112-112.62zm-48-32c53.02 0 96-42.98 96-96s-42.98-96-96-96-96 42.98-96 96 42.98 96 96 96zM592 0H208c-26.47 0-48 22.25-48 49.59V96c23.42 0 45.1 6.78 64 17.8V64h352v288h-64v-64H384v64h-76.24c19.1 16.69 33.12 38.73 39.69 64H592c26.47 0 48-22.25 48-49.59V49.59C640 22.25 618.47 0 592 0z" /></svg></span>
+<span class="publication__authors">Grant Gordon, <a class="publication__author-link" href="https://fergusonaj.github.io/">Austin J. Ferguson</a>, <a class="publication__author-link" href="http://emilyldolson.com"><strong class="publication__author--lab">Emily Dolson</strong></a>, <a class="publication__author-link" href="https://lalejini.com">Alexander Lalejini</a>.
+  </span>
+  <span class="publication__title"><a href="https://doi.org/10.1162/isal.a.863">Environmental connectivity influences long-term evolutionary outcomes</a></span>
+  (2025). <em class="publication__venue">Artificial Life Conference</em>.<span class="publication__projects"></span>
+</li>
+<li class="publication" id="doi-10-1162-isal-a-916"><span class="venue-icon venue-icon--conference" title="Conference publication" role="img" aria-label="Conference publication"><svg viewBox="0 0 640 512" aria-hidden="true"><path d="M208 352c-2.39 0-4.78.35-7.06 1.09C187.98 357.3 174.35 360 160 360c-14.35 0-27.98-2.7-40.95-6.91-2.28-.74-4.66-1.09-7.05-1.09C49.94 352-.33 402.48 0 464.62.14 490.88 21.73 512 48 512h224c26.27 0 47.86-21.12 48-47.38.33-62.14-49.94-112.62-112-112.62zm-48-32c53.02 0 96-42.98 96-96s-42.98-96-96-96-96 42.98-96 96 42.98 96 96 96zM592 0H208c-26.47 0-48 22.25-48 49.59V96c23.42 0 45.1 6.78 64 17.8V64h352v288h-64v-64H384v64h-76.24c19.1 16.69 33.12 38.73 39.69 64H592c26.47 0 48-22.25 48-49.59V49.59C640 22.25 618.47 0 592 0z" /></svg></span>
+<span class="publication__authors"><a class="publication__author-link" href="https://mmore500.com">Matthew Andres Moreno</a>, Sanaz Hasanzadeh Fard, <a class="publication__author-link" href="https://zeeelab.com/">Luis Zaman</a>, <a class="publication__author-link" href="http://emilyldolson.com"><strong class="publication__author--lab">Emily Dolson</strong></a>.
+  </span>
+  <span class="publication__title"><a href="https://doi.org/10.1162/isal.a.916">Extending a Phylogeny-based Method for Detecting Signatures of Multi-level Selection for Applications in Artificial Life</a></span>
+  (2025). <em class="publication__venue">Artificial Life Conference</em>. <a class="publication__link" href="/assets/pdfs/10-1162-isal-a-916.pdf">[pdf]</a><span class="publication__projects"></span>
+</li>
+<li class="publication" id="doi-10-1126-sciadv-adv1268"><span class="venue-icon venue-icon--journal" title="Journal publication" role="img" aria-label="Journal publication"><svg viewBox="0 0 576 512" aria-hidden="true"><path d="M542.22 32.05c-54.8 3.11-163.72 14.43-230.96 55.59-4.64 2.84-7.27 7.89-7.27 13.17v363.87c0 11.55 12.63 18.85 23.28 13.49 69.18-34.82 169.23-44.32 218.7-46.92 16.89-.89 30.02-14.43 30.02-30.66V62.75c.01-17.71-15.35-31.74-33.77-30.7zM264.73 87.64C197.5 46.48 88.58 35.17 33.78 32.05 15.36 31.01 0 45.04 0 62.75V400.6c0 16.24 13.13 29.78 30.02 30.66 49.49 2.6 149.59 12.11 218.77 46.95 10.62 5.35 23.21-1.94 23.21-13.46V100.63c0-5.29-2.62-10.14-7.27-12.99z" /></svg></span>
+<span class="publication__authors">Eshan S. King, Anna E. Stacy, Davis T. Weaver, <a class="publication__author-link" href="https://bisi.umd.edu/people/jeff-maltas">Jeff Maltas</a>, Rowan J Barker-Clarke, <a class="publication__author-link" href="http://emilyldolson.com"><strong class="publication__author--lab">Emily Dolson</strong></a>, <a class="publication__author-link" href="https://www.lerner.ccf.org/genomic-sciences-systems-biology/scott/">Jacob G. Scott</a>.
+  </span>
+  <span class="publication__title"><a href="https://doi.org/10.1126/sciadv.adv1268">Fitness seascapes are necessary for realistic modeling of the evolutionary response to drug therapy</a></span>
+  (2025). <em class="publication__venue">Science Advances</em>.<span class="publication__projects"></span>
+</li>
+<li class="publication" id="doi-10-48550-arxiv-2509-18522"><span class="venue-icon venue-icon--preprint" title="Preprint" role="img" aria-label="Preprint"><svg viewBox="0 0 512 512" aria-hidden="true"><path d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z" /></svg></span>
+<span class="publication__authors"><a class="publication__author-link" href="https://cliffbohm.weebly.com/"><strong class="publication__author--lab">Clifford Bohm</strong></a>, Vincent R. Ragusa, Arend Hintze, <a class="publication__author-link" href="https://ofria.com/">Charles Ofria</a>, <a class="publication__author-link" href="http://emilyldolson.com"><strong class="publication__author--lab">Emily Dolson</strong></a>, <a class="publication__author-link" href="https://mgi.natsci.msu.edu/labs/adami-lab/index.aspx">Adami, Christoph</a>.
+  </span>
+  <span class="publication__title"><a href="https://doi.org/10.48550/arxiv.2509.18522">Functional Information Decomposition: A First-Principles Approach to Analyzing Functional Relationships</a></span>
+  (2025). <em class="publication__venue">arXiv (Cornell University)</em>. <a class="publication__link" href="/assets/pdfs/10-48550-arxiv-2509-18522.pdf">[pdf]</a><span class="publication__projects"></span>
+</li>
+<li class="publication" id="doi-10-1162-isal-a-885"><span class="venue-icon venue-icon--conference" title="Conference publication" role="img" aria-label="Conference publication"><svg viewBox="0 0 640 512" aria-hidden="true"><path d="M208 352c-2.39 0-4.78.35-7.06 1.09C187.98 357.3 174.35 360 160 360c-14.35 0-27.98-2.7-40.95-6.91-2.28-.74-4.66-1.09-7.05-1.09C49.94 352-.33 402.48 0 464.62.14 490.88 21.73 512 48 512h224c26.27 0 47.86-21.12 48-47.38.33-62.14-49.94-112.62-112-112.62zm-48-32c53.02 0 96-42.98 96-96s-42.98-96-96-96-96 42.98-96 96 42.98 96 96 96zM592 0H208c-26.47 0-48 22.25-48 49.59V96c23.42 0 45.1 6.78 64 17.8V64h352v288h-64v-64H384v64h-76.24c19.1 16.69 33.12 38.73 39.69 64H592c26.47 0 48-22.25 48-49.59V49.59C640 22.25 618.47 0 592 0z" /></svg></span>
+<span class="publication__authors"><strong class="publication__author--lab">Kiara M. Johnson</strong>, <strong class="publication__author--lab">Connor Croft</strong>, <a class="publication__author-link" href="https://anyaevostinar.github.io/">Anya E. Vostinar</a>, <a class="publication__author-link" href="https://lalejini.com">Alexander Lalejini</a>, <a class="publication__author-link" href="http://emilyldolson.com"><strong class="publication__author--lab">Emily Dolson</strong></a>.
+  </span>
+  <span class="publication__title"><a href="https://doi.org/10.1162/isal.a.885">Keep Your Friends Close and Your Enemies Distant: Partner Choice Can Enable Parasite Exclusion in Endosymbiotic Coevolution</a></span>
+  (2025). <em class="publication__venue">Artificial Life Conference</em>.<span class="publication__projects"></span>
+</li>
+<li class="publication" id="doi-10-1109-alife-cis64968-2025-10979834"><span class="venue-icon venue-icon--conference" title="Conference publication" role="img" aria-label="Conference publication"><svg viewBox="0 0 640 512" aria-hidden="true"><path d="M208 352c-2.39 0-4.78.35-7.06 1.09C187.98 357.3 174.35 360 160 360c-14.35 0-27.98-2.7-40.95-6.91-2.28-.74-4.66-1.09-7.05-1.09C49.94 352-.33 402.48 0 464.62.14 490.88 21.73 512 48 512h224c26.27 0 47.86-21.12 48-47.38.33-62.14-49.94-112.62-112-112.62zm-48-32c53.02 0 96-42.98 96-96s-42.98-96-96-96-96 42.98-96 96 42.98 96 96 96zM592 0H208c-26.47 0-48 22.25-48 49.59V96c23.42 0 45.1 6.78 64 17.8V64h352v288h-64v-64H384v64h-76.24c19.1 16.69 33.12 38.73 39.69 64H592c26.47 0 48-22.25 48-49.59V49.59C640 22.25 618.47 0 592 0z" /></svg></span>
+<span class="publication__authors"><strong class="publication__author--lab">Max Foreback</strong>, <a class="publication__author-link" href="https://cliffbohm.weebly.com/"><strong class="publication__author--lab">Clifford Bohm</strong></a>, <a class="publication__author-link" href="http://emilyldolson.com"><strong class="publication__author--lab">Emily Dolson</strong></a>.
+  </span>
+  <span class="publication__title"><a href="https://doi.org/10.1109/alife-cis64968.2025.10979834">Leveraging Heterogeneous Controller Representations for Evolutionary Swarm Robotics</a></span>
+  (2025). <em class="publication__venue">IEEE Symposium on Computational Intelligence in Artificial Life and Cooperative Intelligent Systems (ALIFE-CIS)</em>.<span class="publication__projects"></span>
+</li>
+<li class="publication" id="doi-10-48550-arxiv-2512-06185"><span class="venue-icon venue-icon--preprint" title="Preprint" role="img" aria-label="Preprint"><svg viewBox="0 0 512 512" aria-hidden="true"><path d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z" /></svg></span>
+<span class="publication__authors"><a class="publication__author-link" href="https://sites.google.com/msu.edu/guptaa23/"><strong class="publication__author--lab">Ankit Gupta</strong></a>, <a class="publication__author-link" href="https://mgi.natsci.msu.edu/labs/adami-lab/index.aspx">Christoph Adami</a>, <a class="publication__author-link" href="http://emilyldolson.com"><strong class="publication__author--lab">Emily Dolson</strong></a>.
+  </span>
+  <span class="publication__title"><a href="https://doi.org/10.48550/arxiv.2512.06185">SPOOF: Simple Pixel Operations for Out-of-Distribution Fooling</a></span>
+  (2025). <em class="publication__venue">arXiv (Cornell University)</em>. <a class="publication__link" href="/assets/pdfs/10-48550-arxiv-2512-06185.pdf">[pdf]</a><span class="publication__projects"></span>
+</li>
+<li class="publication" id="doi-10-1109-alife-cis64968-2025-10979833"><span class="venue-icon venue-icon--conference" title="Conference publication" role="img" aria-label="Conference publication"><svg viewBox="0 0 640 512" aria-hidden="true"><path d="M208 352c-2.39 0-4.78.35-7.06 1.09C187.98 357.3 174.35 360 160 360c-14.35 0-27.98-2.7-40.95-6.91-2.28-.74-4.66-1.09-7.05-1.09C49.94 352-.33 402.48 0 464.62.14 490.88 21.73 512 48 512h224c26.27 0 47.86-21.12 48-47.38.33-62.14-49.94-112.62-112-112.62zm-48-32c53.02 0 96-42.98 96-96s-42.98-96-96-96-96 42.98-96 96 42.98 96 96 96zM592 0H208c-26.47 0-48 22.25-48 49.59V96c23.42 0 45.1 6.78 64 17.8V64h352v288h-64v-64H384v64h-76.24c19.1 16.69 33.12 38.73 39.69 64H592c26.47 0 48-22.25 48-49.59V49.59C640 22.25 618.47 0 592 0z" /></svg></span>
+<span class="publication__authors"><a class="publication__author-link" href="https://mmore500.com">Matthew Andres Moreno</a>, Anika Ranjan, <a class="publication__author-link" href="http://emilyldolson.com"><strong class="publication__author--lab">Emily Dolson</strong></a>, <a class="publication__author-link" href="https://zeeelab.com/">Luis Zaman</a>.
+  </span>
+  <span class="publication__title"><a href="https://doi.org/10.1109/alife-cis64968.2025.10979833">Testing the Inference Accuracy of Accelerator-Friendly Approximate Phylogeny Tracking</a></span>
+  (2025). <em class="publication__venue">IEEE Symposium on Computational Intelligence in Artificial Life and Cooperative Intelligent Systems (ALIFE-CIS)</em>. <a class="publication__link" href="/assets/pdfs/10-1109-alife-cis64968-2025-10979833.pdf">[pdf]</a><span class="publication__projects"></span>
+</li>
+<li class="publication" id="doi-10-1101-2025-07-09-664005"><span class="venue-icon venue-icon--preprint" title="Preprint" role="img" aria-label="Preprint"><svg viewBox="0 0 512 512" aria-hidden="true"><path d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z" /></svg></span>
+<span class="publication__authors"><strong class="publication__author--lab">Sydney Leither</strong>, Maximilian Strobl, <a class="publication__author-link" href="https://www.lerner.ccf.org/genomic-sciences-systems-biology/scott/">Jacob  Gardinier Scott</a>, <a class="publication__author-link" href="http://emilyldolson.com"><strong class="publication__author--lab">Emily Dolson</strong></a>.
+  </span>
+  <span class="publication__title"><a href="https://doi.org/10.1101/2025.07.09.664005">Using spatial statistics to infer game-theoretic interactions in an agent-based model of cancer cells</a></span>
+  (2025). <em class="publication__venue">bioRxiv (Cold Spring Harbor Laboratory)</em>. <a class="publication__link" href="/assets/pdfs/10-1101-2025-07-09-664005.pdf">[pdf]</a><span class="publication__projects"></span>
+</li>
+</ul>
+<h3 class="publication-year">2024</h3>
+<ul class="publication-list"><li class="publication" id="doi-10-48550-arxiv-2403-00266"><span class="venue-icon venue-icon--preprint" title="Preprint" role="img" aria-label="Preprint"><svg viewBox="0 0 512 512" aria-hidden="true"><path d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z" /></svg></span>
+<span class="publication__authors"><a class="publication__author-link" href="https://mmore500.com">Matthew Andres Moreno</a>, Santiago Rodriguez Papa, <a class="publication__author-link" href="http://emilyldolson.com"><strong class="publication__author--lab">Emily Dolson</strong></a>.
+  </span>
+  <span class="publication__title"><a href="https://doi.org/10.48550/arxiv.2403.00266">Algorithms for Efficient, Compact Online Data Stream Curation</a></span>
+  (2024). <em class="publication__venue">arXiv (Cornell University)</em>. <a class="publication__link" href="/assets/pdfs/10-48550-arxiv-2403-00266.pdf">[pdf]</a><span class="publication__projects"></span>
+</li>
+<li class="publication" id="doi-10-48550-arxiv-2403-00246"><span class="venue-icon venue-icon--preprint" title="Preprint" role="img" aria-label="Preprint"><svg viewBox="0 0 512 512" aria-hidden="true"><path d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z" /></svg></span>
+<span class="publication__authors"><a class="publication__author-link" href="https://mmore500.com">Matthew Andres Moreno</a>, Santiago Rodriguez Papa, <a class="publication__author-link" href="http://emilyldolson.com"><strong class="publication__author--lab">Emily Dolson</strong></a>.
+  </span>
+  <span class="publication__title"><a href="https://doi.org/10.48550/arxiv.2403.00246">Analysis of Phylogeny Tracking Algorithms for Serial and Multiprocess Applications</a></span>
+  (2024). <em class="publication__venue">arXiv (Cornell University)</em>. <a class="publication__link" href="/assets/pdfs/10-48550-arxiv-2403-00246.pdf">[pdf]</a><span class="publication__projects"></span>
+</li>
+<li class="publication" id="doi-10-1162-isal-a-00721"><span class="venue-icon venue-icon--conference" title="Conference publication" role="img" aria-label="Conference publication"><svg viewBox="0 0 640 512" aria-hidden="true"><path d="M208 352c-2.39 0-4.78.35-7.06 1.09C187.98 357.3 174.35 360 160 360c-14.35 0-27.98-2.7-40.95-6.91-2.28-.74-4.66-1.09-7.05-1.09C49.94 352-.33 402.48 0 464.62.14 490.88 21.73 512 48 512h224c26.27 0 47.86-21.12 48-47.38.33-62.14-49.94-112.62-112-112.62zm-48-32c53.02 0 96-42.98 96-96s-42.98-96-96-96-96 42.98-96 96 42.98 96 96 96zM592 0H208c-26.47 0-48 22.25-48 49.59V96c23.42 0 45.1 6.78 64 17.8V64h352v288h-64v-64H384v64h-76.24c19.1 16.69 33.12 38.73 39.69 64H592c26.47 0 48-22.25 48-49.59V49.59C640 22.25 618.47 0 592 0z" /></svg></span>
+<span class="publication__authors"><a class="publication__author-link" href="https://cliffbohm.weebly.com/"><strong class="publication__author--lab">Clifford Bohm</strong></a>, Ivy Zhang, <a class="publication__author-link" href="http://emilyldolson.com"><strong class="publication__author--lab">Emily Dolson</strong></a>.
+  </span>
+  <span class="publication__title"><a href="https://doi.org/10.1162/isal_a_00721">Assessing the ability of the MODES toolbox to detect hallmarks of open-endedness</a></span>
+  (2024). <em class="publication__venue">Artificial Life Conference</em>.<span class="publication__projects"></span>
+</li>
+<li class="publication" id="doi-10-21105-joss-06617"><span class="venue-icon venue-icon--journal" title="Journal publication" role="img" aria-label="Journal publication"><svg viewBox="0 0 576 512" aria-hidden="true"><path d="M542.22 32.05c-54.8 3.11-163.72 14.43-230.96 55.59-4.64 2.84-7.27 7.89-7.27 13.17v363.87c0 11.55 12.63 18.85 23.28 13.49 69.18-34.82 169.23-44.32 218.7-46.92 16.89-.89 30.02-14.43 30.02-30.66V62.75c.01-17.71-15.35-31.74-33.77-30.7zM264.73 87.64C197.5 46.48 88.58 35.17 33.78 32.05 15.36 31.01 0 45.04 0 62.75V400.6c0 16.24 13.13 29.78 30.02 30.66 49.49 2.6 149.59 12.11 218.77 46.95 10.62 5.35 23.21-1.94 23.21-13.46V100.63c0-5.29-2.62-10.14-7.27-12.99z" /></svg></span>
+<span class="publication__authors"><a class="publication__author-link" href="https://anyaevostinar.github.io/">Anya E. Vostinar</a>, <a class="publication__author-link" href="https://lalejini.com">Alexander Lalejini</a>, <a class="publication__author-link" href="https://ofria.com/">Charles Ofria</a>, <a class="publication__author-link" href="http://emilyldolson.com"><strong class="publication__author--lab">Emily Dolson</strong></a>, <a class="publication__author-link" href="https://mmore500.com">Matthew Andres Moreno</a>.
+  </span>
+  <span class="publication__title"><a href="https://doi.org/10.21105/joss.06617">Empirical: A scientific software library for research, education, and public engagement</a></span>
+  (2024). <em class="publication__venue">The Journal of Open Source Software</em>.<span class="publication__projects"></span>
+</li>
+<li class="publication" id="doi-10-1162-isal-a-00749"><span class="venue-icon venue-icon--conference" title="Conference publication" role="img" aria-label="Conference publication"><svg viewBox="0 0 640 512" aria-hidden="true"><path d="M208 352c-2.39 0-4.78.35-7.06 1.09C187.98 357.3 174.35 360 160 360c-14.35 0-27.98-2.7-40.95-6.91-2.28-.74-4.66-1.09-7.05-1.09C49.94 352-.33 402.48 0 464.62.14 490.88 21.73 512 48 512h224c26.27 0 47.86-21.12 48-47.38.33-62.14-49.94-112.62-112-112.62zm-48-32c53.02 0 96-42.98 96-96s-42.98-96-96-96-96 42.98-96 96 42.98 96 96 96zM592 0H208c-26.47 0-48 22.25-48 49.59V96c23.42 0 45.1 6.78 64 17.8V64h352v288h-64v-64H384v64h-76.24c19.1 16.69 33.12 38.73 39.69 64H592c26.47 0 48-22.25 48-49.59V49.59C640 22.25 618.47 0 592 0z" /></svg></span>
+<span class="publication__authors">John Shea, <strong class="publication__author--lab">Sydney Leither</strong>, <strong class="publication__author--lab">Max Foreback</strong>, <a class="publication__author-link" href="http://emilyldolson.com"><strong class="publication__author--lab">Emily Dolson</strong></a>, <a class="publication__author-link" href="https://lalejini.com">Alexander Lalejini</a>.
+  </span>
+  <span class="publication__title"><a href="https://doi.org/10.1162/isal_a_00749">Environmental connectivity influences the origination of adaptive processes</a></span>
+  (2024). <em class="publication__venue">Conference on Artificial Life (ALIFE)</em>. <a class="publication__link" href="/assets/pdfs/10-1162-isal-a-00749.pdf">[pdf]</a><span class="publication__projects"></span>
+</li>
+<li class="publication" id="doi-10-1145-3638530-3654350"><span class="venue-icon venue-icon--conference" title="Conference publication" role="img" aria-label="Conference publication"><svg viewBox="0 0 640 512" aria-hidden="true"><path d="M208 352c-2.39 0-4.78.35-7.06 1.09C187.98 357.3 174.35 360 160 360c-14.35 0-27.98-2.7-40.95-6.91-2.28-.74-4.66-1.09-7.05-1.09C49.94 352-.33 402.48 0 464.62.14 490.88 21.73 512 48 512h224c26.27 0 47.86-21.12 48-47.38.33-62.14-49.94-112.62-112-112.62zm-48-32c53.02 0 96-42.98 96-96s-42.98-96-96-96-96 42.98-96 96 42.98 96 96 96zM592 0H208c-26.47 0-48 22.25-48 49.59V96c23.42 0 45.1 6.78 64 17.8V64h352v288h-64v-64H384v64h-76.24c19.1 16.69 33.12 38.73 39.69 64H592c26.47 0 48-22.25 48-49.59V49.59C640 22.25 618.47 0 592 0z" /></svg></span>
+<span class="publication__authors"><strong class="publication__author--lab">Sydney Leither</strong>, Vincent R. Ragusa, <a class="publication__author-link" href="http://emilyldolson.com"><strong class="publication__author--lab">Emily Dolson</strong></a>.
+  </span>
+  <span class="publication__title"><a href="https://doi.org/10.1145/3638530.3654350">Evolving Weighted and Directed Graphs with Constrained Properties</a></span>
+  (2024). <em class="publication__venue">Genetic and Evolutionary Computation Conference Companion (GECCO Companion)</em>.<span class="publication__projects"></span>
+</li>
+<li class="publication" id="doi-10-1162-isal-a-00790"><span class="venue-icon venue-icon--conference" title="Conference publication" role="img" aria-label="Conference publication"><svg viewBox="0 0 640 512" aria-hidden="true"><path d="M208 352c-2.39 0-4.78.35-7.06 1.09C187.98 357.3 174.35 360 160 360c-14.35 0-27.98-2.7-40.95-6.91-2.28-.74-4.66-1.09-7.05-1.09C49.94 352-.33 402.48 0 464.62.14 490.88 21.73 512 48 512h224c26.27 0 47.86-21.12 48-47.38.33-62.14-49.94-112.62-112-112.62zm-48-32c53.02 0 96-42.98 96-96s-42.98-96-96-96-96 42.98-96 96 42.98 96 96 96zM592 0H208c-26.47 0-48 22.25-48 49.59V96c23.42 0 45.1 6.78 64 17.8V64h352v288h-64v-64H384v64h-76.24c19.1 16.69 33.12 38.73 39.69 64H592c26.47 0 48-22.25 48-49.59V49.59C640 22.25 618.47 0 592 0z" /></svg></span>
+<span class="publication__authors"><strong class="publication__author--lab">Connor Croft</strong>, <strong class="publication__author--lab">Kiara Johnson</strong>, <a class="publication__author-link" href="https://anyaevostinar.github.io/">Anya E. Vostinar</a>, <a class="publication__author-link" href="http://emilyldolson.com"><strong class="publication__author--lab">Emily Dolson</strong></a>.
+  </span>
+  <span class="publication__title"><a href="https://doi.org/10.1162/isal_a_00790">On the de novo Evolution of Mutualism in Symbulation</a></span>
+  (2024). <em class="publication__venue">Artificial Life Conference</em>.<span class="publication__projects"></span>
+</li>
+<li class="publication" id="doi-10-1145-3638529-3654215"><span class="venue-icon venue-icon--conference" title="Conference publication" role="img" aria-label="Conference publication"><svg viewBox="0 0 640 512" aria-hidden="true"><path d="M208 352c-2.39 0-4.78.35-7.06 1.09C187.98 357.3 174.35 360 160 360c-14.35 0-27.98-2.7-40.95-6.91-2.28-.74-4.66-1.09-7.05-1.09C49.94 352-.33 402.48 0 464.62.14 490.88 21.73 512 48 512h224c26.27 0 47.86-21.12 48-47.38.33-62.14-49.94-112.62-112-112.62zm-48-32c53.02 0 96-42.98 96-96s-42.98-96-96-96-96 42.98-96 96 42.98 96 96 96zM592 0H208c-26.47 0-48 22.25-48 49.59V96c23.42 0 45.1 6.78 64 17.8V64h352v288h-64v-64H384v64h-76.24c19.1 16.69 33.12 38.73 39.69 64H592c26.47 0 48-22.25 48-49.59V49.59C640 22.25 618.47 0 592 0z" /></svg></span>
+<span class="publication__authors"><strong class="publication__author--lab">Shakiba Shahbandegan</strong>, <a class="publication__author-link" href="http://emilyldolson.com"><strong class="publication__author--lab">Emily Dolson</strong></a>.
+  </span>
+  <span class="publication__title"><a href="https://doi.org/10.1145/3638529.3654215">On the robustness of lexicase selection to contradictory objectives</a></span>
+  (2024). <em class="publication__venue">Genetic and Evolutionary Computation Conference (GECCO)</em>. <a class="publication__link" href="/assets/pdfs/10-1145-3638529-3654215.pdf">[pdf]</a><span class="publication__projects"></span>
+</li>
+<li class="publication" id="doi-10-48550-arxiv-2306-03970"><span class="venue-icon venue-icon--chapter" title="Book chapter" role="img" aria-label="Book chapter"><svg viewBox="0 0 448 512" aria-hidden="true"><path d="M448 360V24c0-13.3-10.7-24-24-24H96C43 0 0 43 0 96v320c0 53 43 96 96 96h328c13.3 0 24-10.7 24-24v-16c0-7.5-3.5-14.3-8.9-18.7-4.2-15.4-4.2-59.3 0-74.7 5.4-4.3 8.9-11.1 8.9-18.6zM128 134c0-3.3 2.7-6 6-6h212c3.3 0 6 2.7 6 6v20c0 3.3-2.7 6-6 6H134c-3.3 0-6-2.7-6-6v-20zm0 64c0-3.3 2.7-6 6-6h212c3.3 0 6 2.7 6 6v20c0 3.3-2.7 6-6 6H134c-3.3 0-6-2.7-6-6v-20zm253.4 250H96c-17.7 0-32-14.3-32-32 0-17.6 14.4-32 32-32h285.4c-1.9 17.1-1.9 46.9 0 64z" /></svg></span>
+<span class="publication__authors"><a class="publication__author-link" href="https://lalejini.com">Alexander Lalejini</a>, <a class="publication__author-link" href="https://mmore500.com">Matthew Andres Moreno</a>, <a class="publication__author-link" href="https://jgh9094.github.io">Jose Guadalupe Hernandez</a>, <a class="publication__author-link" href="http://emilyldolson.com"><strong class="publication__author--lab">Emily Dolson</strong></a>.
+  </span>
+  <span class="publication__title"><a href="https://link.springer.com/chapter/10.1007/978-981-99-8413-8_13">Phylogeny-Informed Fitness Estimation for Test-Based Parent Selection</a></span>
+  (2024). <em class="publication__venue">Genetic Programming in Theory and Practice XX</em>. <a class="publication__link" href="/assets/pdfs/10-48550-arxiv-2306-03970.pdf">[pdf]</a><span class="publication__projects"></span>
+</li>
+<li class="publication" id="doi-10-48550-arxiv-2405-09389"><span class="venue-icon venue-icon--preprint" title="Preprint" role="img" aria-label="Preprint"><svg viewBox="0 0 512 512" aria-hidden="true"><path d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z" /></svg></span>
+<span class="publication__authors"><a class="publication__author-link" href="http://emilyldolson.com"><strong class="publication__author--lab">Emily Dolson</strong></a>, Santiago Rodriguez Papa, <a class="publication__author-link" href="https://mmore500.com">Matthew Andres Moreno</a>.
+  </span>
+  <span class="publication__title"><a href="https://doi.org/10.48550/arxiv.2405.09389">Phylotrack: C++ and Python libraries for in silico phylogenetic tracking</a></span>
+  (2024). <em class="publication__venue">arXiv (Cornell University)</em>. <a class="publication__link" href="/assets/pdfs/10-48550-arxiv-2405-09389.pdf">[pdf]</a><span class="publication__projects"></span>
+</li>
+<li class="publication" id="doi-10-1007-978-981-99-8413-8-15"><span class="venue-icon venue-icon--chapter" title="Book chapter" role="img" aria-label="Book chapter"><svg viewBox="0 0 448 512" aria-hidden="true"><path d="M448 360V24c0-13.3-10.7-24-24-24H96C43 0 0 43 0 96v320c0 53 43 96 96 96h328c13.3 0 24-10.7 24-24v-16c0-7.5-3.5-14.3-8.9-18.7-4.2-15.4-4.2-59.3 0-74.7 5.4-4.3 8.9-11.1 8.9-18.6zM128 134c0-3.3 2.7-6 6-6h212c3.3 0 6 2.7 6 6v20c0 3.3-2.7 6-6 6H134c-3.3 0-6-2.7-6-6v-20zm0 64c0-3.3 2.7-6 6-6h212c3.3 0 6 2.7 6 6v20c0 3.3-2.7 6-6 6H134c-3.3 0-6-2.7-6-6v-20zm253.4 250H96c-17.7 0-32-14.3-32-32 0-17.6 14.4-32 32-32h285.4c-1.9 17.1-1.9 46.9 0 64z" /></svg></span>
+<span class="publication__authors"><a class="publication__author-link" href="http://emilyldolson.com"><strong class="publication__author--lab">Emily Dolson</strong></a>, <a class="publication__author-link" href="https://lalejini.com">Alexander Lalejini</a>.
+  </span>
+  <span class="publication__title"><a href="https://link.springer.com/chapter/10.1007/978-981-99-8413-8_15">Reachability Analysis for Lexicase Selection via Community Assembly Graphs</a></span>
+  (2024). <em class="publication__venue">Genetic Programming in Theory and Practice XX</em>. <a class="publication__link" href="/assets/pdfs/10-1007-978-981-99-8413-8-15.pdf">[pdf]</a><span class="publication__projects"></span>
+</li>
+<li class="publication" id="doi-10-1145-3638530-3654208"><span class="venue-icon venue-icon--poster" title="Poster presentation" role="img" aria-label="Poster presentation"><svg viewBox="0 0 512 512" aria-hidden="true"><path d="M64 32h384v320H64V32zm64 64v32h256V96H128zm0 80v32h256v-32H128zm0 80v32h176v-32H128zm96 96h64v96h-64v-96zm32 0 112 96H144l112-96z" /></svg></span>
+<span class="publication__authors"><a class="publication__author-link" href="https://lalejini.com">Alexander Lalejini</a>, Marcos Sanson, Jack Garbus, <a class="publication__author-link" href="https://mmore500.com">Matthew Andres Moreno</a>, <a class="publication__author-link" href="http://emilyldolson.com"><strong class="publication__author--lab">Emily Dolson</strong></a>.
+  </span>
+  <span class="publication__title"><a href="https://doi.org/10.1145/3638530.3654208">Runtime phylogenetic analysis enables extreme subsampling for test-based problems</a></span>
+  (2024). <em class="publication__venue">Genetic and Evolutionary Computation Conference Companion (GECCO Companion)</em>. <a class="publication__link" href="/assets/pdfs/10-1145-3638530-3654208.pdf">[pdf]</a><span class="publication__projects"></span>
+</li>
+<li class="publication" id="doi-10-48550-arxiv-2409-06199"><span class="venue-icon venue-icon--preprint" title="Preprint" role="img" aria-label="Preprint"><svg viewBox="0 0 512 512" aria-hidden="true"><path d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z" /></svg></span>
+<span class="publication__authors"><a class="publication__author-link" href="https://mmore500.com">Matthew Andres Moreno</a>, <a class="publication__author-link" href="https://zeeelab.com/">Luis Zaman</a>, <a class="publication__author-link" href="http://emilyldolson.com"><strong class="publication__author--lab">Emily Dolson</strong></a>.
+  </span>
+  <span class="publication__title"><a href="https://doi.org/10.48550/arxiv.2409.06199">Structured Downsampling for Fast, Memory-efficient Curation of Online Data Streams</a></span>
+  (2024). <em class="publication__venue">arXiv (Cornell University)</em>. <a class="publication__link" href="/assets/pdfs/10-48550-arxiv-2409-06199.pdf">[pdf]</a><span class="publication__projects"></span>
+</li>
+<li class="publication" id="doi-10-48550-arxiv-2404-10861"><span class="venue-icon venue-icon--conference" title="Conference publication" role="img" aria-label="Conference publication"><svg viewBox="0 0 640 512" aria-hidden="true"><path d="M208 352c-2.39 0-4.78.35-7.06 1.09C187.98 357.3 174.35 360 160 360c-14.35 0-27.98-2.7-40.95-6.91-2.28-.74-4.66-1.09-7.05-1.09C49.94 352-.33 402.48 0 464.62.14 490.88 21.73 512 48 512h224c26.27 0 47.86-21.12 48-47.38.33-62.14-49.94-112.62-112-112.62zm-48-32c53.02 0 96-42.98 96-96s-42.98-96-96-96-96 42.98-96 96 42.98 96 96 96zM592 0H208c-26.47 0-48 22.25-48 49.59V96c23.42 0 45.1 6.78 64 17.8V64h352v288h-64v-64H384v64h-76.24c19.1 16.69 33.12 38.73 39.69 64H592c26.47 0 48-22.25 48-49.59V49.59C640 22.25 618.47 0 592 0z" /></svg></span>
+<span class="publication__authors"><a class="publication__author-link" href="https://mmore500.com">Matthew Andres Moreno</a>, Connor Yang, <a class="publication__author-link" href="http://emilyldolson.com"><strong class="publication__author--lab">Emily Dolson</strong></a>, <a class="publication__author-link" href="https://zeeelab.com/">Luis Zaman</a>.
+  </span>
+  <span class="publication__title"><a href="https://direct.mit.edu/isal/proceedings-abstract/isal2024/36/123538">Trackable Agent-based Evolution Models at Wafer Scale</a></span>
+  (2024). <em class="publication__venue">Artificial Life Conference</em>. <a class="publication__link" href="/assets/pdfs/10-48550-arxiv-2404-10861.pdf">[pdf]</a><span class="publication__projects"></span>
+</li>
+</ul>
+<h3 class="publication-year">2023</h3>
+<ul class="publication-list"><li class="publication" id="doi-10-1145-3583131-3590356"><span class="venue-icon venue-icon--conference" title="Conference publication" role="img" aria-label="Conference publication"><svg viewBox="0 0 640 512" aria-hidden="true"><path d="M208 352c-2.39 0-4.78.35-7.06 1.09C187.98 357.3 174.35 360 160 360c-14.35 0-27.98-2.7-40.95-6.91-2.28-.74-4.66-1.09-7.05-1.09C49.94 352-.33 402.48 0 464.62.14 490.88 21.73 512 48 512h224c26.27 0 47.86-21.12 48-47.38.33-62.14-49.94-112.62-112-112.62zm-48-32c53.02 0 96-42.98 96-96s-42.98-96-96-96-96 42.98-96 96 42.98 96 96 96zM592 0H208c-26.47 0-48 22.25-48 49.59V96c23.42 0 45.1 6.78 64 17.8V64h352v288h-64v-64H384v64h-76.24c19.1 16.69 33.12 38.73 39.69 64H592c26.47 0 48-22.25 48-49.59V49.59C640 22.25 618.47 0 592 0z" /></svg></span>
+<span class="publication__authors"><a class="publication__author-link" href="http://emilyldolson.com"><strong class="publication__author--lab">Emily Dolson</strong></a>.
+  </span>
+  <span class="publication__title"><a href="https://doi.org/10.1145/3583131.3590356">Calculating lexicase selection probabilities is NP-Hard</a></span>
+  (2023). <em class="publication__venue">Genetic and Evolutionary Computation Conference (GECCO)</em>. <a class="publication__link" href="/assets/pdfs/10-1145-3583131-3590356.pdf">[pdf]</a><span class="publication__projects"></span>
+</li>
+<li class="publication" id="doi-10-1162-isal-a-00686"><span class="venue-icon venue-icon--conference" title="Conference publication" role="img" aria-label="Conference publication"><svg viewBox="0 0 640 512" aria-hidden="true"><path d="M208 352c-2.39 0-4.78.35-7.06 1.09C187.98 357.3 174.35 360 160 360c-14.35 0-27.98-2.7-40.95-6.91-2.28-.74-4.66-1.09-7.05-1.09C49.94 352-.33 402.48 0 464.62.14 490.88 21.73 512 48 512h224c26.27 0 47.86-21.12 48-47.38.33-62.14-49.94-112.62-112-112.62zm-48-32c53.02 0 96-42.98 96-96s-42.98-96-96-96-96 42.98-96 96 42.98 96 96 96zM592 0H208c-26.47 0-48 22.25-48 49.59V96c23.42 0 45.1 6.78 64 17.8V64h352v288h-64v-64H384v64h-76.24c19.1 16.69 33.12 38.73 39.69 64H592c26.47 0 48-22.25 48-49.59V49.59C640 22.25 618.47 0 592 0z" /></svg></span>
+<span class="publication__authors"><strong class="publication__author--lab">Sydney Leither</strong>, <strong class="publication__author--lab">Max Foreback</strong>, <a class="publication__author-link" href="https://baumlab.biology.wisc.edu/">David Baum</a>, <a class="publication__author-link" href="http://emilyldolson.com"><strong class="publication__author--lab">Emily Dolson</strong></a>.
+  </span>
+  <span class="publication__title"><a href="https://doi.org/10.1162/isal_a_00686">Interaction Strengths Affect Whether Ecological Networks Promote the Initiation of Egalitarian Major Transitions</a></span>
+  (2023). <em class="publication__venue">Artificial Life Conference</em>.<span class="publication__projects"></span>
+</li>
+<li class="publication" id="doi-10-1098-rsif-2023-0346"><span class="venue-icon venue-icon--journal" title="Journal publication" role="img" aria-label="Journal publication"><svg viewBox="0 0 576 512" aria-hidden="true"><path d="M542.22 32.05c-54.8 3.11-163.72 14.43-230.96 55.59-4.64 2.84-7.27 7.89-7.27 13.17v363.87c0 11.55 12.63 18.85 23.28 13.49 69.18-34.82 169.23-44.32 218.7-46.92 16.89-.89 30.02-14.43 30.02-30.66V62.75c.01-17.71-15.35-31.74-33.77-30.7zM264.73 87.64C197.5 46.48 88.58 35.17 33.78 32.05 15.36 31.01 0 45.04 0 62.75V400.6c0 16.24 13.13 29.78 30.02 30.66 49.49 2.6 149.59 12.11 218.77 46.95 10.62 5.35 23.21-1.94 23.21-13.46V100.63c0-5.29-2.62-10.14-7.27-12.99z" /></svg></span>
+<span class="publication__authors"><a class="publication__author-link" href="https://baumlab.biology.wisc.edu/">David Baum</a>, Zhen Peng, <a class="publication__author-link" href="http://emilyldolson.com"><strong class="publication__author--lab">Emily Dolson</strong></a>, <a class="publication__author-link" href="https://sites.santafe.edu/~desmith/Main.html">Eric Smith</a>, Alex M. Plum, Praful Gagrani.
+  </span>
+  <span class="publication__title"><a href="https://doi.org/10.1098/rsif.2023.0346">The ecology–evolution continuum and the origin of life</a></span>
+  (2023). <em class="publication__venue">Journal of The Royal Society Interface</em>.<span class="publication__projects"></span>
+</li>
+<li class="publication" id="doi-10-1162-isal-a-00692"><span class="venue-icon venue-icon--conference" title="Conference publication" role="img" aria-label="Conference publication"><svg viewBox="0 0 640 512" aria-hidden="true"><path d="M208 352c-2.39 0-4.78.35-7.06 1.09C187.98 357.3 174.35 360 160 360c-14.35 0-27.98-2.7-40.95-6.91-2.28-.74-4.66-1.09-7.05-1.09C49.94 352-.33 402.48 0 464.62.14 490.88 21.73 512 48 512h224c26.27 0 47.86-21.12 48-47.38.33-62.14-49.94-112.62-112-112.62zm-48-32c53.02 0 96-42.98 96-96s-42.98-96-96-96-96 42.98-96 96 42.98 96 96 96zM592 0H208c-26.47 0-48 22.25-48 49.59V96c23.42 0 45.1 6.78 64 17.8V64h352v288h-64v-64H384v64h-76.24c19.1 16.69 33.12 38.73 39.69 64H592c26.47 0 48-22.25 48-49.59V49.59C640 22.25 618.47 0 592 0z" /></svg></span>
+<span class="publication__authors"><strong class="publication__author--lab">Max Foreback</strong>, <strong class="publication__author--lab">Sydney Leither</strong>, <a class="publication__author-link" href="https://baumlab.biology.wisc.edu/">David Baum</a>, <a class="publication__author-link" href="http://emilyldolson.com"><strong class="publication__author--lab">Emily Dolson</strong></a>.
+  </span>
+  <span class="publication__title"><a href="https://doi.org/10.1162/isal_a_00692">The Role of Abiotic Parameters in the Promotion of Egalitarian Major Evolutionary Transitions</a></span>
+  (2023). <em class="publication__venue">Artificial Life Conference</em>.<span class="publication__projects"></span>
+</li>
+<li class="publication" id="doi-10-1145-3583133-3590714"><span class="venue-icon venue-icon--workshop" title="Workshop publication" role="img" aria-label="Workshop publication"><svg viewBox="0 0 512 512" aria-hidden="true"><path d="M501.1 395.7L384 278.6c-23.1-23.1-57.6-27.6-85.4-13.9L192 158.1V96L64 0 0 64l96 128h62.1l106.6 106.6c-13.6 27.8-9.2 62.3 13.9 85.4l117.1 117.1c14.6 14.6 38.2 14.6 52.7 0l52.7-52.7c14.5-14.6 14.5-38.2 0-52.7zM331.7 225c28.3 0 54.9 11 74.9 31l19.4 19.4c15.8-6.9 30.8-16.5 43.8-29.5 37.1-37.1 49.7-89.3 37.9-136.7-2.2-9-13.5-12.1-20.1-5.5l-74.4 74.4-67.9-11.3L334 98.9l74.4-74.4c6.6-6.6 3.4-17.9-5.7-20.2-47.4-11.7-99.6.9-136.6 37.9-28.5 28.5-41.9 66.1-41.2 103.6l82.1 82.1c8.1-1.9 16.5-2.9 24.7-2.9zm-103.9 82l-56.7-56.7L18.7 402.8c-25 25-25 65.5 0 90.5s65.5 25 90.5 0l123.6-123.6c-7.6-19.9-9.9-41.6-5-62.7zM64 472c-13.2 0-24-10.8-24-24 0-13.3 10.7-24 24-24s24 10.7 24 24c0 13.2-10.7 24-24 24z" /></svg></span>
+<span class="publication__authors"><strong class="publication__author--lab">Shakiba Shahbandegan</strong>, <a class="publication__author-link" href="http://emilyldolson.com"><strong class="publication__author--lab">Emily Dolson</strong></a>.
+  </span>
+  <span class="publication__title"><a href="https://doi.org/10.1145/3583133.3590714">Theoretical Limits on the Success of Lexicase Selection Under Contradictory Objectives</a></span>
+  (2023). <em class="publication__venue">GECCO 2023 Companion</em>.<span class="publication__projects"></span>
+</li>
+<li class="publication" id="doi-10-1162-isal-a-00694"><span class="venue-icon venue-icon--conference" title="Conference publication" role="img" aria-label="Conference publication"><svg viewBox="0 0 640 512" aria-hidden="true"><path d="M208 352c-2.39 0-4.78.35-7.06 1.09C187.98 357.3 174.35 360 160 360c-14.35 0-27.98-2.7-40.95-6.91-2.28-.74-4.66-1.09-7.05-1.09C49.94 352-.33 402.48 0 464.62.14 490.88 21.73 512 48 512h224c26.27 0 47.86-21.12 48-47.38.33-62.14-49.94-112.62-112-112.62zm-48-32c53.02 0 96-42.98 96-96s-42.98-96-96-96-96 42.98-96 96 42.98 96 96 96zM592 0H208c-26.47 0-48 22.25-48 49.59V96c23.42 0 45.1 6.78 64 17.8V64h352v288h-64v-64H384v64h-76.24c19.1 16.69 33.12 38.73 39.69 64H592c26.47 0 48-22.25 48-49.59V49.59C640 22.25 618.47 0 592 0z" /></svg></span>
+<span class="publication__authors"><a class="publication__author-link" href="https://mmore500.com">Matthew Andres Moreno</a>, <a class="publication__author-link" href="http://emilyldolson.com"><strong class="publication__author--lab">Emily Dolson</strong></a>, Santiago Rodriguez Papa.
+  </span>
+  <span class="publication__title"><a href="https://doi.org/10.1162/isal_a_00694">Toward Phylogenetic Inference of Evolutionary Dynamics at Scale</a></span>
+  (2023). <em class="publication__venue">Artificial Life Conference</em>.<span class="publication__projects"></span>
+</li>
+<li class="publication" id="doi-10-1145-3583133-3590704"><span class="venue-icon venue-icon--poster" title="Poster presentation" role="img" aria-label="Poster presentation"><svg viewBox="0 0 512 512" aria-hidden="true"><path d="M64 32h384v320H64V32zm64 64v32h256V96H128zm0 80v32h256v-32H128zm0 80v32h176v-32H128zm96 96h64v96h-64v-96zm32 0 112 96H144l112-96z" /></svg></span>
+<span class="publication__authors"><strong class="publication__author--lab">Max Foreback</strong>, <strong class="publication__author--lab">Sydney Leither</strong>, <a class="publication__author-link" href="http://emilyldolson.com"><strong class="publication__author--lab">Emily Dolson</strong></a>.
+  </span>
+  <span class="publication__title"><a href="https://doi.org/10.1145/3583133.3590704">Using Evolutionary Computation to Find Parameters that Promote Egalitarian Major Evolutionary Transitions</a></span>
+  (2023). <em class="publication__venue">GECCO 2023 Companion</em>.<span class="publication__projects"></span>
+</li>
+</ul>
+<h3 class="publication-year">2022</h3>
+<ul class="publication-list"><li class="publication" id="doi-10-7554-elife-79665"><span class="venue-icon venue-icon--journal" title="Journal publication" role="img" aria-label="Journal publication"><svg viewBox="0 0 576 512" aria-hidden="true"><path d="M542.22 32.05c-54.8 3.11-163.72 14.43-230.96 55.59-4.64 2.84-7.27 7.89-7.27 13.17v363.87c0 11.55 12.63 18.85 23.28 13.49 69.18-34.82 169.23-44.32 218.7-46.92 16.89-.89 30.02-14.43 30.02-30.66V62.75c.01-17.71-15.35-31.74-33.77-30.7zM264.73 87.64C197.5 46.48 88.58 35.17 33.78 32.05 15.36 31.01 0 45.04 0 62.75V400.6c0 16.24 13.13 29.78 30.02 30.66 49.49 2.6 149.59 12.11 218.77 46.95 10.62 5.35 23.21-1.94 23.21-13.46V100.63c0-5.29-2.62-10.14-7.27-12.99z" /></svg></span>
+<span class="publication__authors"><a class="publication__author-link" href="https://lalejini.com">Alexander Lalejini</a>, <a class="publication__author-link" href="http://emilyldolson.com"><strong class="publication__author--lab">Emily Dolson</strong></a>, <a class="publication__author-link" href="https://anyaevostinar.github.io/">Anya E. Vostinar</a>, <a class="publication__author-link" href="https://zeeelab.com/">Luis Zaman</a>.
+  </span>
+  <span class="publication__title"><a href="https://doi.org/10.7554/elife.79665">Artificial selection methods from evolutionary computing show promise for directed evolution of microbes</a></span>
+  (2022). <em class="publication__venue">eLife</em>. <a class="publication__link" href="/assets/pdfs/10-7554-elife-79665.pdf">[pdf]</a><span class="publication__projects"></span>
+</li>
+<li class="publication" id="doi-10-1007-s10710-022-09443-x"><span class="venue-icon venue-icon--other" title="Other publication" role="img" aria-label="Other publication"><svg viewBox="0 0 512 512" aria-hidden="true"><path d="M96 208a48 48 0 1 0 0 96 48 48 0 1 0 0-96zm160 0a48 48 0 1 0 0 96 48 48 0 1 0 0-96zm160 0a48 48 0 1 0 0 96 48 48 0 1 0 0-96z" /></svg></span>
+<span class="publication__authors"><a class="publication__author-link" href="http://emilyldolson.com"><strong class="publication__author--lab">Emily Dolson</strong></a>.
+  </span>
+  <span class="publication__title"><a href="https://doi.org/10.1007/s10710-022-09443-x">Book Review: the evolution of complexity</a></span>
+  (2022). <em class="publication__venue">Genetic Programming and Evolvable Machines</em>.<span class="publication__projects"></span>
+</li>
+<li class="publication" id="doi-10-1162-isal-a-00488"><span class="venue-icon venue-icon--conference" title="Conference publication" role="img" aria-label="Conference publication"><svg viewBox="0 0 640 512" aria-hidden="true"><path d="M208 352c-2.39 0-4.78.35-7.06 1.09C187.98 357.3 174.35 360 160 360c-14.35 0-27.98-2.7-40.95-6.91-2.28-.74-4.66-1.09-7.05-1.09C49.94 352-.33 402.48 0 464.62.14 490.88 21.73 512 48 512h224c26.27 0 47.86-21.12 48-47.38.33-62.14-49.94-112.62-112-112.62zm-48-32c53.02 0 96-42.98 96-96s-42.98-96-96-96-96 42.98-96 96 42.98 96 96 96zM592 0H208c-26.47 0-48 22.25-48 49.59V96c23.42 0 45.1 6.78 64 17.8V64h352v288h-64v-64H384v64h-76.24c19.1 16.69 33.12 38.73 39.69 64H592c26.47 0 48-22.25 48-49.59V49.59C640 22.25 618.47 0 592 0z" /></svg></span>
+<span class="publication__authors"><strong class="publication__author--lab">Kiara Johnson</strong>, Piper Welch, <a class="publication__author-link" href="http://emilyldolson.com"><strong class="publication__author--lab">Emily Dolson</strong></a>, <a class="publication__author-link" href="https://anyaevostinar.github.io/">Anya E. Vostinar</a>.
+  </span>
+  <span class="publication__title"><a href="https://doi.org/10.1162/isal_a_00488">Endosymbiosis or Bust: Influence of Ectosymbiosis on Evolution of Obligate Endosymbiosis</a></span>
+  (2022). <em class="publication__venue">Conference on Artificial Life (ALIFE)</em>. <a class="publication__link" href="/assets/pdfs/10-1162-isal-a-00488.pdf">[pdf]</a><span class="publication__projects"></span>
+</li>
+<li class="publication" id="doi-10-1162-isal-a-00554"><span class="venue-icon venue-icon--poster" title="Poster presentation" role="img" aria-label="Poster presentation"><svg viewBox="0 0 512 512" aria-hidden="true"><path d="M64 32h384v320H64V32zm64 64v32h256V96H128zm0 80v32h256v-32H128zm0 80v32h176v-32H128zm96 96h64v96h-64v-96zm32 0 112 96H144l112-96z" /></svg></span>
+<span class="publication__authors"><strong class="publication__author--lab">Shakeal Hodge</strong>, <strong class="publication__author--lab">Zhen Ren</strong>, <a class="publication__author-link" href="https://anyaevostinar.github.io/">Anya E. Vostinar</a>, <a class="publication__author-link" href="http://emilyldolson.com"><strong class="publication__author--lab">Emily Dolson</strong></a>.
+  </span>
+  <span class="publication__title"><a href="https://doi.org/10.1162/isal_a_00554">Evolutionary stability of host-endosymbiont mutualism is reduced by multi-infection</a></span>
+  (2022). <em class="publication__venue">Artificial Life Conference</em>.<span class="publication__projects"></span>
+</li>
+<li class="publication" id="doi-10-1162-isal-a-00550"><span class="venue-icon venue-icon--conference" title="Conference publication" role="img" aria-label="Conference publication"><svg viewBox="0 0 640 512" aria-hidden="true"><path d="M208 352c-2.39 0-4.78.35-7.06 1.09C187.98 357.3 174.35 360 160 360c-14.35 0-27.98-2.7-40.95-6.91-2.28-.74-4.66-1.09-7.05-1.09C49.94 352-.33 402.48 0 464.62.14 490.88 21.73 512 48 512h224c26.27 0 47.86-21.12 48-47.38.33-62.14-49.94-112.62-112-112.62zm-48-32c53.02 0 96-42.98 96-96s-42.98-96-96-96-96 42.98-96 96 42.98 96 96 96zM592 0H208c-26.47 0-48 22.25-48 49.59V96c23.42 0 45.1 6.78 64 17.8V64h352v288h-64v-64H384v64h-76.24c19.1 16.69 33.12 38.73 39.69 64H592c26.47 0 48-22.25 48-49.59V49.59C640 22.25 618.47 0 592 0z" /></svg></span>
+<span class="publication__authors"><a class="publication__author-link" href="https://mmore500.com">Matthew Andres Moreno</a>, <a class="publication__author-link" href="http://emilyldolson.com"><strong class="publication__author--lab">Emily Dolson</strong></a>, <a class="publication__author-link" href="https://ofria.com/">Charles Ofria</a>.
+  </span>
+  <span class="publication__title"><a href="https://direct.mit.edu/isal/proceedings/isal2022/34/64/112297">Hereditary stratigraphy: genome annotations to enable phylogenetic inference over distributed populations</a></span>
+  (2022). <em class="publication__venue">Artificial Life Conference</em>.<span class="publication__projects"></span>
+</li>
+<li class="publication" id="doi-10-21105-joss-04866"><span class="venue-icon venue-icon--journal" title="Journal publication" role="img" aria-label="Journal publication"><svg viewBox="0 0 576 512" aria-hidden="true"><path d="M542.22 32.05c-54.8 3.11-163.72 14.43-230.96 55.59-4.64 2.84-7.27 7.89-7.27 13.17v363.87c0 11.55 12.63 18.85 23.28 13.49 69.18-34.82 169.23-44.32 218.7-46.92 16.89-.89 30.02-14.43 30.02-30.66V62.75c.01-17.71-15.35-31.74-33.77-30.7zM264.73 87.64C197.5 46.48 88.58 35.17 33.78 32.05 15.36 31.01 0 45.04 0 62.75V400.6c0 16.24 13.13 29.78 30.02 30.66 49.49 2.6 149.59 12.11 218.77 46.95 10.62 5.35 23.21-1.94 23.21-13.46V100.63c0-5.29-2.62-10.14-7.27-12.99z" /></svg></span>
+<span class="publication__authors"><a class="publication__author-link" href="https://mmore500.com">Matthew Andres Moreno</a>, <a class="publication__author-link" href="http://emilyldolson.com"><strong class="publication__author--lab">Emily Dolson</strong></a>, <a class="publication__author-link" href="https://ofria.com/">Charles Ofria</a>.
+  </span>
+  <span class="publication__title"><a href="https://doi.org/10.21105/joss.04866">hstrat: a Python Package for phylogenetic inference on distributed digital evolution populations</a></span>
+  (2022). <em class="publication__venue">The Journal of Open Source Software</em>. <a class="publication__link" href="/assets/pdfs/10-21105-joss-04866.pdf">[pdf]</a><span class="publication__projects"></span>
+</li>
+<li class="publication" id="doi-10-1145-3520304-3528900"><span class="venue-icon venue-icon--poster" title="Poster presentation" role="img" aria-label="Poster presentation"><svg viewBox="0 0 512 512" aria-hidden="true"><path d="M64 32h384v320H64V32zm64 64v32h256V96H128zm0 80v32h256v-32H128zm0 80v32h176v-32H128zm96 96h64v96h-64v-96zm32 0 112 96H144l112-96z" /></svg></span>
+<span class="publication__authors"><a class="publication__author-link" href="https://lalejini.com">Alexander Lalejini</a>, <a class="publication__author-link" href="http://emilyldolson.com"><strong class="publication__author--lab">Emily Dolson</strong></a>, <a class="publication__author-link" href="https://anyaevostinar.github.io/">Anya E. Vostinar</a>, <a class="publication__author-link" href="https://zeeelab.com/">Luis Zaman</a>.
+  </span>
+  <span class="publication__title"><a href="https://doi.org/10.1145/3520304.3528900">Selection schemes from evolutionary computing show promise for directed evolution of microbes</a></span>
+  (2022). <em class="publication__venue">Genetic and Evolutionary Computation Conference Companion (GECCO Companion)</em>.<span class="publication__projects"></span>
+</li>
+<li class="publication" id="doi-10-1145-3520304-3534028"><span class="venue-icon venue-icon--workshop" title="Workshop publication" role="img" aria-label="Workshop publication"><svg viewBox="0 0 512 512" aria-hidden="true"><path d="M501.1 395.7L384 278.6c-23.1-23.1-57.6-27.6-85.4-13.9L192 158.1V96L64 0 0 64l96 128h62.1l106.6 106.6c-13.6 27.8-9.2 62.3 13.9 85.4l117.1 117.1c14.6 14.6 38.2 14.6 52.7 0l52.7-52.7c14.5-14.6 14.5-38.2 0-52.7zM331.7 225c28.3 0 54.9 11 74.9 31l19.4 19.4c15.8-6.9 30.8-16.5 43.8-29.5 37.1-37.1 49.7-89.3 37.9-136.7-2.2-9-13.5-12.1-20.1-5.5l-74.4 74.4-67.9-11.3L334 98.9l74.4-74.4c6.6-6.6 3.4-17.9-5.7-20.2-47.4-11.7-99.6.9-136.6 37.9-28.5 28.5-41.9 66.1-41.2 103.6l82.1 82.1c8.1-1.9 16.5-2.9 24.7-2.9zm-103.9 82l-56.7-56.7L18.7 402.8c-25 25-25 65.5 0 90.5s65.5 25 90.5 0l123.6-123.6c-7.6-19.9-9.9-41.6-5-62.7zM64 472c-13.2 0-24-10.8-24-24 0-13.3 10.7-24 24-24s24 10.7 24 24c0 13.2-10.7 24-24 24z" /></svg></span>
+<span class="publication__authors"><strong class="publication__author--lab">Shakiba Shahbandegan</strong>, <a class="publication__author-link" href="https://jgh9094.github.io">Jose Guadalupe Hernandez</a>, <a class="publication__author-link" href="https://lalejini.com">Alexander Lalejini</a>, <a class="publication__author-link" href="http://emilyldolson.com"><strong class="publication__author--lab">Emily Dolson</strong></a>.
+  </span>
+  <span class="publication__title"><a href="https://doi.org/10.1145/3520304.3534028">Untangling phylogenetic diversity's role in evolutionary computation using a suite of diagnostic fitness landscapes</a></span><span class="publication__award" title="Best Student Paper Award" aria-label="Best Student Paper Award">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h10v2h3v3a4 4 0 0 1-3.6 4A5 5 0 0 1 13 14.9V17h3v2H8v-2h3v-2.1A5 5 0 0 1 7.6 12 4 4 0 0 1 4 8V5h3V3zm-1 4v1a2 2 0 0 0 1 1.7V7H6zm11 0v2.7A2 2 0 0 0 18 8V7h-1z" /></svg></span>
+  (2022). <em class="publication__venue">Genetic and Evolutionary Computation Conference Companion (GECCO Companion)</em>.<span class="publication__projects"></span>
+</li>
+<li class="publication" id="doi-10-1007-978-981-16-8113-4-4"><span class="venue-icon venue-icon--chapter" title="Book chapter" role="img" aria-label="Book chapter"><svg viewBox="0 0 448 512" aria-hidden="true"><path d="M448 360V24c0-13.3-10.7-24-24-24H96C43 0 0 43 0 96v320c0 53 43 96 96 96h328c13.3 0 24-10.7 24-24v-16c0-7.5-3.5-14.3-8.9-18.7-4.2-15.4-4.2-59.3 0-74.7 5.4-4.3 8.9-11.1 8.9-18.6zM128 134c0-3.3 2.7-6 6-6h212c3.3 0 6 2.7 6 6v20c0 3.3-2.7 6-6 6H134c-3.3 0-6-2.7-6-6v-20zm0 64c0-3.3 2.7-6 6-6h212c3.3 0 6 2.7 6 6v20c0 3.3-2.7 6-6 6H134c-3.3 0-6-2.7-6-6v-20zm253.4 250H96c-17.7 0-32-14.3-32-32 0-17.6 14.4-32 32-32h285.4c-1.9 17.1-1.9 46.9 0 64z" /></svg></span>
+<span class="publication__authors"><a class="publication__author-link" href="https://jgh9094.github.io">Jose Guadalupe Hernandez</a>, <a class="publication__author-link" href="https://lalejini.com">Alexander Lalejini</a>, <a class="publication__author-link" href="http://emilyldolson.com"><strong class="publication__author--lab">Emily Dolson</strong></a>.
+  </span>
+  <span class="publication__title"><a href="https://link.springer.com/chapter/10.1007/978-981-16-8113-4_4">What Can Phylogenetic Metrics Tell us About Useful Diversity in Evolutionary Algorithms?</a></span>
+  (2022). <em class="publication__venue">Genetic Programming in Theory and Practice XVIII</em>. <a class="publication__link" href="/assets/pdfs/10-1007-978-981-16-8113-4-4.pdf">[pdf]</a><span class="publication__projects"></span>
+</li>
+</ul>
+<h3 class="publication-year">2021</h3>
+<ul class="publication-list"><li class="publication" id="doi-10-3389-fevo-2021-750779"><span class="venue-icon venue-icon--journal" title="Journal publication" role="img" aria-label="Journal publication"><svg viewBox="0 0 576 512" aria-hidden="true"><path d="M542.22 32.05c-54.8 3.11-163.72 14.43-230.96 55.59-4.64 2.84-7.27 7.89-7.27 13.17v363.87c0 11.55 12.63 18.85 23.28 13.49 69.18-34.82 169.23-44.32 218.7-46.92 16.89-.89 30.02-14.43 30.02-30.66V62.75c.01-17.71-15.35-31.74-33.77-30.7zM264.73 87.64C197.5 46.48 88.58 35.17 33.78 32.05 15.36 31.01 0 45.04 0 62.75V400.6c0 16.24 13.13 29.78 30.02 30.66 49.49 2.6 149.59 12.11 218.77 46.95 10.62 5.35 23.21-1.94 23.21-13.46V100.63c0-5.29-2.62-10.14-7.27-12.99z" /></svg></span>
+<span class="publication__authors"><a class="publication__author-link" href="http://emilyldolson.com"><strong class="publication__author--lab">Emily Dolson</strong></a>, <a class="publication__author-link" href="https://ofria.com/">Charles Ofria</a>.
+  </span>
+  <span class="publication__title"><a href="https://doi.org/10.3389/fevo.2021.750779">Digital Evolution for Ecology Research: A Review</a></span>
+  (2021). <em class="publication__venue">Frontiers in Ecology and Evolution</em>. <a class="publication__link" href="/assets/pdfs/10-3389-fevo-2021-750779.pdf">[pdf]</a><span class="publication__projects"></span>
+</li>
+</ul>
+</div><div class="d-print-none"><footer class="article__footer"><!-- start custom article footer snippet -->
+
+<!-- end custom article footer snippet -->
+</footer>
+</div>
+
+</div>
+
+<script>(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    $(function() {
+      var $this ,$scroll;
+      var $articleContent = $('.js-article-content');
+      var hasSidebar = $('.js-page-root').hasClass('layout--page--sidebar');
+      var scroll = hasSidebar ? '.js-page-main' : 'html, body';
+      $scroll = $(scroll);
+
+      $articleContent.find('.highlight').each(function() {
+        $this = $(this);
+        $this.attr('data-lang', $this.find('code').attr('data-lang'));
+      });
+      $articleContent.find('h1[id], h2[id], h3[id], h4[id], h5[id], h6[id]').each(function() {
+        $this = $(this);
+        $this.append($('<a class="anchor d-print-none" aria-hidden="true"></a>').html('<i class="fas fa-anchor"></i>'));
+      });
+      $articleContent.on('click', '.anchor', function() {
+        $scroll.scrollToAnchor('#' + $(this).parent().attr('id'), 400);
+      });
+    });
+  });
+})();
+</script>
+</div><section class="page__comments d-print-none"></section></article><!-- start custom main bottom snippet -->
+
+<!-- end custom main bottom snippet -->
+</div>
+            </div></div></div><div class="page__footer d-print-none">
+<footer class="footer py-4 js-page-footer">
+  <div class="main"><div itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Emily Dolson"><meta itemprop="url" content="https://emilyldolson.com"><meta itemprop="description" content="PI"><div class="footer__author-links"><div class="author-links">
+  <ul class="menu menu--nowrap menu--inline"><link itemprop="url" href="https://emilyldolson.com"><li title="Send me an Email.">
+      <a class="button button--circle mail-button" itemprop="email" href="mailto:emilyldolson@gmail.com" target="_blank">
+        <i class="fas fa-envelope"></i>
+      </a>
+      </li><li title="Follow me on Twitter.">
+        <a class="button button--circle twitter-button" itemprop="sameAs" href="https://twitter.com/emilyldolson" target="_blank">
+          <div class="icon"><svg fill="#000000" width="24px" height="24px" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M1024.032 194.432c-37.664 16.704-78.176 28-120.672 33.088 43.36-26.016 76.672-67.168 92.384-116.224-40.608 24.064-85.568 41.568-133.408 50.976-38.336-40.832-92.928-66.336-153.344-66.336-116.032 0-210.08 94.048-210.08 210.08 0 16.48 1.856 32.512 5.44 47.872-174.592-8.768-329.408-92.416-433.024-219.52-18.08 31.04-28.448 67.104-28.448 105.632 0 72.896 37.088 137.184 93.472 174.88-34.432-1.088-66.816-10.528-95.168-26.272-0.032 0.864-0.032 1.76-0.032 2.656 0 101.792 72.416 186.688 168.512 205.984-17.632 4.8-36.192 7.36-55.36 7.36-13.536 0-26.688-1.312-39.52-3.776 26.72 83.456 104.32 144.192 196.256 145.888-71.904 56.352-162.496 89.92-260.928 89.92-16.96 0-33.664-0.992-50.112-2.944 92.96 59.616 203.392 94.4 322.048 94.4 386.432 0 597.728-320.128 597.728-597.76 0-9.12-0.192-18.176-0.608-27.168 41.056-29.632 76.672-66.624 104.832-108.736z" />
+</svg>
+</div>
+        </a>
+      </li><li title="Follow me on Linkedin.">
+        <a class="button button--circle linkedin-button" itemprop="sameAs" href="https://www.linkedin.com/in/dolsonemily" target="_blank">
+          <div class="icon"><svg fill="#000000" width="24px" height="24px" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M260.096 155.648c0 27.307008-9.899008 50.516992-29.696 69.632-19.796992 19.115008-45.396992 28.672-76.8 28.672-30.036992 0-54.612992-9.556992-73.728-28.672-19.115008-19.115008-28.672-42.324992-28.672-69.632 0-28.672 9.556992-52.224 28.672-70.656 19.115008-18.432 44.372992-27.648 75.776-27.648 31.403008 0 56.32 9.216 74.752 27.648 18.432 18.432 28.331008 41.984 29.696 70.656 0 0 0 0 0 0m-202.752 808.96c0 0 0-632.832 0-632.832 0 0 196.608 0 196.608 0 0 0 0 632.832 0 632.832 0 0-196.608 0-196.608 0 0 0 0 0 0 0m313.344-430.08c0-58.708992-1.364992-126.292992-4.096-202.752 0 0 169.984 0 169.984 0 0 0 10.24 88.064 10.24 88.064 0 0 4.096 0 4.096 0 40.96-68.267008 105.812992-102.4 194.56-102.4 68.267008 0 123.220992 22.868992 164.864 68.608 41.643008 45.739008 62.464 113.664 62.464 203.776 0 0 0 374.784 0 374.784 0 0-196.608 0-196.608 0 0 0 0-350.208 0-350.208 0-91.476992-33.451008-137.216-100.352-137.216-47.787008 0-81.236992 24.576-100.352 73.728-4.096 8.192-6.144 24.576-6.144 49.152 0 0 0 364.544 0 364.544 0 0-198.656 0-198.656 0 0 0 0-430.08 0-430.08 0 0 0 0 0 0" />
+</svg>
+</div>
+        </a>
+      </li><li title="Follow me on Github.">
+        <a class="button button--circle github-button" itemprop="sameAs" href="https://github.com/dolsonlab" target="_blank">
+          <div class="icon"><svg fill="#000000" width="24px" height="24px" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path class="svgpath" data-index="path_0" fill="#272636" d="M0 525.2c0 223.6 143.3 413.7 343 483.5 26.9 6.8 22.8-12.4 22.8-25.4l0-88.7c-155.3 18.2-161.5-84.6-172-101.7-21.1-36-70.8-45.2-56-62.3 35.4-18.2 71.4 4.6 113.1 66.3 30.2 44.7 89.1 37.2 119 29.7 6.5-26.9 20.5-50.9 39.7-69.6C248.8 728.2 181.7 630 181.7 513.2c0-56.6 18.7-108.7 55.3-150.7-23.3-69.3 2.2-128.5 5.6-137.3 66.5-6 135.5 47.6 140.9 51.8 37.8-10.2 80.9-15.6 129.1-15.6 48.5 0 91.8 5.6 129.8 15.9 12.9-9.8 77-55.8 138.8-50.2 3.3 8.8 28.2 66.7 6.3 135 37.1 42.1 56 94.6 56 151.4 0 117-67.5 215.3-228.8 243.7 26.9 26.6 43.6 63.4 43.6 104.2l0 128.8c0.9 10.3 0 20.5 17.2 20.5C878.1 942.4 1024 750.9 1024 525.3c0-282.9-229.3-512-512-512C229.1 13.2 0 242.3 0 525.2L0 525.2z" />
+</svg>
+</div>
+        </a>
+      </li></ul>
+</div>
+</div>
+    </div><div class="site-info mt-2">
+      <div>© ECODE Lab 2021,
+        Powered by <a title="Jekyll is a simple, blog-aware, static site generator." href="http://jekyllrb.com/">Jekyll</a> & <a
+        title="TeXt is a super customizable Jekyll theme." href="https://github.com/kitian616/jekyll-TeXt-theme">TeXt Theme</a>.
+      </div>
+    </div>
+  </div>
+</footer>
+</div></div>
+    </div><script>(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    var $body = $('body'), $window = $(window);
+    var $pageRoot = $('.js-page-root'), $pageMain = $('.js-page-main');
+    var activeCount = 0;
+    function modal(options) {
+      var $root = this, visible, onChange, hideWhenWindowScroll = false;
+      var scrollTop;
+      function setOptions(options) {
+        var _options = options || {};
+        visible = _options.initialVisible === undefined ? false : show;
+        onChange = _options.onChange;
+        hideWhenWindowScroll = _options.hideWhenWindowScroll;
+      }
+      function init() {
+        setState(visible);
+      }
+      function setState(isShow) {
+        if (isShow === visible) {
+          return;
+        }
+        visible = isShow;
+        if (visible) {
+          activeCount++;
+          scrollTop = $(window).scrollTop() || $pageMain.scrollTop();
+          $root.addClass('modal--show');
+          $pageMain.scrollTop(scrollTop);
+          activeCount === 1 && ($pageRoot.addClass('show-modal'), $body.addClass('of-hidden'));
+          hideWhenWindowScroll && window.hasEvent('touchstart') && $window.on('scroll', hide);
+          $window.on('keyup', handleKeyup);
+        } else {
+          activeCount > 0 && activeCount--;
+          $root.removeClass('modal--show');
+          $window.scrollTop(scrollTop);
+          activeCount === 0 && ($pageRoot.removeClass('show-modal'), $body.removeClass('of-hidden'));
+          hideWhenWindowScroll && window.hasEvent('touchstart') && $window.off('scroll', hide);
+          $window.off('keyup', handleKeyup);
+        }
+        onChange && onChange(visible);
+      }
+      function show() {
+        setState(true);
+      }
+      function hide() {
+        setState(false);
+      }
+      function handleKeyup(e) {
+        // Char Code: 27  ESC
+        if (e.which ===  27) {
+          hide();
+        }
+      }
+      setOptions(options);
+      init();
+      return {
+        show: show,
+        hide: hide,
+        $el: $root
+      };
+    }
+    $.fn.modal = modal;
+  });
+})();
+</script><div class="modal modal--overflow page__search-modal d-print-none js-page-search-modal"><script>
+(function () {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    // search panel
+    var search = (window.search || (window.search = {}));
+    var useDefaultSearchBox = window.useDefaultSearchBox === undefined ?
+      true : window.useDefaultSearchBox ;
+
+    var $searchModal = $('.js-page-search-modal');
+    var $searchToggle = $('.js-search-toggle');
+    var searchModal = $searchModal.modal({ onChange: handleModalChange, hideWhenWindowScroll: true });
+    var modalVisible = false;
+    search.searchModal = searchModal;
+
+    var $searchBox = null;
+    var $searchInput = null;
+    var $searchClear = null;
+
+    function getModalVisible() {
+      return modalVisible;
+    }
+    search.getModalVisible = getModalVisible;
+
+    function handleModalChange(visible) {
+      modalVisible = visible;
+      if (visible) {
+        search.onShow && search.onShow();
+        useDefaultSearchBox && $searchInput[0] && $searchInput[0].focus();
+      } else {
+        search.onShow && search.onHide();
+        useDefaultSearchBox && $searchInput[0] && $searchInput[0].blur();
+        setTimeout(function() {
+          useDefaultSearchBox && ($searchInput.val(''), $searchBox.removeClass('not-empty'));
+          search.clear && search.clear();
+          window.pageAsideAffix && window.pageAsideAffix.refresh();
+        }, 400);
+      }
+    }
+
+    $searchToggle.on('click', function() {
+      modalVisible ? searchModal.hide() : searchModal.show();
+    });
+    // Char Code: 83  S, 191 /
+    $(window).on('keyup', function(e) {
+      if (!modalVisible && !window.isFormElement(e.target || e.srcElement) && (e.which === 83 || e.which === 191)) {
+        modalVisible || searchModal.show();
+      }
+    });
+
+    if (useDefaultSearchBox) {
+      $searchBox = $('.js-search-box');
+      $searchInput = $searchBox.children('input');
+      $searchClear = $searchBox.children('.js-icon-clear');
+      search.getSearchInput = function() {
+        return $searchInput.get(0);
+      };
+      search.getVal = function() {
+        return $searchInput.val();
+      };
+      search.setVal = function(val) {
+        $searchInput.val(val);
+      };
+
+      $searchInput.on('focus', function() {
+        $(this).addClass('focus');
+      });
+      $searchInput.on('blur', function() {
+        $(this).removeClass('focus');
+      });
+      $searchInput.on('input', window.throttle(function() {
+        var val = $(this).val();
+        if (val === '' || typeof val !== 'string') {
+          search.clear && search.clear();
+        } else {
+          $searchBox.addClass('not-empty');
+          search.onInputNotEmpty && search.onInputNotEmpty(val);
+        }
+      }, 400));
+      $searchClear.on('click', function() {
+        $searchInput.val(''); $searchBox.removeClass('not-empty');
+        search.clear && search.clear();
+      });
+    }
+  });
+})();
+</script><div class="search search--dark">
+  <div class="main">
+    <div class="search__header">Search</div>
+    <div class="search-bar">
+      <div class="search-box js-search-box">
+        <div class="search-box__icon-search"><i class="fas fa-search"></i></div>
+        <input type="text" />
+        <div class="search-box__icon-clear js-icon-clear">
+          <a><i class="fas fa-times"></i></a>
+        </div>
+      </div>
+      <button class="button button--theme-dark button--pill search__cancel js-search-toggle">
+        Cancel</button>
+    </div>
+    <div class="search-result js-search-result"></div>
+  </div>
+</div>
+<script>var SOURCES = window.TEXT_VARIABLES.sources;
+var PAHTS = window.TEXT_VARIABLES.paths;
+window.Lazyload.js([SOURCES.jquery, PAHTS.search_js], function() {
+  var search = (window.search || (window.search = {}));
+  var searchData = window.TEXT_SEARCH_DATA || {};
+
+  function memorize(f) {
+    var cache = {};
+    return function () {
+      var key = Array.prototype.join.call(arguments, ',');
+      if (key in cache) return cache[key];
+      else return cache[key] = f.apply(this, arguments);
+    };
+  }
+
+  /// search
+  function searchByQuery(query) {
+    var i, j, key, keys, cur, _title, result = {};
+    keys = Object.keys(searchData);
+    for (i = 0; i < keys.length; i++) {
+      key = keys[i];
+      for (j = 0; j < searchData[key].length; j++) {
+        cur = searchData[key][j], _title = cur.title;
+        if ((result[key] === undefined || result[key] && result[key].length < 4 )
+          && _title.toLowerCase().indexOf(query.toLowerCase()) >= 0) {
+          if (result[key] === undefined) {
+            result[key] = [];
+          }
+          result[key].push(cur);
+        }
+      }
+    }
+    return result;
+  }
+
+  var renderHeader = memorize(function(header) {
+    return $('<p class="search-result__header">' + header + '</p>');
+  });
+
+  var renderItem = function(index, title, url) {
+    return $('<li class="search-result__item" data-index="' + index + '"><a class="button" href="' + url + '">' + title + '</a></li>');
+  };
+
+  function render(data) {
+    if (!data) { return null; }
+    var $root = $('<ul></ul>'), i, j, key, keys, cur, itemIndex = 0;
+    keys = Object.keys(data);
+    for (i = 0; i < keys.length; i++) {
+      key = keys[i];
+      $root.append(renderHeader(key));
+      for (j = 0; j < data[key].length; j++) {
+        cur = data[key][j];
+        $root.append(renderItem(itemIndex++, cur.title, cur.url));
+      }
+    }
+    return $root;
+  }
+
+  // search box
+  var $result = $('.js-search-result'), $resultItems;
+  var lastActiveIndex, activeIndex;
+
+  function clear() {
+    $result.html(null);
+    $resultItems = $('.search-result__item'); activeIndex = 0;
+  }
+  function onInputNotEmpty(val) {
+    $result.html(render(searchByQuery(val)));
+    $resultItems = $('.search-result__item'); activeIndex = 0;
+    $resultItems.eq(0).addClass('active');
+  }
+
+  search.clear = clear;
+  search.onInputNotEmpty = onInputNotEmpty;
+
+  function updateResultItems() {
+    lastActiveIndex >= 0 && $resultItems.eq(lastActiveIndex).removeClass('active');
+    activeIndex >= 0 && $resultItems.eq(activeIndex).addClass('active');
+  }
+
+  function moveActiveIndex(direction) {
+    var itemsCount = $resultItems ? $resultItems.length : 0;
+    if (itemsCount > 1) {
+      lastActiveIndex = activeIndex;
+      if (direction === 'up') {
+        activeIndex = (activeIndex - 1 + itemsCount) % itemsCount;
+      } else if (direction === 'down') {
+        activeIndex = (activeIndex + 1 + itemsCount) % itemsCount;
+      }
+      updateResultItems();
+    }
+  }
+
+  // Char Code: 13  Enter, 37  ⬅, 38  ⬆, 39  ➡, 40  ⬇
+  $(window).on('keyup', function(e) {
+    var modalVisible = search.getModalVisible && search.getModalVisible();
+    if (modalVisible) {
+      if (e.which === 38) {
+        modalVisible && moveActiveIndex('up');
+      } else if (e.which === 40) {
+        modalVisible && moveActiveIndex('down');
+      } else if (e.which === 13) {
+        modalVisible && $resultItems && activeIndex >= 0 && $resultItems.eq(activeIndex).children('a')[0].click();
+      }
+    }
+  });
+
+  $result.on('mouseover', '.search-result__item > a', function() {
+    var itemIndex = $(this).parent().data('index');
+    itemIndex >= 0 && (lastActiveIndex = activeIndex, activeIndex = itemIndex, updateResultItems());
+  });
+});
+</script>
+</div></div>
+
+
+<script>(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    function scrollToAnchor(anchor, duration, callback) {
+      var $root = this;
+      $root.animate({ scrollTop: $(anchor).position().top }, duration, function() {
+        window.history.replaceState(null, '', window.location.href.split('#')[0] + anchor);
+        callback && callback();
+      });
+    }
+    $.fn.scrollToAnchor = scrollToAnchor;
+  });
+})();
+(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    function affix(options) {
+      var $root = this, $window = $(window), $scrollTarget, $scroll,
+        offsetBottom = 0, scrollTarget = window, scroll = window.document, disabled = false, isOverallScroller = true,
+        rootTop, rootLeft, rootHeight, scrollBottom, rootBottomTop,
+        hasInit = false, curState;
+
+      function setOptions(options) {
+        var _options = options || {};
+        _options.offsetBottom && (offsetBottom = _options.offsetBottom);
+        _options.scrollTarget && (scrollTarget = _options.scrollTarget);
+        _options.scroll && (scroll = _options.scroll);
+        _options.disabled !== undefined && (disabled = _options.disabled);
+        $scrollTarget = $(scrollTarget);
+        isOverallScroller = window.isOverallScroller($scrollTarget[0]);
+        $scroll = $(scroll);
+      }
+      function preCalc() {
+        top();
+        rootHeight = $root.outerHeight();
+        rootTop = $root.offset().top + (isOverallScroller ? 0 :  $scrollTarget.scrollTop());
+        rootLeft = $root.offset().left;
+      }
+      function calc(needPreCalc) {
+        needPreCalc && preCalc();
+        scrollBottom = $scroll.outerHeight() - offsetBottom - rootHeight;
+        rootBottomTop = scrollBottom - rootTop;
+      }
+      function top() {
+        if (curState !== 'top') {
+          $root.removeClass('fixed').css({
+            left: 0,
+            top: 0
+          });
+          curState = 'top';
+        }
+      }
+      function fixed() {
+        if (curState !== 'fixed') {
+          $root.addClass('fixed').css({
+            left: rootLeft + 'px',
+            top: 0
+          });
+          curState = 'fixed';
+        }
+      }
+      function bottom() {
+        if (curState !== 'bottom') {
+          $root.removeClass('fixed').css({
+            left: 0,
+            top: rootBottomTop + 'px'
+          });
+          curState = 'bottom';
+        }
+      }
+      function setState() {
+        var scrollTop = $scrollTarget.scrollTop();
+        if (scrollTop >= rootTop && scrollTop <= scrollBottom) {
+          fixed();
+        } else if (scrollTop < rootTop) {
+          top();
+        } else {
+          bottom();
+        }
+      }
+      function init() {
+        if(!hasInit) {
+          var interval, timeout;
+          calc(true); setState();
+          // run calc every 100 millisecond
+          interval = setInterval(function() {
+            calc();
+          }, 100);
+          timeout = setTimeout(function() {
+            clearInterval(interval);
+          }, 45000);
+          window.pageLoad.then(function() {
+            setTimeout(function() {
+              clearInterval(interval);
+              clearTimeout(timeout);
+            }, 3000);
+          });
+          $scrollTarget.on('scroll', function() {
+            disabled || setState();
+          });
+          $window.on('resize', function() {
+            disabled || (calc(true), setState());
+          });
+          hasInit = true;
+        }
+      }
+
+      setOptions(options);
+      if (!disabled) {
+        init();
+      }
+      $window.on('resize', window.throttle(function() {
+        init();
+      }, 200));
+      return {
+        setOptions: setOptions,
+        refresh: function() {
+          calc(true, { animation: false }); setState();
+        }
+      };
+    }
+    $.fn.affix = affix;
+  });
+})();
+(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    function toc(options) {
+      var $root = this, $window = $(window), $scrollTarget, $scroller, $tocUl = $('<ul class="toc toc--ellipsis"></ul>'), $tocLi, $headings, $activeLast, $activeCur,
+        selectors = 'h1,h2,h3', container = 'body', scrollTarget = window, scroller = 'html, body', disabled = false,
+        headingsPos, scrolling = false, hasRendered = false, hasInit = false;
+
+      function setOptions(options) {
+        var _options = options || {};
+        _options.selectors && (selectors = _options.selectors);
+        _options.container && (container = _options.container);
+        _options.scrollTarget && (scrollTarget = _options.scrollTarget);
+        _options.scroller && (scroller = _options.scroller);
+        _options.disabled !== undefined && (disabled = _options.disabled);
+        $headings = $(container).find(selectors).filter('[id]');
+        $scrollTarget = $(scrollTarget);
+        $scroller = $(scroller);
+      }
+      function calc() {
+        headingsPos = [];
+        $headings.each(function() {
+          headingsPos.push(Math.floor($(this).position().top));
+        });
+      }
+      function setState(element, disabled) {
+        var scrollTop = $scrollTarget.scrollTop(), i;
+        if (disabled || !headingsPos || headingsPos.length < 1) { return; }
+        if (element) {
+          $activeCur = element;
+        } else {
+          for (i = 0; i < headingsPos.length; i++) {
+            if (scrollTop >= headingsPos[i]) {
+              $activeCur = $tocLi.eq(i);
+            } else {
+              $activeCur || ($activeCur = $tocLi.eq(i));
+              break;
+            }
+          }
+        }
+        $activeLast && $activeLast.removeClass('active');
+        ($activeLast = $activeCur).addClass('active');
+      }
+      function render() {
+        if(!hasRendered) {
+          $root.append($tocUl);
+          $headings.each(function() {
+            var $this = $(this);
+            $tocUl.append($('<li></li>').addClass('toc-' + $this.prop('tagName').toLowerCase())
+              .append($('<a></a>').text($this.text()).attr('href', '#' + $this.prop('id'))));
+          });
+          $tocLi = $tocUl.children('li');
+          $tocUl.on('click', 'a', function(e) {
+            e.preventDefault();
+            var $this = $(this);
+            scrolling = true;
+            setState($this.parent());
+            $scroller.scrollToAnchor($this.attr('href'), 400, function() {
+              scrolling = false;
+            });
+          });
+        }
+        hasRendered = true;
+      }
+      function init() {
+        var interval, timeout;
+        if(!hasInit) {
+          render(); calc(); setState(null, scrolling);
+          // run calc every 100 millisecond
+          interval = setInterval(function() {
+            calc();
+          }, 100);
+          timeout = setTimeout(function() {
+            clearInterval(interval);
+          }, 45000);
+          window.pageLoad.then(function() {
+            setTimeout(function() {
+              clearInterval(interval);
+              clearTimeout(timeout);
+            }, 3000);
+          });
+          $scrollTarget.on('scroll', function() {
+            disabled || setState(null, scrolling);
+          });
+          $window.on('resize', window.throttle(function() {
+            if (!disabled) {
+              render(); calc(); setState(null, scrolling);
+            }
+          }, 100));
+        }
+        hasInit = true;
+      }
+
+      setOptions(options);
+      if (!disabled) {
+        init();
+      }
+      $window.on('resize', window.throttle(function() {
+        init();
+      }, 200));
+      return {
+        setOptions: setOptions
+      };
+    }
+    $.fn.toc = toc;
+  });
+})();
+/*(function () {
+
+})();*/
+</script><script>
+  /* toc must before affix, since affix need to konw toc' height. */(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    var $window = $(window), $pageFooter = $('.js-page-footer');
+    var $pageAside = $('.js-page-aside');
+    var affix;
+    var tocDisabled = false;
+    var hasSidebar = $('.js-page-root').hasClass('layout--page--sidebar');
+
+    affix = $pageAside.affix({
+      offsetBottom: $pageFooter.outerHeight(),
+      scrollTarget: hasSidebar ? '.js-page-main' : null,
+      scroller: hasSidebar ? '.js-page-main' : null,
+      scroll: hasSidebar ? $('.js-page-main').children() : null,
+      disabled: tocDisabled
+    });
+
+    $window.on('resize', window.throttle(function() {
+      affix && affix.setOptions({
+        disabled: tocDisabled
+      });
+    }, 100));
+
+    window.pageAsideAffix = affix;
+  });
+})();
+</script><script>
+  window.Lazyload.js(['https://cdn.bootcss.com/jquery/3.1.1/jquery.min.js', 'https://cdn.bootcss.com/Chart.js/2.7.2/Chart.bundle.min.js'], function() {
+    var $canvas = null, $this = null, _ctx = null, _text = '';
+    $('.language-chart').each(function(){
+      $this = $(this);
+      $canvas = $('<canvas></canvas>');
+      _text = $this.text();
+      $this.text('').append($canvas);
+      _ctx = $canvas.get(0).getContext('2d');
+      (_ctx && _text) && (new Chart(_ctx, JSON.parse(_text)) && $this.attr('data-processed', true));
+    });
+  });
+</script>
+<script type="text/x-mathjax-config">
+	var _config = { tex2jax: {
+		inlineMath: [['$','$'], ['\\(','\\)']]
+	}};MathJax.Hub.Config(_config);
+</script>
+<script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+<script>
+  window.Lazyload.js('https://cdn.bootcss.com/mermaid/8.0.0-rc.8/mermaid.min.js', function() {
+    mermaid.initialize({
+      startOnLoad: true
+    });
+    mermaid.init(undefined, '.language-mermaid');
+  });
+</script>
+
+    </div>
+    <script>(function () {
+  var $root = document.getElementsByClassName('root')[0];
+  if (window.hasEvent('touchstart')) {
+    $root.dataset.isTouch = true;
+    document.addEventListener('touchstart', function(){}, false);
+  }
+})();
+</script>
+  </body>
+</html>
+

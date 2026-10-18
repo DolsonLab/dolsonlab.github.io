@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Open Science Best Practices</title>
+    <meta charset="utf-8">
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+      body { font-family: 'Droid Serif'; }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: normal;
+      }
+      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+class: center, middle
+
+# Best Practices for Open Science in 2020
+
+### Presented by Emily Dolson at BEACON Congress 2020
+##### (she/her)
+##### <i class="fab fa-twitter"></i> @emilyldolson
+##### <i class="fas fa-envelope"></i> emilyldolson@gmail.com
+---
+
+# Agenda
+
+1. Context
+2. Open science workflows
+3. Tools for open science
+
+I almost listed this as a sandbox - please chime in with your own thoughts!
+
+---
+class: center, middle
+
+# What is open science?
+
+---
+class: center, middle
+
+# Open science is [not one thing](https://smallpondscience.com/2016/03/14/open-science-is-not-one-thing/)
+
+Maybe it's [not even a useful umbrella term](http://www.talyarkoni.org/blog/2019/07/13/i-hate-open-science/)
+
+---
+# The open science umbrella
+
+- Free sharing of 
+  - data
+  - code
+  - ideas
+  - papers
+
+- Transparency in how science is carried out
+
+- Reproducibility
+
+- Diversity, equity, and inclusion
+
+Discussion: Anything I'm missing?
+
+---
+class: center, middle
+
+For the purposes of this tutorial open science is 
+
+# A shared ideal to strive for
+(all we can do is make incremental progress)
+
+
+---
+class: center, middle
+
+# I'm not going to talk about policies
+
+---
+# Considerations
+
+- Not all or nothing 
+
+--
+
+- [Need to think about social implications](https://medium.com/@denalbz/reimagining-open-science-through-a-feminist-lens-546f3d10fa65)
+
+--
+
+- Obstacles to open science aren't evenly distributed
+
+--
+
+- History of bad behavior in many "open" communities
+
+--
+
+- [Freedom vs. justice](https://medium.com/@beewithablog/open-is-cancelled-da7dd6f2aaaf)
+
+
+---
+
+# So why bother?
+
+- ["Danger of being ignored > danger of being scooped"](http://ivory.idyll.org/blog/2014-open-and-tenured.html)
+
+- Gain collaborators
+
+- Refine your ideas
+
+- Improve the efficacy of science
+
+
+---
+
+class: center, middle
+# Onto the actual tutorial!
+
+---
+
+class: center, middle
+# Workflows
+
+---
+
+
+# The open science ecosystem
+
+.center[<img src="https://user-images.githubusercontent.com/1413074/39658594-79ed63bc-4fcb-11e8-81ec-5690c3af4ee7.png" width="60%">]
+Image source: [Mozilla Open Science Roadmap](https://github.com/OpenScienceRoadmap/mozilla-sprint-2018/issues/11)
+
+
+---
+# My workflow
+
+Unatainable ideal: a paper that could be reproduced with a button click
+
+- Each paper gets a repo on [github](https://github.com)
+
+--
+
+- Write experimental code in C++
+
+--
+
+- Write web GUI, host on [github pages](https://pages.github.com/)
+
+--
+
+- Run experiments on computing cluster; store queue submission scripts in repo
+
+--
+
+- Wrangle data in Python, analyze in R, store it all in an [RMarkdown](https://rmarkdown.rstudio.com/) file using [Reticulate](https://rstudio.github.io/reticulate/)
+
+--
+
+- Store data somewhere
+
+--
+
+- Write paper on [Overleaf](https://www.overleaf.com), syncing to github
+
+--
+
+- Get repo a DOI with [Zenodo](https://zenodo.org/)
+
+--
+  - Releases for preprint, submission, revision
+
+---
+
+class: center, middle
+# Discussion: what is your workflow like?
+
+---
+
+# Aspirational workflow goals
+
+- Automated testing via Travis CI
+
+--
+
+- Tutorials for all code
+
+--
+
+- Release R or Python packages when appropriate
+
+--
+
+- Detailed README explaining the contents of the repo
+
+---
+
+class: center, middle
+# Discussion: what is a next step you could take to improve your workflow?
+
+---
+
+# Designing a workflow
+
+- Make the behavior you want easy
+
+--
+
+- Use tools that reinforce each other
+
+--
+
+- My (untested) plan:
+
+--
+
+  - Every paper has its own repo
+
+--
+
+  - Make heavy used of the slack/github integration
+  
+--
+
+  - Keep track of todo list as github issues
+
+--
+
+  - Github as default location for sharing updates
+
+---
+
+class: center, middle
+# Nuts and bolts
+
+---
+
+# ALL CAPS files
+
+- LICENSE
+
+- CITATION
+
+- README.md
+
+- CONTRIBUTING
+
+- CODE_OF_CONDUCT
+---
+
+
+
+# Licenses
+
+- You should have one
+
+--
+
+- Considerations:
+  - Can other people use your stuff?
+    - Do you care what license **they** use?
+  - Can other people build on your stuff?
+  - Do you want attribution?
+  - Are you okay with commerical re-use?
+
+--
+
+- [Guide to choosing a license](https://choosealicense.com/)
+
+--
+
+- Discussion: Do you have a preferred license?
+
+---
+
+
+# Citation
+
+- Can be a citation for a paper describing your code
+
+- Get your repo a DOI with [Zenodo](https://zenodo.org/)
+
+- Any other options people like?
+
+---
+
+# README
+
+- Explain what's in the repo and how to use it
+
+- Pointers to other resources
+
+- Badges
+
+- Can be pretty
+
+---
+
+# Contributing guidelines
+
+If you want people to contribute, tell them how!
+
+[Example](https://github.com/devosoft/Empirical/blob/infrastructure/CONTRIBUTING.md)
+
+---
+
+# Code of conduct
+
+- Encourage diverse participants
+
+- Normalize talking about stuff before it becomes a problem
+
+- Examples:
+
+  - [BEACON Congress](https://sites.google.com/view/beacon-congress-2020/code-of-conduct?authuser=0)
+  - [Contributor covenant](https://www.contributor-covenant.org/)
+  - [Carpentries code of conduct](https://docs.carpentries.org/topic_folders/policies/code-of-conduct.html)
+---
+
+class: center, middle
+# Sharing your work
+
+---
+
+# Paper access
+
+- PDF on your website
+
+- Pre-prints
+
+- Open-access journal
+
+- Discussion: any opinions on best preprint servers?
+ 
+---
+
+
+# Accessible analysis
+ 
+- [RMarkdown](https://rmarkdown.rstudio.com/)
+
+- [Jupyter](https://jupyter.org/)
+
+- [Open Refine](https://openrefine.org/)
+
+---
+
+
+# Communicating your science
+
+- Twitter
+
+  - [Guide by Matthew Moreno](https://mmore500.com/2019/11/17/twitter-bestiary.html)
+
+- Github pages
+
+  - [Mozilla working open workshop](http://mozillascience.github.io/working-open-workshop/)
+---
+
+# Some cool publication venues
+
+- [Journal of Trial and Error](https://www.jtrialerror.com/)
+- [Rescience](http://rescience.github.io/)
+- [Journal of Open Source Software](https://joss.theoj.org/)
+- [Journal of Open Source Education](https://jose.theoj.org/)
+- [eLife](https://elifesciences.org/)
+
+
+---
+
+class: center, middle
+# Discussion: do you have any favorite tools that we haven't discussed yet?
+
+---
+
+# Stuff to do to be a good citizen
+
+- Cite code
+
+- Answer people's questions
+
+- Be nice!
+
+Discussion: Anything else?
+
+---
+
+class: center, middle
+# Questions/discussion
+
+---
+
+
+    </textarea>
+    <script src="https://kit.fontawesome.com/d331c76d52.js" crossorigin="anonymous"></script>
+    <script src="https://remarkjs.com/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
