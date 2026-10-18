@@ -21,6 +21,9 @@ article_header:
     - text: Our Research
       type: outline-theme-dark
       url: "#hero-1"
+    - text: Publications
+      type: outline-theme-dark
+      url: /publications/
     # - text: Principal Investigator
     #   url: "#hero-2"
 
@@ -30,21 +33,45 @@ data:
       excerpt: "The world is filled with ecological communities made up of multiple evolving populations. Controlling the trajectory of evolution in these communities is a general problem that is important in contexts ranging from medicine to machine learning. In the ECODE (Evolutionary Control of Digital Ecologies) lab, we are an interdisciplinary group of researchers coming at this problem from a range of different perspectives. Our core tool is digital evolutionary experiments, but we embrace many other approaches where appropriate, including pure mathematical theory, collaborations with wet lab researchers, and re-analysis of previously published field data. While some of our work is very abstract, we usually try to ground our research in specific communities that we would like to steer the evolution of. That way our findings have immediate relevance to those problems, but also inform our general quest for evolutionary control. Some specific problems that we are interested in include:"
       children:
       - title: Evolutionary Computation
+        actions:
+          - text: Learn more
+            url: /research/evolutionary-computation/
         image:
+          url: /research/evolutionary-computation/
           src: /assets/images/General_EC_Diagram.png
         excerpt: We use this class of evolution-inspired machine learning algorithms as a model system for testing out new eco-evolutionary theory, while simultaneously using what we learn to build evolutionary algorithms that solve problems better.
       - title: Microbiome Communities
+        actions:
+          - text: Learn more
+            url: /research/microbiome-communities/
         image:
+          url: /research/microbiome-communities/
           src: /assets/images/symbulation.png
         excerpt: In collaboration with <a href="https://anyaevostinar.github.io/">the Symbulab</a> we study what factors influence evolution along the mutualism-parasitism spectrum in the context of communities in which many symbionts inhabit a single host.
       - title: Cancer
+        actions:
+          - text: Learn more
+            url: /research/cancer/
         image:
+          url: /research/cancer/
           src: /assets/images/memic.png 
-        excerpt: In collaboration with <a href="https://www.lerner.ccf.org/thor/scott/lab/">the Theory Division</a> we study ways to control the trajectory of evolution in cancer to prevent the evolution of therapy resistance.
+        excerpt: In collaboration with <a href="https://www.lerner.ccf.org/genomic-sciences-systems-biology/scott/">the Theory Division</a> we study ways to control the trajectory of evolution in cancer to prevent the evolution of therapy resistance.
       - title: Data Analysis Tools
+        actions:
+          - text: Learn more
+            url: /research/data-analysis-tools/
         image:
+          url: /research/data-analysis-tools/
           src: /assets/images/Phylogenyschematic.png
         excerpt: A lot of the questions that we ask are challenging to answer and require us to develop new mathematical and statistical tools for asking evolutionary questions. We are particularly interested in metrics based on phylogenetic trees.
+      - title: Open-Ended Evolution and Major Transitions
+        actions:
+          - text: Learn more
+            url: /research/open-ended-evolution/
+        image:
+          url: /research/open-ended-evolution/
+          src: /assets/images/spatialphylogeny.png
+        excerpt: We study the conditions under which evolving systems continue to produce novelty, including the roles of spatial structure, ecological interactions, and major evolutionary transitions.
       # - title: Climate Change
       #   image:
       #     src: /assets/images/symbulation.png            

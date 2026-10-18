@@ -177,6 +177,11 @@ permalink   : date
 
 include: ['_pages']
 
+collections:
+  projects:
+    output: true
+    permalink: /research/:name/
+
 exclude:
   - CHANGELOG.md
   - HOW_TO_RELEASE.md
@@ -194,8 +199,14 @@ exclude:
   - /screenshots
   - /test
   - /vendor
+  - /scripts
 
 defaults:
+  - scope:
+      path: ""
+      type: projects
+    values:
+      layout: project
   - scope:
       path: ""
       type: posts

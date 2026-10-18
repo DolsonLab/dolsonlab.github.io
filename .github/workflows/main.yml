@@ -11,6 +11,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # Stop the deploy if any visible publication lacks a valid project.
+      - name: Check publication data
+        run: |
+          pip install pyyaml
+          python3 scripts/publications.py check
+
       # Use GitHub Actions' cache to cache dependencies on servers
       - uses: actions/cache@v3
         with:
