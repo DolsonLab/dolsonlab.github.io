@@ -1,0 +1,54 @@
+name: Sync publications
+
+# Weekly: fetch works linked to the PI's ORCID iD from OpenAlex, update
+# _data/publications.yml, and open (or update) a pull request for review.
+# New papers arrive with suggested projects and `needs_review: true`.
+
+on:
+  schedule:
+    - cron: "17 9 * * 1"   # Mondays 09:17 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+env:
+  ORCID: 0000-0001-8616-4898
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install pyyaml
+
+      - name: Fetch from OpenAlex
+        env:
+          # Free API key from OpenAlex (https://openalex.org). Add it as a
+          # repository secret named OPENALEX_API_KEY.
+          OPENALEX_API_KEY: ${{ secrets.OPENALEX_API_KEY }}
+        run: |
+          python scripts/publications.py sync --orcid "$ORCID" --report sync-report.md
+          { echo; echo '### Validation'; echo '```'; python scripts/publications.py check || true; echo '```'; } >> sync-report.md
+          cat sync-report.md >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Open pull request
+        uses: peter-evans/create-pull-request@v7
+        with:
+          # Pull requests opened with the default GITHUB_TOKEN do not trigger
+          # other workflows; using the existing personal access token lets the
+          # "Check publications" workflow run on this pull request.
+          token: ${{ secrets.GH_PAGES_TOKEN }}
+          branch: automated/publication-sync
+          add-paths: _data/publications.yml
+          commit-message: "Sync publications from OpenAlex"
+          title: "Publication sync: review new papers"
+          body-path: sync-report.md
+          labels: publications
+          delete-branch: true
