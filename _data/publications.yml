@@ -15,6 +15,90 @@
 #   award:        text such as "Best paper award"; shows a trophy next to the title
 #   pdf:          path under assets/pdfs/ of a hosted PDF (overrides the default <slug>.pdf)
 
+- id: doi:10.5281/zenodo.19579297
+  title: 'amlalejini/Aagos: Release for preprint'
+  authors:
+  - name: Alex Lalejini
+  - name: Lauren Gillespie
+  - name: Emily L. Dolson
+    lab: true
+  - name: Charles Ofria
+  year: 2026
+  venue: Zenodo (CERN European Organization for Nuclear Research)
+  doi: 10.5281/zenodo.19579297
+  url: https://doi.org/10.5281/zenodo.19579297
+  oa_url: https://doi.org/10.5281/zenodo.19579297
+  type: software
+  openalex: W7154411655
+  kind: preprint
+  projects: []
+  hidden: true
+
+- id: doi:10.1007/978-981-95-6398-2_17
+  title: Applications of Evolutionary Algorithms for Instrument Design
+  authors:
+  - name: Julie Anne Rolla
+  - name: Bryan Reynolds
+  - name: Jacob Weiler
+  - name: Dylan Wells
+  - name: Max Foreback
+    lab: true
+  - name: Amy L. Connolly
+  - name: Emily L. Dolson
+    lab: true
+  - name: Charles Ofria
+  year: 2026
+  venue: Genetic Programming in Theory and Practice XXII
+  doi: 10.1007/978-981-95-6398-2_17
+  url: https://doi.org/10.1007/978-981-95-6398-2_17
+  type: book-chapter
+  openalex: W7167896494
+  kind: chapter
+  projects:
+  - evolutionary-computation
+  - nebulous
+
+- id: title:data-environmental-change-and-mutation-rate-modulate-the-adaptive-evolution-of-g
+  title: Data - Environmental change and mutation rate modulate the adaptive evolution of genetic modularity through gene segregation
+  authors:
+  - name: Lauren Gillespie
+  - name: Emily L. Dolson
+    lab: true
+  - name: Afsheen Afsheen
+  - name: Alexander Lalejini
+  year: 2026
+  venue: OSF Preprints (OSF Preprints)
+  url: https://osf.io/wm659
+  type: preprint
+  openalex: W7154675704
+  kind: preprint
+  projects: []
+  hidden: true
+
+- id: doi:10.17605/osf.io/8fcux
+  title: 'Data - Let the Wrong One In: Partner Choice Evolution Can Select for Endosymbiotic Parasite–Mutualist Coexistence'
+  authors:
+  - name: Kiara Johnson
+    lab: true
+  - name: Connor Croft
+    lab: true
+  - name: Matthew Andres Moreno
+  - name: Anya E. Vostinar
+  - name: Alexander Lalejini
+  - name: Emily L. Dolson
+    lab: true
+  year: 2026
+  venue: Open Science Framework
+  doi: 10.17605/osf.io/8fcux
+  url: https://doi.org/10.17605/osf.io/8fcux
+  oa_url: https://doi.org/10.17605/osf.io/8fcux
+  type: preprint
+  openalex: W7159904002
+  kind: journal
+  projects:
+  - microbiome-communities
+  hidden: true
+
 - id: doi:10.48550/arxiv.2601.05098
   title: 'ECLIPSE: An Evolutionary Computation Library for Instrumentation Prototyping in Scientific Engineering'
   authors:
@@ -52,8 +136,28 @@
   kind: preprint
   projects:
   - evolutionary-computation
+  description: This paper presents ECLIPSE, the framework that we use to evolve astrophysical instruments in our collaboration with NEBULOUS
   pdf: /assets/pdfs/10-48550-arxiv-2601-05098.pdf
-  description: "This paper presents ECLIPSE, the framework that we use to evolve astrophysical instruments in our collaboration with NEBULOUS"
+
+- id: doi:10.5281/zenodo.18796293
+  title: 'emilydolson/chemical-ecology: v2.0.0'
+  authors:
+  - name: Sydney
+  - name: Alex Lalejini
+  - name: Max-Foreback
+    lab: true
+  - name: Emily L. Dolson
+    lab: true
+  year: 2026
+  venue: Zenodo (CERN European Organization for Nuclear Research)
+  doi: 10.5281/zenodo.18796293
+  url: https://doi.org/10.5281/zenodo.18796293
+  oa_url: https://doi.org/10.5281/zenodo.18796293
+  type: software
+  openalex: W7131903507
+  kind: preprint
+  projects: []
+  needs_review: true
 
 - id: doi:10.1162/isal.a.1024
   title: Endosymbiotic mutualism can constrain host diversity and evolved complexity
@@ -79,9 +183,54 @@
   kind: conference
   projects:
   - microbiome-communities
-  pdf: /assets/pdfs/10-1162-isal-a-1024.pdf
-  description: "Using Symbulation, we find that hosts evolved with mutualistic endosymbionts are less able to evolve complex traits"
+  description: Using Symbulation, we find that hosts evolved with mutualistic endosymbionts are less able to evolve complex traits
   award: Best Paper at Artificial Life 2026 (awarded to two papers), Best Student Paper at Artificial Life 2026 (awarded to two papers)
+  pdf: /assets/pdfs/10-1162-isal-a-1024.pdf
+
+- id: doi:10.5281/zenodo.18905447
+  title: 'missing-edge-randomizer: Robustness of graph metrics under missing edges'
+  authors:
+  - name: Sanaz Hasanzadeh Fard
+  - name: Emily L. Dolson
+    lab: true
+  year: 2026
+  venue: Zenodo (CERN European Organization for Nuclear Research)
+  doi: 10.5281/zenodo.18905447
+  url: https://doi.org/10.5281/zenodo.18905447
+  oa_url: https://doi.org/10.5281/zenodo.18905447
+  type: software
+  openalex: W7134107926
+  kind: preprint
+  projects: []
+  hidden: true
+
+- id: title:nebulous-applying-genetic-algorithms-to-design-next-generation-satellites-for-dr
+  title: 'NEBULOUS: Applying Genetic Algorithms to Design Next-Generation Satellites for Drag Resilience'
+  authors:
+  - name: Rick Marcusen
+  - name: Adrian Bryant
+  - name: Julie Anne Rolla
+  - name: Max Foreback
+    lab: true
+  - name: Evan Imata
+  - name: Emily L. Dolson
+    lab: true
+  - name: Kyle Helson
+  - name: Marcin Dominik Pilinski
+  - name: Anselmo C. Pontes
+  - name: Jonathan Sy
+  - name: Wagner, Joey
+  - name: Scott Palo
+  year: 2026
+  venue: Digital Commons - USU (Utah State University)
+  url: https://digitalcommons.usu.edu/context/smallsat/article/6584/viewcontent/SSC26_P2_34.pdf
+  oa_url: https://digitalcommons.usu.edu/cgi/viewcontent.cgi?article=6584&context=smallsat
+  type: conference-paper
+  openalex: W7204018885
+  kind: conference
+  projects:
+  - evolutionary-computation
+  hidden: true
 
 - id: title:phyloframe-a-dataframe-based-library-for-fast-flexible-phylogenetic-computation
   title: 'PhyloFrame: A DataFrame-based Library for Fast, Flexible Phylogenetic Computation'
@@ -101,8 +250,27 @@
   kind: preprint
   projects:
   - data-analysis-tools
+  description: We present a highly efficient library for performing analyis on phylogenies
   pdf: /assets/pdfs/phyloframe-a-dataframe-based-library-for-fast-flexible-phylogenetic-computation.pdf
-  description: "We present a highly efficient library for performing analyis on phylogenies"
+
+- id: doi:10.48550/arxiv.2502.16778
+  title: Robustness of Network Structural Metrics Under Incomplete Data
+  authors:
+  - name: Sanaz Hasanzadeh Fard
+    lab: true
+  - name: Emily L. Dolson
+    lab: true
+  year: 2026
+  venue: International Conference on Complex Networks and Their Applications
+  doi: 10.1007/978-3-032-16645-6_20
+  url: https://link.springer.com/chapter/10.1007/978-3-032-16645-6_20
+  oa_url: https://arxiv.org/pdf/2502.16778
+  type: conference-paper
+  openalex: W7147134633
+  kind: conference
+  projects:
+  - data-analysis-tools
+  pdf: /assets/pdfs/10-48550-arxiv-2502-16778.pdf
 
 - id: doi:10.1162/isal.a.1025
   title: 'Saved by the Symbiont: Environmental Stress Intensity and Endosymbiont-Mediated Stress Response Determine Evolved Host Complexity'
@@ -125,9 +293,9 @@
   kind: conference
   projects:
   - microbiome-communities
-  pdf: /assets/pdfs/10-1162-isal-a-1025.pdf
-  description: "We add a new type of symbiotic interaction (stress) to Symbulation and find that it affects the evolution of complexity similarly to other modes of mutualism/parasitism"
+  description: We add a new type of symbiotic interaction (stress) to Symbulation and find that it affects the evolution of complexity similarly to other modes of mutualism/parasitism
   award: Student Paper of Distinction at Artificial Life 2026  (awarded to one paper; two other papers were awarded Best Student Paper)
+  pdf: /assets/pdfs/10-1162-isal-a-1025.pdf
 
 - id: doi:10.48550/arxiv.2607.13377
   title: The impact of objective interactions on the performance of massive objective optimization algorithms
@@ -147,8 +315,8 @@
   kind: preprint
   projects:
   - evolutionary-computation
+  description: We show that lexicase selection performs well on hugely multi-objective problems, and that the performance of all many objective optimization algorithms tested varies heavily based on the problem landscape
   pdf: /assets/pdfs/10-48550-arxiv-2607-13377.pdf
-  description: "We show that lexicase selection performs well on hugely multi-objective problems, and that the performance of all many objective optimization algorithms tested varies heavily based on the problem landscape"  
 
 - id: title:trust-but-verify-rigorously-profiling-best-effort-high-performance-computing-for
   title: 'Trust, but Verify: Rigorously Profiling Best-Effort High-Performance Computing for Digital Evolution'
@@ -171,7 +339,7 @@
   - data-analysis-tools
   pdf: /assets/pdfs/trust-but-verify-rigorously-profiling-best-effort-high-performance-computing-for.pdf
 
-- id: doi:10.1162/ISAL.a.890 
+- id: doi:10.1162/ISAL.a.890
   title: A Scalable Trie Building Algorithm for High-Throughput Phyloanalysis of Wafer-Scale Digital Evolution Experiments
   authors:
   - name: Vivaan Singhvi
@@ -182,16 +350,56 @@
   - name: Matthew Andres Moreno
   year: 2025
   venue: Artificial Life Conference
-  doi: 10.1162/ISAL.a.890 
+  doi: 10.1162/ISAL.a.890
   url: https://direct.mit.edu/isal/proceedings-abstract/isal2025/37/134060
-  oa_url: https://arxiv.org/pdf/2508.15074
-  type: preprint
-  openalex: W4416050505
+  oa_url: https://direct.mit.edu/isal/proceedings-pdf/isal2025/37/62/2567097/isal.a.890.pdf
+  type: conference-paper
+  openalex: W7109950625
   kind: conference
   projects:
   - data-analysis-tools
+  description: Using a naive algorithm to reconstruct phylogenies using our hstrat technique was intractably slow - the new algorithm presented in this paper is a massive speed-up
   pdf: /assets/pdfs/isal.a.890.pdf
-  description: "Using a naive algorithm to reconstruct phylogenies using our hstrat technique was intractably slow - the new algorithm presented in this paper is a massive speed-up"
+
+- id: doi:10.17605/osf.io/wm659
+  title: Data - Environmental change and mutation rate modulate the adaptive evolution of genetic modularity through gene segregation
+  authors:
+  - name: Alexander Lalejini
+  - name: Emily L. Dolson
+    lab: true
+  - name: Lauren Gillespie
+  - name: Afsheen Afsheen
+  year: 2025
+  doi: 10.17605/osf.io/wm659
+  url: https://doi.org/10.17605/osf.io/wm659
+  oa_url: https://doi.org/10.17605/osf.io/wm659
+  type: preprint
+  openalex: W7154329151
+  kind: preprint
+  projects: []
+  hidden: true
+
+- id: doi:10.17605/osf.io/j3ezd
+  title: Data - Mutualism can constrain host diversity and evolution
+  authors:
+  - name: Alexander Lalejini
+  - name: Anya E. Vostinar
+  - name: Emily L. Dolson
+    lab: true
+  - name: Kiara Johnson
+    lab: true
+  - name: Delaney Kelley
+  - name: Owen Hillary
+  year: 2025
+  doi: 10.17605/osf.io/j3ezd
+  url: https://doi.org/10.17605/osf.io/j3ezd
+  oa_url: https://doi.org/10.17605/osf.io/j3ezd
+  type: preprint
+  openalex: W7136220726
+  kind: preprint
+  projects:
+  - microbiome-communities
+  hidden: true
 
 - id: doi:10.1162/isal.a.842
   title: 'Disentangling Swarm Behavior and Function: Improved Explainability via Information-Flow Diagrams and Controller Activation Patterns'
@@ -213,7 +421,7 @@
   projects:
   - evolutionary-computation
   - data-analysis-tools
-  description: "Figuring out how evolved algorithms control swarms is hard. In this paper we walk through a case study of using information theoretic techniques to do so, and show that they are quite effective."
+  description: Figuring out how evolved algorithms control swarms is hard. In this paper we walk through a case study of using information theoretic techniques to do so, and show that they are quite effective.
 
 - id: doi:10.48550/arxiv.2506.12975
   title: 'Downstream: efficient cross-platform algorithms for fixed-capacity stream downsampling'
@@ -235,6 +443,24 @@
   projects:
   - data-analysis-tools
   pdf: /assets/pdfs/10-48550-arxiv-2506-12975.pdf
+
+- id: title:downstream-profiling
+  title: Downstream Profiling
+  authors:
+  - name: Emily L. Dolson
+    lab: true
+  - name: Joseph Wagner
+    lab: true
+  - name: Matthew Andres Moreno
+  - name: Luis Zaman
+  year: 2025
+  venue: OSF Preprints (OSF Preprints)
+  url: https://osf.io/kjpqu
+  type: preprint
+  openalex: W7113452355
+  kind: preprint
+  projects: []
+  hidden: true
 
 - id: doi:10.1162/artl_a_00470
   title: Ecology, Spatial Structure, and Selection Pressure Induce Strong Signatures in Phylogenetic Structure
@@ -273,7 +499,7 @@
   kind: conference
   projects:
   - spatial-structure
-  - evolutionary-theory  
+  - evolutionary-theory
 
 - id: doi:10.1162/isal.a.916
   title: Extending a Phylogeny-based Method for Detecting Signatures of Multi-level Selection for Applications in Artificial Life
@@ -296,21 +522,44 @@
   - open-ended-evolution
   pdf: /assets/pdfs/10-1162-isal-a-916.pdf
 
-- id: doi:10.1101/2022.06.10.495696
+- id: doi:10.17605/osf.io/37fv8
+  title: Extending a Phylogeny-based Method for Detecting Signatures of Multi-level Selection for Applications in Artificial Life
+  authors:
+  - name: Matthew Andres Moreno
+  - name: Sanaz Hasan
+  - name: Emily L. Dolson
+    lab: true
+  - name: Luis Zaman
+  year: 2025
+  venue: OSF Preprints (OSF Preprints)
+  doi: 10.17605/osf.io/37fv8
+  url: https://doi.org/10.17605/osf.io/37fv8
+  type: preprint
+  openalex: W7110782036
+  kind: preprint
+  projects:
+  - data-analysis-tools
+  hidden: true
+
+
+- id: doi:10.1126/sciadv.adv1268
   title: Fitness seascapes are necessary for realistic modeling of the evolutionary response to drug therapy
+  authors:
+  - name: Eshan S. King
+  - name: Anna E. Stacy
+  - name: Davis T. Weaver
+  - name: Jeff Maltas
+  - name: Rowan J Barker-Clarke
+  - name: Emily L. Dolson
+    lab: true
+  - name: Jacob G. Scott
   year: 2025
   venue: Science Advances
-  authors:
-  - name: Eshan King
-  - name: Anna Stacy
-  - name: Davis Weaver
-  - name: Jeff Maltas
-  - name: Rowan Barker-Clarke
-  - name: Emily Dolson
-    lab: true
-  - name: Jacob Scott
-  doi: 10.1126/sciadv.adv126
-  url: https://www.science.org/doi/abs/10.1126/sciadv.adv1268
+  doi: 10.1126/sciadv.adv1268
+  url: https://doi.org/10.1126/sciadv.adv1268
+  oa_url: https://www.science.org/doi/pdf/10.1126/sciadv.adv1268?download=true
+  type: article
+  openalex: W4411193898
   kind: journal
   projects:
   - cancer
@@ -338,6 +587,30 @@
   - data-analysis-tools
   needs_review: true
   pdf: /assets/pdfs/10-48550-arxiv-2509-18522.pdf
+
+- id: doi:10.17605/osf.io/yn3wx
+  title: hstrat-synthesis
+  authors:
+  - name: Matthew Andres Moreno
+  - name: Joseph Wagner
+    lab: true
+  - name: Emily L. Dolson
+    lab: true
+  - name: Luis Zaman
+  - name: Vivaan Singhvi
+  - name: Anika Ranjan
+  - name: Connor Yang
+  year: 2025
+  venue: OSF Preprints (OSF Preprints)
+  doi: 10.17605/osf.io/yn3wx
+  url: https://doi.org/10.17605/osf.io/yn3wx
+  oa_url: https://osf.io/yn3wx
+  type: preprint
+  openalex: W7163603329
+  kind: preprint
+  projects:
+  - data-analysis-tools
+  hidden: true
 
 - id: doi:10.1162/isal.a.885
   title: 'Keep Your Friends Close and Your Enemies Distant: Partner Choice Can Enable Parasite Exclusion in Endosymbiotic Coevolution'
@@ -419,25 +692,6 @@
   projects:
   - data-analysis-tools
 
-- id: doi:10.48550/arxiv.2502.16778
-  title: Robustness of Network Structural Metrics Under Incomplete Data
-  authors:
-  - name: Sanaz Hasanzadeh Fard
-    lab: true
-  - name: Emily L. Dolson
-    lab: true
-  year: 2026
-  venue: International Conference on Complex Networks and Their Applications
-  doi: 10.1007/978-3-032-16645-6_20
-  url: https://link.springer.com/chapter/10.1007/978-3-032-16645-6_20
-  oa_url: https://arxiv.org/pdf/2502.16778
-  type: preprint
-  openalex: W4414844320
-  kind: conference
-  projects:
-  - data-analysis-tools
-  pdf: /assets/pdfs/10-48550-arxiv-2502-16778.pdf
-
 - id: doi:10.1101/2025.07.09.664005
   title: Using spatial statistics to infer game-theoretic interactions in an agent-based model of cancer cells
   authors:
@@ -471,15 +725,15 @@
   venue: arXiv (Cornell University)
   doi: 10.48550/arxiv.2405.10183
   url: https://doi.org/10.48550/arxiv.2405.10183
-  oa_url: 
+  oa_url: https://arxiv.org/pdf/2405.10183
   type: preprint
   openalex: W4397028534
   kind: preprint
   projects:
   - data-analysis-tools
-  pdf: /assets/pdfs/10-48550-arxiv-2405-10183.pdf
   hidden: true
-  note: "This paper was superseded by the more complete and detailed paper 'Analysis of Phylogeny Tracking Algorithms for Serial and Multiprocess Applications' (doi:10.48550/arxiv.2403.00246)."
+  note: This paper was superseded by the more complete and detailed paper 'Analysis of Phylogeny Tracking Algorithms for Serial and Multiprocess Applications' (doi:10.48550/arxiv.2403.00246).
+  pdf: /assets/pdfs/10-48550-arxiv-2405-10183.pdf
 
 - id: doi:10.48550/arxiv.2403.00266
   title: Algorithms for Efficient, Compact Online Data Stream Curation
@@ -600,6 +854,27 @@
   projects:
   - evolutionary-computation
 
+- id: doi:10.1162/isal_a_00790
+  title: On the de novo Evolution of Mutualism in Symbulation
+  authors:
+  - name: Connor Croft
+    lab: true
+  - name: Kiara Johnson
+    lab: true
+  - name: Anya E. Vostinar
+  - name: Emily L. Dolson
+    lab: true
+  year: 2024
+  venue: Artificial Life Conference
+  doi: 10.1162/isal_a_00790
+  url: https://doi.org/10.1162/isal_a_00790
+  oa_url: http://dx.doi.org/10.1162/isal_a_00790
+  type: conference-paper
+  openalex: W4402158670
+  kind: conference
+  projects:
+  - microbiome-communities
+
 - id: doi:10.1145/3638529.3654215
   title: On the robustness of lexicase selection to contradictory objectives
   authors:
@@ -618,6 +893,25 @@
   projects:
   - evolutionary-computation
   pdf: /assets/pdfs/10-1145-3638529-3654215.pdf
+
+- id: doi:10.48550/arxiv.2306.03970
+  title: Phylogeny-informed fitness estimation
+  authors:
+  - name: Alexander Lalejini
+  - name: Matthew Andres Moreno
+  - name: Jose Guadalupe Hernandez
+  - name: Emily L. Dolson
+    lab: true
+  year: 2024
+  venue: Genetic Programming in Theory and Practice XX
+  doi: 10.1007/978-981-99-8413-8_13
+  url: https://link.springer.com/chapter/10.1007/978-981-99-8413-8_13
+  oa_url: https://arxiv.org/pdf/2306.03970
+  type: preprint
+  openalex: W4379933179
+  kind: chapter
+  projects:
+  - evolutionary-computation
 
 - id: doi:10.1007/978-981-99-8413-8_13
   title: Phylogeny-Informed Fitness Estimation for Test-Based Parent Selection
@@ -657,6 +951,23 @@
   projects:
   - data-analysis-tools
   pdf: /assets/pdfs/10-48550-arxiv-2405-09389.pdf
+
+- id: title:phylotrackpy-profiling
+  title: PhylotrackPy Profiling
+  authors:
+  - name: Matthew Andres Moreno
+  - name: Emily L. Dolson
+    lab: true
+  year: 2024
+  venue: OSF Preprints (OSF Preprints)
+  url: https://osf.io/52hzs
+  oa_url: https://osf.io/52hzs
+  type: preprint
+  openalex: W7112978575
+  kind: preprint
+  projects:
+  - data-analysis-tools
+  hidden: true
 
 - id: doi:10.1007/978-981-99-8413-8_15
   title: Reachability Analysis for Lexicase Selection via Community Assembly Graphs
@@ -717,27 +1028,6 @@
   - data-analysis-tools
   pdf: /assets/pdfs/10-48550-arxiv-2409-06199.pdf
 
-- id: doi:10.1162/isal_a_00790
-  title: On the de novo Evolution of Mutualism in Symbulation
-  authors:
-  - name: Connor Croft
-    lab: true
-  - name: Kiara Johnson
-    lab: true
-  - name: Anya E. Vostinar
-  - name: Emily L. Dolson
-    lab: true
-  year: 2024
-  venue: Artificial Life Conference
-  doi: 10.1162/isal_a_00790
-  url: https://doi.org/10.1162/isal_a_00790
-  oa_url: http://dx.doi.org/10.1162/isal_a_00790
-  type: conference-paper
-  openalex: W4402158670
-  kind: conference
-  projects:
-  - microbiome-communities
-
 - id: doi:10.48550/arxiv.2404.10861
   title: Trackable Agent-based Evolution Models at Wafer Scale
   authors:
@@ -748,7 +1038,7 @@
   - name: Luis Zaman
   year: 2024
   venue: Artificial Life Conference
-  doi: 10.1162/isal_a_00830 
+  doi: 10.1162/isal_a_00830
   url: https://direct.mit.edu/isal/proceedings-abstract/isal2024/36/123538
   oa_url: https://arxiv.org/pdf/2404.10861
   type: preprint
@@ -777,8 +1067,8 @@
   projects:
   - data-analysis-tools
   - evolutionary-computation
-  pdf: /assets/pdfs/10-1145-3638530-3664090.pdf
   hidden: true
+  pdf: /assets/pdfs/10-1145-3638530-3664090.pdf
 
 - id: doi:10.1145/3583131.3590356
   title: Calculating lexicase selection probabilities is NP-Hard
@@ -817,25 +1107,6 @@
   kind: conference
   projects:
   - open-ended-evolution
-
-- id: doi:10.48550/arxiv.2306.03970
-  title: Phylogeny-informed fitness estimation
-  authors:
-  - name: Alexander Lalejini
-  - name: Matthew Andres Moreno
-  - name: Jose Guadalupe Hernandez
-  - name: Emily L. Dolson
-    lab: true
-  year: 2024
-  venue: Genetic Programming in Theory and Practice XX
-  doi: 10.1007/978-981-99-8413-8_13
-  url: https://link.springer.com/chapter/10.1007/978-981-99-8413-8_13
-  oa_url: https://arxiv.org/pdf/2306.03970
-  type: preprint
-  openalex: W4379933179
-  kind: chapter
-  projects:
-  - evolutionary-computation
 
 - id: doi:10.1098/rsif.2023.0346
   title: The ecology–evolution continuum and the origin of life
@@ -995,6 +1266,25 @@
   - evolutionary-computation
   pdf: /assets/pdfs/10-7554-elife-79665.pdf
 
+- id: doi:10.7554/elife.79665.sa2
+  title: 'Author response: Artificial selection methods from evolutionary computing show promise for directed evolution of microbes'
+  authors:
+  - name: Alexander Lalejini
+  - name: Emily L. Dolson
+    lab: true
+  - name: Anya E. Vostinar
+  - name: Luis Zaman
+  year: 2022
+  doi: 10.7554/elife.79665.sa2
+  url: https://doi.org/10.7554/elife.79665.sa2
+  oa_url: https://doi.org/10.7554/elife.79665.sa2
+  type: peer-review
+  openalex: W4294622377
+  kind: conference
+  projects:
+  - evolutionary-computation
+  hidden: true
+
 - id: doi:10.1007/s10710-022-09443-x
   title: 'Book Review: the evolution of complexity'
   authors:
@@ -1061,7 +1351,7 @@
   hidden: true
 
 - id: doi:10.1145/3520304.3533937
-  title: Hereditary stratigraphy: genome annotations to enable phylogenetic inference over distributed populations
+  title: 'Hereditary stratigraphy: genome annotations to enable phylogenetic inference over distributed populations'
   authors:
   - name: Matthew Andres Moreno
   - name: Emily L. Dolson
@@ -1149,10 +1439,10 @@
   type: conference-paper
   openalex: W4285805324
   kind: workshop
-  award: Best Student Paper Award
   projects:
   - evolutionary-computation
   - data-analysis-tools
+  award: Best Student Paper Award
 
 - id: doi:10.1007/978-981-16-8113-4_4
   title: What Can Phylogenetic Metrics Tell us About Useful Diversity in Evolutionary Algorithms?
@@ -1190,3 +1480,979 @@
   projects:
   - eco-evolutionary-theory
   pdf: /assets/pdfs/10-3389-fevo-2021-750779.pdf
+
+- id: doi:10.1371/journal.pone.0241734
+  title: UV decontamination of personal protective equipment with idle laboratory biosafety cabinets during the COVID-19 pandemic
+  authors:
+  - name: Davis T. Weaver
+  - name: Benjamin D. McElvany
+  - name: Vishhvaan Gopalakrishnan
+  - name: Kyle J. Card
+  - name: Dena Crozier
+  - name: Andrew Dhawan
+  - name: Mina N. Dinh
+  - name: Emily L. Dolson
+    lab: true
+  - name: Nathan Farrokhian
+  - name: Masahiro Hitomi
+  - name: Emily Ho
+  - name: Tanush Jagdish
+  - name: Eshan S. King
+  - name: Jennifer L. Cadnum
+  - name: Curtis J. Donskey
+  - name: Nikhil P. Krishnan
+  - name: Gleb Kuzmin
+  - name: Ju Li
+  - name: Jeff Maltas
+  - name: Jinhan Mo
+  - name: Julia Pelesko
+  - name: Jessica A. Scarborough
+  - name: Geoff Sedor
+  - name: Enze Tian
+  - name: Gary C. An
+  - name: Sean A. Diehl
+  - name: Jacob G. Scott
+  year: 2021
+  venue: PLoS ONE
+  doi: 10.1371/journal.pone.0241734
+  url: https://doi.org/10.1371/journal.pone.0241734
+  oa_url: https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0241734&type=printable
+  type: article
+  openalex: W3184752776
+  kind: journal
+  projects: []
+  hidden: true
+
+- id: doi:10.1158/1538-7445.am2020-2690
+  title: 'Abstract 2690: Qualitatively distinct evolutionary games played by EGFR driven NSCLC'
+  authors:
+  - name: Nathan Farrokhian
+  - name: Artem Kaznatcheev
+  - name: Patrick Ellsworth
+  - name: Masahiro Hitomi
+  - name: Emily L. Dolson
+    lab: true
+  - name: Jacob G. Scott
+  year: 2020
+  venue: Cancer Research
+  doi: 10.1158/1538-7445.am2020-2690
+  url: https://doi.org/10.1158/1538-7445.am2020-2690
+  type: conference-abstract
+  openalex: W3083311904
+  kind: conference
+  projects:
+  - cancer
+  hidden: true
+
+- id: doi:10.1162/isal_a_00344
+  title: An introduction to using counterdiabatic driving to eliminate genetic lag in changing environments
+  authors:
+  - name: Emily L. Dolson
+    lab: true
+  - name: Shamreen Iram
+  - name: Joshua Chiel
+  - name: Julia Pelesko
+  - name: Nikhil P. Krishnan
+  - name: Özenç Güngör
+  - name: Benjamin Kuznets-Speck
+  - name: Sebastian Deffner
+  - name: Efe İlker
+  - name: Jacob G. Scott
+  - name: Michael Hinczewski
+  year: 2020
+  venue: Conference on Artificial Life (ALIFE)
+  doi: 10.1162/isal_a_00344
+  url: https://doi.org/10.1162/isal_a_00344
+  oa_url: http://hdl.handle.net/11603/19356
+  type: conference-paper
+  openalex: W3043767210
+  kind: conference
+  projects:
+  - cancer
+  hidden: true
+
+- id: doi:10.1007/978-3-030-39958-0_1
+  title: Characterizing the Effects of Random Subsampling on Lexicase Selection
+  authors:
+  - name: Austin J. Ferguson
+  - name: Jose Guadalupe Hernandez
+  - name: Daniel Junghans
+  - name: Alexander Lalejini
+  - name: Emily L. Dolson
+    lab: true
+  - name: Charles Ofria
+  year: 2020
+  venue: Genetic and evolutionary computation
+  doi: 10.1007/978-3-030-39958-0_1
+  url: https://doi.org/10.1007/978-3-030-39958-0_1
+  type: book-chapter
+  openalex: W3023345483
+  kind: chapter
+  projects:
+  - evolutionary-computation
+  hidden: true
+
+- id: doi:10.1038/s41567-020-0989-3
+  title: Controlling the speed and trajectory of evolution with counterdiabatic driving
+  authors:
+  - name: Shamreen Iram
+  - name: Emily L. Dolson
+    lab: true
+  - name: Joshua Chiel
+  - name: Julia Pelesko
+  - name: Nikhil Krishnan
+  - name: Özenç Güngör
+  - name: Benjamin Kuznets-Speck
+  - name: Sebastian Deffner
+  - name: Efe İlker
+  - name: Jacob G. Scott
+  - name: Michael Hinczewski
+  year: 2020
+  venue: Nature Physics
+  doi: 10.1038/s41567-020-0989-3
+  url: https://doi.org/10.1038/s41567-020-0989-3
+  oa_url: https://www.biorxiv.org/content/biorxiv/early/2020/06/04/867143.full.pdf
+  type: article
+  openalex: W2993673854
+  kind: journal
+  projects:
+  - cancer
+  hidden: true
+
+- id: doi:10.1162/artl_a_00313
+  title: 'Interpreting the Tape of Life: Ancestry-Based Analyses Provide Insights and Intuition about Evolutionary Dynamics'
+  authors:
+  - name: Emily L. Dolson
+    lab: true
+  - name: Alexander Lalejini
+  - name: Steven Jorgensen
+  - name: Charles Ofria
+  year: 2020
+  venue: Artificial Life
+  doi: 10.1162/artl_a_00313
+  url: https://doi.org/10.1162/artl_a_00313
+  type: article
+  openalex: W3005112985
+  kind: journal
+  projects:
+  - data-analysis-tools
+  hidden: true
+
+- id: doi:10.1016/j.ajic.2020.11.010
+  title: UV-C tower for point-of-care decontamination of filtering facepiece respirators
+  authors:
+  - name: Badar J. Kayani
+  - name: Davis T. Weaver
+  - name: Vishhvaan Gopalakrishnan
+  - name: Eshan S. King
+  - name: Emily L. Dolson
+    lab: true
+  - name: Nikhil P. Krishnan
+  - name: Julia Pelesko
+  - name: Michael J. Scott
+  - name: Masahiro Hitomi
+  - name: Jennifer L. Cadnum
+  - name: Daniel F. Li
+  - name: Curtis J. Donskey
+  - name: Jacob G. Scott
+  - name: Ian Charnas
+  year: 2020
+  venue: American Journal of Infection Control
+  doi: 10.1016/j.ajic.2020.11.010
+  url: https://doi.org/10.1016/j.ajic.2020.11.010
+  oa_url: http://www.ajicjournal.org/article/S0196655320309950/pdf
+  type: article
+  openalex: W3102208259
+  kind: journal
+  projects: []
+  hidden: true
+
+- id: doi:10.1162/isal_a_00213
+  title: Data Standards for Artificial Life Software
+  authors:
+  - name: Alexander Lalejini
+  - name: Emily L. Dolson
+    lab: true
+  - name: Clifford Bohm
+    lab: true
+  - name: Austin J. Ferguson
+  - name: David P. Parsons
+  - name: Penelope Faulkner Rainford
+  - name: Paul Richmond
+  - name: Charles Ofria
+  year: 2019
+  venue: Conference on Artificial Life (ALIFE)
+  doi: 10.1162/isal_a_00213
+  url: https://doi.org/10.1162/isal_a_00213
+  oa_url: https://inria.hal.science/hal-02285716
+  type: conference-paper
+  openalex: W2963093971
+  kind: conference
+  projects:
+  - data-analysis-tools
+  hidden: true
+
+- id: doi:10.1162/isal_a_00213.xml
+  title: Data Standards for Artificial Life Software
+  authors:
+  - name: Alexander Lalejini
+  - name: Emily L. Dolson
+    lab: true
+  - name: Clifford Bohm
+    lab: true
+  - name: Austin J. Ferguson
+  - name: David P. Parsons
+  - name: Penelope Faulkner Rainford
+  - name: Paul Richmond
+  - name: Charles Ofria
+  year: 2019
+  venue: Conference on Artificial Life (ALIFE)
+  doi: 10.1162/isal_a_00213.xml
+  url: https://doi.org/10.1162/isal_a_00213.xml
+  type: conference-paper
+  openalex: W4235550244
+  kind: conference
+  projects:
+  - data-analysis-tools
+  hidden: true
+
+- id: doi:10.1007/978-3-030-04735-1_1
+  title: Exploring Genetic Programming Systems with MAP-Elites
+  authors:
+  - name: Emily L. Dolson
+    lab: true
+  - name: Alexander Lalejini
+  - name: Charles Ofria
+  year: 2019
+  venue: Genetic and evolutionary computation
+  doi: 10.1007/978-3-030-04735-1_1
+  url: https://doi.org/10.1007/978-3-030-04735-1_1
+  type: book-chapter
+  openalex: W2892844106
+  kind: chapter
+  projects:
+  - evolutionary-computation
+  hidden: true
+
+- id: doi:10.1145/3319619.3326900
+  title: Random subsampling improves performance in lexicase selection
+  authors:
+  - name: Jose Guadalupe Hernandez
+  - name: Alexander Lalejini
+  - name: Emily L. Dolson
+    lab: true
+  - name: Charles Ofria
+  year: 2019
+  venue: Genetic and Evolutionary Computation Conference Companion (GECCO Companion)
+  doi: 10.1145/3319619.3326900
+  url: https://doi.org/10.1145/3319619.3326900
+  oa_url: https://dl.acm.org/doi/pdf/10.1145/3319619.3326900
+  type: conference-paper
+  openalex: W2961535796
+  kind: conference
+  projects:
+  - evolutionary-computation
+  hidden: true
+
+- id: doi:10.1162/artl_a_00280
+  title: 'The MODES Toolbox: Measurements of Open-Ended Dynamics in Evolving Systems'
+  authors:
+  - name: Emily L. Dolson
+    lab: true
+  - name: Anya E. Vostinar
+  - name: Michael J. Wiser
+  - name: Charles Ofria
+  year: 2019
+  venue: Artificial Life
+  doi: 10.1162/artl_a_00280
+  url: https://doi.org/10.1162/artl_a_00280
+  oa_url: https://www.mitpressjournals.org/doi/pdf/10.1162/artl_a_00280
+  type: article
+  openalex: W2895271995
+  kind: journal
+  projects:
+  - open-ended-evolution
+  hidden: true
+
+- id: doi:10.1007/978-3-319-90512-9_5
+  title: Applying Ecological Principles to Genetic Programming
+  authors:
+  - name: Emily L. Dolson
+    lab: true
+  - name: Wolfgang Banzhaf
+  - name: Charles Ofria
+  year: 2018
+  venue: Genetic and evolutionary computation
+  doi: 10.1007/978-3-319-90512-9_5
+  url: https://doi.org/10.1007/978-3-319-90512-9_5
+  type: book-chapter
+  openalex: W2850529529
+  kind: chapter
+  projects:
+  - evolutionary-computation
+  hidden: true
+
+- id: doi:10.1145/3205651.3205780
+  title: Ecological theory provides insights about evolutionary computation
+  authors:
+  - name: Emily L. Dolson
+    lab: true
+  - name: Charles Ofria
+  year: 2018
+  venue: Genetic and Evolutionary Computation Conference Companion (GECCO Companion)
+  doi: 10.1145/3205651.3205780
+  url: https://doi.org/10.1145/3205651.3205780
+  oa_url: https://dl.acm.org/doi/pdf/10.1145/3205651.3205780
+  type: conference-paper
+  openalex: W2838189371
+  kind: conference
+  projects:
+  - evolutionary-computation
+  hidden: true
+
+- id: doi:10.7287/peerj.preprints.27315v1
+  title: Ecological theory provides insights about evolutionary computation
+  authors:
+  - name: Emily L. Dolson
+    lab: true
+  - name: Wolfgang Banzhaf
+  - name: Charles Ofria
+  year: 2018
+  doi: 10.7287/peerj.preprints.27315v1
+  url: https://doi.org/10.7287/peerj.preprints.27315v1
+  oa_url: https://doi.org/10.7287/peerj.preprints.27315v1
+  type: preprint
+  openalex: W4289305969
+  kind: preprint
+  projects:
+  - evolutionary-computation
+  hidden: true
+
+- id: doi:10.7287/peerj.preprints.27315
+  title: Ecological theory provides insights about evolutionary computation
+  authors:
+  - name: Emily L. Dolson
+    lab: true
+  - name: Wolfgang Banzhaf
+  - name: Charles Ofria
+  year: 2018
+  doi: 10.7287/peerj.preprints.27315
+  url: https://doi.org/10.7287/peerj.preprints.27315
+  oa_url: https://doi.org/10.7287/peerj.preprints.27315
+  type: preprint
+  openalex: W2907901897
+  kind: preprint
+  projects:
+  - evolutionary-computation
+  hidden: true
+
+- id: doi:10.7287/peerj.preprints.27154v1
+  title: Exploring genetic programming systems with MAP-Elites
+  authors:
+  - name: Emily L. Dolson
+    lab: true
+  - name: Alexander Lalejini
+  - name: Charles Ofria
+  year: 2018
+  doi: 10.7287/peerj.preprints.27154v1
+  url: https://doi.org/10.7287/peerj.preprints.27154v1
+  oa_url: https://doi.org/10.7287/peerj.preprints.27154v1
+  type: preprint
+  openalex: W4254979853
+  kind: preprint
+  projects:
+  - evolutionary-computation
+  hidden: true
+
+- id: doi:10.7287/peerj.preprints.27154
+  title: Exploring genetic programming systems with MAP-Elites
+  authors:
+  - name: Emily L. Dolson
+    lab: true
+  - name: Alexander Lalejini
+  - name: Charles Ofria
+  year: 2018
+  doi: 10.7287/peerj.preprints.27154
+  url: https://doi.org/10.7287/peerj.preprints.27154
+  oa_url: https://doi.org/10.7287/peerj.preprints.27154
+  type: preprint
+  openalex: W4247616056
+  kind: preprint
+  projects:
+  - evolutionary-computation
+  hidden: true
+
+- id: doi:10.1162/isal_a_00020
+  title: 'Quantifying the Tape of Life: Ancestry-based Metrics Provide Insights and Intuition about Evolutionary Dynamics'
+  authors:
+  - name: Emily L. Dolson
+    lab: true
+  - name: Alexander Lalejini
+  - name: Steven Jorgensen
+  - name: Charles Ofria
+  year: 2018
+  venue: Conference on Artificial Life (ALIFE)
+  doi: 10.1162/isal_a_00020
+  url: https://doi.org/10.1162/isal_a_00020
+  type: conference-paper
+  openalex: W2800921126
+  kind: conference
+  projects:
+  - data-analysis-tools
+  hidden: true
+
+- id: doi:10.7287/peerj.preprints.26883
+  title: 'Quantifying the tape of life: Ancestry-based metrics provide insights and intuition about evolutionary dynamics'
+  authors:
+  - name: Emily L. Dolson
+    lab: true
+  - name: Alexander Lalejini
+  - name: Steven Jorgensen
+  - name: Charles Ofria
+  year: 2018
+  doi: 10.7287/peerj.preprints.26883
+  url: https://doi.org/10.7287/peerj.preprints.26883
+  oa_url: https://doi.org/10.7287/peerj.preprints.26883
+  type: preprint
+  openalex: W2892695598
+  kind: preprint
+  projects:
+  - data-analysis-tools
+  hidden: true
+
+- id: doi:10.7287/peerj.preprints.26883v1
+  title: 'Quantifying the tape of life: Ancestry-based metrics provide insights and intuition about evolutionary dynamics'
+  authors:
+  - name: Emily L. Dolson
+    lab: true
+  - name: Alexander Lalejini
+  - name: Steven Jorgensen
+  - name: Charles Ofria
+  year: 2018
+  doi: 10.7287/peerj.preprints.26883v1
+  url: https://doi.org/10.7287/peerj.preprints.26883v1
+  oa_url: https://doi.org/10.7287/peerj.preprints.26883v1
+  type: preprint
+  openalex: W4300835257
+  kind: preprint
+  projects:
+  - data-analysis-tools
+  hidden: true
+
+- id: doi:10.1162/isal_a_00091
+  title: Synthesizing Research on the Generation and Maintenance of Population Diversity
+  authors:
+  - name: Emily L. Dolson
+    lab: true
+  - name: Charles Ofria
+  year: 2018
+  venue: Conference on Artificial Life (ALIFE)
+  doi: 10.1162/isal_a_00091
+  url: https://doi.org/10.1162/isal_a_00091
+  type: conference-paper
+  openalex: W2883582752
+  kind: conference
+  projects: []
+  hidden: true
+
+- id: doi:10.7287/peerj.preprints.27246v1
+  title: 'The Boundedness Illusion: Asymptotic projections from early evolution underestimate evolutionary potential'
+  authors:
+  - name: Michael J. Wiser
+  - name: Emily L. Dolson
+    lab: true
+  - name: Anya E. Vostinar
+  - name: Richard E. Lenski
+  - name: Charles Ofria
+  year: 2018
+  doi: 10.7287/peerj.preprints.27246v1
+  url: https://doi.org/10.7287/peerj.preprints.27246v1
+  oa_url: https://doi.org/10.7287/peerj.preprints.27246v1
+  type: preprint
+  openalex: W2899939990
+  kind: preprint
+  projects:
+  - open-ended-evolution
+  hidden: true
+
+- id: doi:10.7287/peerj.preprints.27246v2
+  title: 'The Boundedness Illusion: Asymptotic projections from early evolution underestimate evolutionary potential'
+  authors:
+  - name: Michael J. Wiser
+  - name: Emily L. Dolson
+    lab: true
+  - name: Anya E. Vostinar
+  - name: Richard E. Lenski
+  - name: Charles Ofria
+  year: 2018
+  doi: 10.7287/peerj.preprints.27246v2
+  url: https://doi.org/10.7287/peerj.preprints.27246v2
+  oa_url: https://doi.org/10.7287/peerj.preprints.27246v2
+  type: preprint
+  openalex: W4248846262
+  kind: preprint
+  projects:
+  - open-ended-evolution
+  hidden: true
+
+- id: doi:10.7287/peerj.preprints.27246
+  title: 'The Boundedness Illusion: Asymptotic projections from early evolution underestimate evolutionary potential'
+  authors:
+  - name: Michael J. Wiser
+  - name: Emily L. Dolson
+    lab: true
+  - name: Anya E. Vostinar
+  - name: Richard E. Lenski
+  - name: Charles Ofria
+  year: 2018
+  doi: 10.7287/peerj.preprints.27246
+  url: https://doi.org/10.7287/peerj.preprints.27246
+  oa_url: https://doi.org/10.7287/peerj.preprints.27246
+  type: preprint
+  openalex: W4238916577
+  kind: preprint
+  projects:
+  - open-ended-evolution
+  hidden: true
+
+- id: doi:10.7287/peerj.preprints.27249v1
+  title: 'The MODES toolbox: Measurements of Open-ended Dynamics in Evolving Systems'
+  authors:
+  - name: Emily L. Dolson
+    lab: true
+  - name: Anya E. Vostinar
+  - name: Michael J. Wiser
+  - name: Charles Ofria
+  year: 2018
+  doi: 10.7287/peerj.preprints.27249v1
+  url: https://doi.org/10.7287/peerj.preprints.27249v1
+  oa_url: https://doi.org/10.7287/peerj.preprints.27249v1
+  type: preprint
+  openalex: W4289437672
+  kind: preprint
+  projects:
+  - open-ended-evolution
+  hidden: true
+
+- id: doi:10.7287/peerj.preprints.27249
+  title: 'The MODES toolbox: Measurements of Open-ended Dynamics in Evolving Systems'
+  authors:
+  - name: Emily L. Dolson
+    lab: true
+  - name: Anya E. Vostinar
+  - name: Michael J. Wiser
+  - name: Charles Ofria
+  year: 2018
+  doi: 10.7287/peerj.preprints.27249
+  url: https://doi.org/10.7287/peerj.preprints.27249
+  oa_url: https://doi.org/10.7287/peerj.preprints.27249
+  type: preprint
+  openalex: W2928329883
+  kind: preprint
+  projects:
+  - open-ended-evolution
+  hidden: true
+
+- id: doi:10.7287/peerj.preprints.27249v3
+  title: 'The MODES toolbox: Measurements of Open-ended Dynamics in Evolving Systems'
+  authors:
+  - name: Emily L. Dolson
+    lab: true
+  - name: Anya E. Vostinar
+  - name: Michael J. Wiser
+  - name: Charles Ofria
+  year: 2018
+  doi: 10.7287/peerj.preprints.27249v3
+  url: https://doi.org/10.7287/peerj.preprints.27249v3
+  oa_url: https://doi.org/10.7287/peerj.preprints.27249v3
+  type: preprint
+  openalex: W4289378910
+  kind: preprint
+  projects:
+  - open-ended-evolution
+  hidden: true
+
+- id: doi:10.7287/peerj.preprints.27249v2
+  title: 'The MODES toolbox: Measurements of Open-ended Dynamics in Evolving Systems'
+  authors:
+  - name: Emily L. Dolson
+    lab: true
+  - name: Anya E. Vostinar
+  - name: Michael J. Wiser
+  - name: Charles Ofria
+  year: 2018
+  doi: 10.7287/peerj.preprints.27249v2
+  url: https://doi.org/10.7287/peerj.preprints.27249v2
+  oa_url: https://doi.org/10.7287/peerj.preprints.27249v2
+  type: preprint
+  openalex: W4289435578
+  kind: preprint
+  projects:
+  - open-ended-evolution
+  hidden: true
+
+- id: doi:10.1145/3205651.3208301
+  title: Visualizing the tape of life
+  authors:
+  - name: Emily L. Dolson
+    lab: true
+  - name: Charles Ofria
+  year: 2018
+  venue: Genetic and Evolutionary Computation Conference Companion (GECCO Companion)
+  doi: 10.1145/3205651.3208301
+  url: https://doi.org/10.1145/3205651.3208301
+  oa_url: https://dl.acm.org/doi/pdf/10.1145/3205651.3208301
+  type: conference-paper
+  openalex: W2831422597
+  kind: conference
+  projects:
+  - data-analysis-tools
+  - evolutionary-computation
+  hidden: true
+
+- id: doi:10.15200/winn.152418.86598
+  title: What's holding artificial life back from open-ended evolution?
+  authors:
+  - name: Emily L. Dolson
+    lab: true
+  - name: Anya E. Vostinar
+  - name: Charles Ofria
+  year: 2018
+  doi: 10.15200/winn.152418.86598
+  url: https://doi.org/10.15200/winn.152418.86598
+  oa_url: https://doi.org/10.15200/winn.152418.86598
+  type: preprint
+  openalex: W1239044758
+  kind: preprint
+  projects:
+  - open-ended-evolution
+  hidden: true
+
+- id: doi:10.7551/ecal_a_023
+  title: Spatial resource heterogeneity creates local hotspots of evolutionary potential
+  authors:
+  - name: Emily L. Dolson
+    lab: true
+  - name: Charles Ofria
+  year: 2017
+  doi: 10.7551/ecal_a_023
+  url: https://doi.org/10.7551/ecal_a_023
+  type: conference-paper
+  openalex: W3104682361
+  kind: conference
+  projects:
+  - open-ended-evolution
+  hidden: true
+
+- id: doi:10.1162/isal_a_023
+  title: Spatial resource heterogeneity creates local hotspots of evolutionary potential
+  authors:
+  - name: Emily L. Dolson
+    lab: true
+  - name: Ofria, Charles
+  year: 2017
+  doi: 10.1162/isal_a_023
+  url: https://doi.org/10.1162/isal_a_023
+  oa_url: https://direct.mit.edu/isal/proceedings-pdf/ecal2017/29/122/1904614/isal_a_023.pdf
+  type: conference-paper
+  openalex: W2916146753
+  kind: conference
+  projects:
+  - open-ended-evolution
+  hidden: true
+
+- id: doi:10.1101/149302
+  title: Spatial resource heterogeneity creates local hotspots of evolutionary potential
+  authors:
+  - name: Emily L. Dolson
+    lab: true
+  - name: Charles Ofria
+  year: 2017
+  venue: bioRxiv (Cold Spring Harbor Laboratory)
+  doi: 10.1101/149302
+  url: https://doi.org/10.1101/149302
+  oa_url: https://www.biorxiv.org/content/biorxiv/early/2017/06/15/149302.full.pdf
+  type: preprint
+  openalex: W2626917515
+  kind: preprint
+  projects:
+  - open-ended-evolution
+  hidden: true
+
+- id: doi:10.1101/148973
+  title: Spatial resource heterogeneity increases diversity and evolutionary potential
+  authors:
+  - name: Emily L. Dolson
+    lab: true
+  - name: Samuel G. Pérez
+  - name: Randal S. Olson
+  - name: Charles Ofria
+  year: 2017
+  venue: bioRxiv (Cold Spring Harbor Laboratory)
+  doi: 10.1101/148973
+  url: https://doi.org/10.1101/148973
+  oa_url: https://www.biorxiv.org/content/biorxiv/early/2017/06/12/148973.full.pdf
+  type: preprint
+  openalex: W2626471265
+  kind: preprint
+  projects:
+  - open-ended-evolution
+  hidden: true
+
+- id: title:open-ended-evolution-a-perspective-from-york
+  title: 'Open-Ended Evolution: A Perspective from York'
+  authors:
+  - name: Timothy F. Taylor
+  - name: Mark A. Bedau
+  - name: Alastair Channon
+  - name: David H. Ackley
+  - name: Wolfgang Banzhaf
+  - name: Guillaume Beslon
+  - name: Emily L. Dolson
+    lab: true
+  - name: Tom Froese
+  - name: Simon Hickinbotham
+  - name: Takashi Ikegami
+  - name: Barry McMullin
+  - name: Norman H. Packard
+  - name: Steen Rasmussen
+  - name: Nathaniel Virgo
+  year: 2016
+  venue: Artificial Life
+  url: http://findresearcher.sdu.dk/portal/en/publications/openended-evolution-a-perspective-from-york(b3707d32-82c4-4069-9878-63f8f0fb3fa7).html
+  type: article
+  openalex: W2338155562
+  kind: journal
+  projects:
+  - open-ended-evolution
+  hidden: true
+
+- id: doi:10.1162/artl_a_00210
+  title: 'Open-Ended Evolution: Perspectives from the OEE Workshop in York'
+  authors:
+  - name: Tim Taylor
+  - name: Mark A. Bedau
+  - name: Alastair Channon
+  - name: David H. Ackley
+  - name: Wolfgang Banzhaf
+  - name: Guillaume Beslon
+  - name: Emily L. Dolson
+    lab: true
+  - name: Tom Froese
+  - name: Simon Hickinbotham
+  - name: Takashi Ikegami
+  - name: Barry McMullin
+  - name: Norman H. Packard
+  - name: Steen Rasmussen
+  - name: Nathaniel Virgo
+  - name: Eran Agmon
+  - name: Edward Clark
+  - name: Simon McGregor
+  - name: Charles Ofria
+  - name: Glen E. P. Ropella
+  - name: Lee C. Spector
+  - name: Kenneth Owen Stanley
+  - name: Adam Stanton
+  - name: Christopher Timperley
+  - name: Anya E. Vostinar
+  - name: Michael J. Wiser
+  year: 2016
+  venue: Artificial Life
+  doi: 10.1162/artl_a_00210
+  url: https://doi.org/10.1162/artl_a_00210
+  oa_url: https://direct.mit.edu/artl/article-pdf/22/3/408/1666297/artl_a_00210.pdf
+  type: article
+  openalex: W2484875298
+  kind: journal
+  projects:
+  - open-ended-evolution
+  hidden: true
+
+- id: doi:10.5281/zenodo.57544
+  title: 'Software Carpentry: The Unix Shell'
+  authors:
+  - name: I. Aldazábal
+  - name: Harriet Alexander
+  - name: James D. Allen
+  - name: Areej S. Alsheikh-Hussain
+  - name: Daniel Baird
+  - name: Piotr Banaszkiewicz
+  - name: P. Barmby
+  - name: Robert A. Beagrie
+  - name: Trevor Bekolay
+  - name: Evgenij Belikov
+  - name: Jason Bell
+  - name: Kai Blin
+  - name: John Blischak
+  - name: Boardman, Simon
+  - name: Boissoneault, Maxime
+  - name: Jessica K. Bonnie
+  - name: Andy Boughton
+  - name: Ry an Brase
+  - name: Amy Brown
+  - name: Dana Brunson
+  - name: Orion J. Buske
+  - name: Abigail Cabunoc Mayes
+  - name: Daniel Chen
+  - name: Chung, Kathy
+  - name: Gabriel A. Devenyi
+  - name: Emily L. Dolson
+    lab: true
+  - name: Jonah M. Duckles
+  - name: Rémi Emonet
+  - name: David M. Eyers
+  - name: Fernandes, Filipe
+  - name: Hugues Fontenelle
+  - name: Francis Gacenga
+  - name: Matthew Gidden
+  - name: Iván González
+  - name: Norman Gray
+  - name: Varda F. Hagh
+  - name: Hansen, Michael
+  - name: Emelie Harstad
+  - name: Howe Adina
+  - name: Fatma Imamoglu
+  - name: Damien Irving
+  - name: Mike R. Jackson
+  - name: Emily Jane McTavish
+  - name: Jennings, Michael
+  - name: Dan L. Jones
+  - name: Alix Keener
+  - name: Kristopher Keipert
+  - name: Kelly, Tom
+  - name: Jan T. Kim
+  - name: W. Trevor King
+  - name: Christina Koch
+  - name: Bernhard Konrad
+  - name: Sherry Lake
+  - name: Doug Latornell
+  - name: Philip Lijnzaad
+  - name: Eric J. Ma
+  - name: Joshua S. Madin
+  - name: Camille Marini
+  - name: Kunal Marwaha
+  - name: Sergey Mashchenko
+  - name: François Michonneau
+  - name: Ryan Middleson
+  - name: Jackie Milhans
+  - name: Bill Mills
+  - name: A. Miotto
+  - name: Mount, Sarah
+  - name: Alexander J. Nederbragt
+  - name: Daiva Elena Nielsen
+  - name: Aaron O'Leary
+  - name: Randy Olson
+  - name: Orr, Adam
+  - name: Nina Overgaard Therkildsen
+  - name: Kirill S. Palamartchouk
+  - name: Adam Drew Perry
+  - name: Jon Pipitone
+  - name: Timothée Poisot
+  - name: Hossein Pourreza
+  - name: Timothy Povall
+  - name: Adam Richie-Halford
+  - name: Ritchie, Scott
+  - name: Noam Ross
+  - name: Halfdan Rydbeck
+  - name: Mahdi Sadjadi
+  - name: Pat Schloss
+  - name: Bertie Seyffert
+  - name: Genevieve M. Shattow
+  - name: Raniere Silva
+  - name: Sarah Simpkin
+  - name: John Simpson
+  - name: Byron Smith
+  - name: Nicola Soranzo
+  - name: Ashwin Srinath
+  - name: Daniel Standage
+  - name: Meg Staton
+  - name: Peter Steinbach
+  - name: Marcel Stimberg
+  - name: Bartosz Teleńczuk
+  - name: Florian Thöle
+  - name: Tiffany Timbers
+  - name: Stephen Turner
+  year: 2016
+  venue: Zenodo (CERN European Organization for Nuclear Research)
+  doi: 10.5281/zenodo.57544
+  url: https://doi.org/10.5281/zenodo.57544
+  oa_url: https://doi.org/10.5281/zenodo.57544
+  type: other
+  openalex: W2241338280
+  kind: preprint
+  projects: []
+  hidden: true
+
+- id: doi:10.7551/978-0-262-33936-0-ch071
+  title: The Effects of Evolution and Spatial Structure on Diversity in Biological Reserves
+  authors:
+  - name: Emily L. Dolson
+    lab: true
+  - name: Michael J. Wiser
+  - name: Charles Ofria
+  year: 2016
+  venue: Artificial Life Conference Proceedings
+  doi: 10.7551/978-0-262-33936-0-ch071
+  url: https://doi.org/10.7551/978-0-262-33936-0-ch071
+  type: conference-paper
+  openalex: W2950481816
+  kind: conference
+  projects: []
+  hidden: true
+
+- id: doi:10.1101/043083
+  title: The Effects of Evolution and Spatial Structure on Diversity in Biological Reserves
+  authors:
+  - name: Emily L. Dolson
+    lab: true
+  - name: Michael J. Wiser
+  - name: Charles Ofria
+  year: 2016
+  venue: bioRxiv (Cold Spring Harbor Laboratory)
+  doi: 10.1101/043083
+  url: https://doi.org/10.1101/043083
+  oa_url: https://www.biorxiv.org/content/biorxiv/early/2016/03/10/043083.full.pdf
+  type: preprint
+  openalex: W2361163162
+  kind: preprint
+  projects: []
+  hidden: true
+
+- id: doi:10.1162/978-0-262-33936-0-ch071
+  title: The Effects of Evolution and Spatial Structure on Diversity in Biological Reserves
+  authors:
+  - name: Emily L. Dolson
+    lab: true
+  - name: Michael J. Wiser
+  - name: Charles Ofria
+  year: 2016
+  venue: Artificial Life Conference Proceedings
+  doi: 10.1162/978-0-262-33936-0-ch071
+  url: https://doi.org/10.1162/978-0-262-33936-0-ch071
+  oa_url: https://doi.org/10.1162/978-0-262-33936-0-ch071
+  type: conference-paper
+  openalex: W4390864768
+  kind: conference
+  projects: []
+  hidden: true
+
+- id: doi:10.1162/978-0-262-33936-0-ch068
+  title: The Prisoners Dilemma, Memory, and the Early Evolution of Intelligence
+  authors:
+  - name: Mikaela Leas
+  - name: Emily L. Dolson
+    lab: true
+  - name: Riley Annis
+  - name: Joshua Nahum
+  - name: Laura M. Grabowski
+  - name: Charles Ofria
+  year: 2016
+  venue: Artificial Life Conference Proceedings
+  doi: 10.1162/978-0-262-33936-0-ch068
+  url: https://doi.org/10.1162/978-0-262-33936-0-ch068
+  oa_url: https://doi.org/10.1162/978-0-262-33936-0-ch068
+  type: conference-paper
+  openalex: W2525890162
+  kind: conference
+  projects: []
+  hidden: true
