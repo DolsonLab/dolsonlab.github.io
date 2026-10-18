@@ -56,7 +56,6 @@
   kind: chapter
   projects:
   - evolutionary-computation
-  - nebulous
 
 - id: title:data-environmental-change-and-mutation-rate-modulate-the-adaptive-evolution-of-g
   title: Data - Environmental change and mutation rate modulate the adaptive evolution of genetic modularity through gene segregation
@@ -253,7 +252,7 @@
   description: We present a highly efficient library for performing analyis on phylogenies
   pdf: /assets/pdfs/phyloframe-a-dataframe-based-library-for-fast-flexible-phylogenetic-computation.pdf
 
-- id: doi:10.48550/arxiv.2502.16778
+- id: doi:10.1007/978-3-032-16645-6_20
   title: Robustness of Network Structural Metrics Under Incomplete Data
   authors:
   - name: Sanaz Hasanzadeh Fard
@@ -519,8 +518,7 @@
   openalex: W7110073978
   kind: conference
   projects:
-  - spatial-structure
-  - evolutionary-theory
+  - other
 
 - id: doi:10.1162/isal.a.916
   title: Extending a Phylogeny-based Method for Detecting Signatures of Multi-level Selection for Applications in Artificial Life
@@ -605,7 +603,6 @@
   kind: preprint
   projects:
   - data-analysis-tools
-  needs_review: true
   pdf: /assets/pdfs/10-48550-arxiv-2509-18522.pdf
 
 - id: doi:10.17605/osf.io/yn3wx
@@ -1518,7 +1515,7 @@
   openalex: W3217192268
   kind: journal
   projects:
-  - eco-evolutionary-theory
+  - other
   pdf: /assets/pdfs/10-3389-fevo-2021-750779.pdf
 
 - id: doi:10.1371/journal.pone.0241734
