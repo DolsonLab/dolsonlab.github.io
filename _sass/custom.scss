@@ -1,3 +1,119 @@
 /* start custom scss snippet */
 
+/* Research portfolio and publication lists */
+.publication-list {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+}
+.publication {
+  margin-bottom: 0.8rem;
+  line-height: 1.5;
+}
+.publication__author--lab {
+  // padding: 0 0.12em;
+  // border-radius: 2px;
+  // background-color: #e5f1e8;
+  // color: #185b35;
+  // font-weight: 700;
+  text-decoration: underline;
+  // text-decoration-thickness: 2px;
+  // text-underline-offset: 0.12em;
+}
+.publication__projects {
+  display: block;
+  margin-top: 0.2rem;
+}
+.publication__tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  padding: 0.05rem 0.5rem;
+  margin-right: 0.35rem;
+  border: 1px solid currentColor;
+  border-radius: 1rem;
+  text-decoration: none;
+}
+.venue-icon {
+  display: inline-block;
+  width: 1.1em;
+  height: 1.1em;
+  margin-right: 0.4em;
+  vertical-align: -0.15em;
+  opacity: 0.75;
+}
+.venue-icon svg,
+.publication__award svg {
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
+}
+.publication__award {
+  display: inline-block;
+  width: 1.1em;
+  height: 1.1em;
+  margin-left: 0.3em;
+  vertical-align: -0.15em;
+  color: #d4a017;
+}
+.publication__title{
+  background-color: #e5f1e8;  
+}
+.publication__title--tip {
+  position: relative;
+  border-bottom: 1px dotted currentColor;
+  cursor: help;
+}
+.publication__title--tip::after {
+  content: attr(data-tip);
+  position: absolute;
+  left: 0;
+  bottom: 100%;
+  z-index: 10;
+  width: max-content;
+  max-width: 22rem;
+  padding: 0.5rem 0.7rem;
+  border-radius: 4px;
+  background: #333;
+  color: #fff;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.15s;
+  pointer-events: none;
+}
+.publication__title--tip:hover::after,
+.publication__title--tip:focus::after {
+  visibility: visible;
+  opacity: 1;
+}
+.publication-intro {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 2rem;
+  align-items: flex-start;
+}
+.publication-intro > div {
+  flex: 1 1 20rem;
+}
+.article__content table.publication-legend {
+  flex: 0 0 auto;
+  width: auto;
+  margin-bottom: 1.5rem;
+}
+.publication-legend td:first-child {
+  text-align: center;
+}
+.publication__note {
+  font-style: italic;
+}
+.project__image img {
+  max-height: 260px;
+  display: block;
+  margin: 0 auto 1rem;
+}
+.project__summary {
+  font-size: 1.1rem;
+}
+
 /* end custom scss snippet */

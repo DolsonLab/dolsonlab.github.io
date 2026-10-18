@@ -1,0 +1,29 @@
+{%- comment -%}
+  Lists publications from _data/publications.yml, newest first, grouped by year.
+  Parameters:
+    project        slug to filter by (omit for all publications)
+    exclude_project slug to leave out (e.g. "other" on the main list)
+    featured_only  true to list only entries with featured: true
+    show_projects  true to show project tags after each citation
+{%- endcomment -%}
+{%- assign _pubs = site.data.publications | where_exp: "p", "p.hidden != true" -%}
+{%- assign _only = include.project -%}
+{%- assign _exclude = include.exclude_project -%}
+{%- if _only -%}
+  {%- assign _pubs = _pubs | where_exp: "p", "p.projects contains _only" -%}
+{%- endif -%}
+{%- if _exclude -%}
+  {%- assign _pubs = _pubs | where_exp: "p", "p.projects.size > 1 or p.projects.first != _exclude" -%}
+{%- endif -%}
+{%- if include.featured_only -%}
+  {%- assign _pubs = _pubs | where: "featured", true -%}
+{%- endif -%}
+{%- assign _by_year = _pubs | group_by: "year" | sort: "name" | reverse -%}
+{%- for _year in _by_year -%}
+<h3 class="publication-year">{{ _year.name }}</h3>
+<ul class="publication-list">
+  {%- for _pub in _year.items -%}
+    {%- include publication.html pub=_pub show_projects=include.show_projects -%}
+  {%- endfor -%}
+</ul>
+{%- endfor -%}

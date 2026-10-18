@@ -1,0 +1,54 @@
+{%- comment -%}
+  Renders one entry from _data/publications.yml.
+  Parameters: pub (required), show_projects (optional, default false).
+  Format: Authors. Title (Year). Venue.
+{%- endcomment -%}
+{%- assign _pub = include.pub -%}
+{%- assign _kind = _pub.kind | default: "conference" -%}
+<li class="publication" id="{{ _pub.id | slugify }}">
+  {%- include venue-icon.html kind=_kind -%}
+  {%- if _pub.authors and _pub.authors.size > 0 -%}
+  <span class="publication__authors">
+    {%- for _author in _pub.authors -%}
+      {%- assign _url = site.data.coauthors[_author.name] -%}
+      {%- if _author.lab -%}
+        {%- assign _parts = _author.name | split: " " -%}
+        {%- assign _last = _parts | last | downcase -%}
+        {%- assign _initial = _parts | first | slice: 0 | downcase -%}
+        {%- for _member in site.data.authors -%}
+          {%- assign _mparts = _member.name | split: " " -%}
+          {%- assign _mlast = _mparts | last | downcase -%}
+          {%- assign _minitial = _mparts | first | slice: 0 | downcase -%}
+          {%- if _mlast == _last and _minitial == _initial -%}{%- assign _url = _member.url -%}{%- endif -%}
+        {%- endfor -%}
+      {%- endif -%}
+      {%- capture _label -%}{%- if _author.lab -%}<strong class="publication__author--lab">{{ _author.name }}</strong>{%- else -%}{{ _author.name }}{%- endif -%}{%- endcapture -%}
+      {%- if _url and _url != "" -%}<a class="publication__author-link" href="{{ _url }}">{{ _label }}</a>{%- else -%}{{ _label }}{%- endif -%}
+      {%- unless forloop.last -%}, {% endunless -%}
+    {%- endfor -%}.
+  </span>
+  {%- endif %}
+  {%- if _pub.description %}
+  <span class="publication__title publication__title--tip" tabindex="0" data-tip="{{ _pub.description | strip | escape }}">
+  {%- else %}
+  <span class="publication__title">
+  {%- endif -%}
+  {%- if _pub.url -%}<a href="{{ _pub.url }}">{{ _pub.title }}</a>{%- else -%}{{ _pub.title }}{%- endif -%}
+  </span>
+  {%- if _pub.award %}<span class="publication__award" title="{{ _pub.award | escape }}" aria-label="{{ _pub.award | escape }}">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h10v2h3v3a4 4 0 0 1-3.6 4A5 5 0 0 1 13 14.9V17h3v2H8v-2h3v-2.1A5 5 0 0 1 7.6 12 4 4 0 0 1 4 8V5h3V3zm-1 4v1a2 2 0 0 0 1 1.7V7H6zm11 0v2.7A2 2 0 0 0 18 8V7h-1z"/></svg></span>{%- endif %}
+  ({{ _pub.year }}).
+  {%- if _pub.venue %} <em class="publication__venue">{{ _pub.venue }}</em>.{% endif %}
+  {%- if _pub.pdf %} <a class="publication__link" href="{{ _pub.pdf | relative_url }}">[pdf]</a>{% endif %}
+  {%- if _pub.note %} <span class="publication__note">{{ _pub.note }}</span>{% endif %}
+  {%- if include.show_projects and _pub.projects -%}
+    <span class="publication__projects">
+      {%- for _tag_slug in _pub.projects -%}
+        {%- assign _project = site.projects | where_exp: "p", "p.slug == _tag_slug" | first -%}
+        {%- if _project -%}
+          <a class="publication__tag" href="{{ _project.url | relative_url }}">{{ _project.title }}</a>
+        {%- endif -%}
+      {%- endfor -%}
+    </span>
+  {%- endif %}
+</li>
