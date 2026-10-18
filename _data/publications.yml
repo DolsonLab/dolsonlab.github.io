@@ -20,7 +20,7 @@
   authors:
   - name: Alex Lalejini
   - name: Lauren Gillespie
-  - name: Emily L. Dolson
+  - name: Emily Dolson
     lab: true
   - name: Charles Ofria
   year: 2026
@@ -44,7 +44,7 @@
   - name: Max Foreback
     lab: true
   - name: Amy L. Connolly
-  - name: Emily L. Dolson
+  - name: Emily Dolson
     lab: true
   - name: Charles Ofria
   year: 2026
@@ -62,7 +62,7 @@
   title: Data - Environmental change and mutation rate modulate the adaptive evolution of genetic modularity through gene segregation
   authors:
   - name: Lauren Gillespie
-  - name: Emily L. Dolson
+  - name: Emily Dolson
     lab: true
   - name: Afsheen Afsheen
   - name: Alexander Lalejini
@@ -85,7 +85,7 @@
   - name: Matthew Andres Moreno
   - name: Anya E. Vostinar
   - name: Alexander Lalejini
-  - name: Emily L. Dolson
+  - name: Emily Dolson
     lab: true
   year: 2026
   venue: Open Science Framework
@@ -123,7 +123,7 @@
   - name: Marcin Dominik Pilinski
   - name: Bryan Reynolds
   - name: Anselmo C. Pontes
-  - name: Emily L. Dolson
+  - name: Emily Dolson
     lab: true
   - name: Julie Anne Rolla
   year: 2026
@@ -146,7 +146,7 @@
   - name: Alex Lalejini
   - name: Max-Foreback
     lab: true
-  - name: Emily L. Dolson
+  - name: Emily Dolson
     lab: true
   year: 2026
   venue: Zenodo (CERN European Organization for Nuclear Research)
@@ -157,7 +157,7 @@
   openalex: W7131903507
   kind: preprint
   projects: []
-  needs_review: true
+  hidden: true
 
 - id: doi:10.1162/isal.a.1024
   title: Endosymbiotic mutualism can constrain host diversity and evolved complexity
@@ -169,7 +169,7 @@
   - name: Ruoyu Zhang
   - name: Kiara Johnson
     lab: true
-  - name: Emily L. Dolson
+  - name: Emily Dolson
     lab: true
   - name: Anya E. Vostinar
   - name: Alexander Lalejini
@@ -191,7 +191,7 @@
   title: 'missing-edge-randomizer: Robustness of graph metrics under missing edges'
   authors:
   - name: Sanaz Hasanzadeh Fard
-  - name: Emily L. Dolson
+  - name: Emily Dolson
     lab: true
   year: 2026
   venue: Zenodo (CERN European Organization for Nuclear Research)
@@ -213,7 +213,7 @@
   - name: Max Foreback
     lab: true
   - name: Evan Imata
-  - name: Emily L. Dolson
+  - name: Emily Dolson
     lab: true
   - name: Kyle Helson
   - name: Marcin Dominik Pilinski
@@ -238,7 +238,7 @@
   - name: Matthew Andres Moreno
   - name: Jeet Sukumaran
   - name: Luis Zaman
-  - name: Emily L. Dolson
+  - name: Emily Dolson
     lab: true
   year: 2026
   venue: arXiv (Cornell University)
@@ -258,7 +258,7 @@
   authors:
   - name: Sanaz Hasanzadeh Fard
     lab: true
-  - name: Emily L. Dolson
+  - name: Emily Dolson
     lab: true
   year: 2026
   venue: International Conference on Complex Networks and Their Applications
@@ -281,7 +281,7 @@
   - name: Daya Tucker
   - name: Alexander Lalejini
   - name: Anya E. Vostinar
-  - name: Emily L. Dolson
+  - name: Emily Dolson
     lab: true
   year: 2026
   venue: Artificial Life Conference
@@ -303,7 +303,7 @@
   - name: Shakiba Shahbandegan
     lab: true
   - name: Jose Guadalupe Hernandez
-  - name: Emily L. Dolson
+  - name: Emily Dolson
     lab: true
   year: 2026
   venue: arXiv (Cornell University)
@@ -325,7 +325,7 @@
   - name: Santiago Rodriguez Papa
   - name: Charles Ofria
   - name: Luis Zaman
-  - name: Emily L. Dolson
+  - name: Emily Dolson
     lab: true
   year: 2026
   venue: arXiv (Cornell University)
@@ -344,7 +344,7 @@
   authors:
   - name: Vivaan Singhvi
   - name: Joey Wagner
-  - name: Emily L. Dolson
+  - name: Emily Dolson
     lab: true
   - name: Luis Zaman
   - name: Matthew Andres Moreno
@@ -366,7 +366,7 @@
   authors:
   - name: Vivaan Singhvi
   - name: Wagner, Joey
-  - name: Emily L. Dolson
+  - name: Emily Dolson
     lab: true
   - name: Luis Zaman
   - name: Matthew Andres Moreno
@@ -386,7 +386,7 @@
   title: Data - Environmental change and mutation rate modulate the adaptive evolution of genetic modularity through gene segregation
   authors:
   - name: Alexander Lalejini
-  - name: Emily L. Dolson
+  - name: Emily Dolson
     lab: true
   - name: Lauren Gillespie
   - name: Afsheen Afsheen
@@ -405,7 +405,7 @@
   authors:
   - name: Alexander Lalejini
   - name: Anya E. Vostinar
-  - name: Emily L. Dolson
+  - name: Emily Dolson
     lab: true
   - name: Kiara Johnson
     lab: true
@@ -427,7 +427,7 @@
   authors:
   - name: Max Foreback
     lab: true
-  - name: Emily L. Dolson
+  - name: Emily Dolson
     lab: true
   - name: Clifford Bohm
     lab: true
@@ -449,7 +449,7 @@
   authors:
   - name: Connor Yang
   - name: Joey Wagner
-  - name: Emily L. Dolson
+  - name: Emily Dolson
     lab: true
   - name: Luis Zaman
   - name: Matthew Andres Moreno
@@ -468,7 +468,7 @@
 - id: title:downstream-profiling
   title: Downstream Profiling
   authors:
-  - name: Emily L. Dolson
+  - name: Emily Dolson
     lab: true
   - name: Joseph Wagner
     lab: true
@@ -488,7 +488,7 @@
   authors:
   - name: Matthew Andres Moreno
   - name: Santiago Rodriguez Papa
-  - name: Emily L. Dolson
+  - name: Emily Dolson
     lab: true
   year: 2025
   venue: Artificial Life
@@ -507,7 +507,7 @@
   authors:
   - name: Grant Gordon
   - name: Austin J. Ferguson
-  - name: Emily L. Dolson
+  - name: Emily Dolson
     lab: true
   - name: Alexander Lalejini
   year: 2025
@@ -528,7 +528,7 @@
   - name: Matthew Andres Moreno
   - name: Sanaz Hasanzadeh Fard
   - name: Luis Zaman
-  - name: Emily L. Dolson
+  - name: Emily Dolson
     lab: true
   year: 2025
   venue: Artificial Life Conference
@@ -548,7 +548,7 @@
   authors:
   - name: Matthew Andres Moreno
   - name: Sanaz Hasan
-  - name: Emily L. Dolson
+  - name: Emily Dolson
     lab: true
   - name: Luis Zaman
   year: 2025
@@ -570,7 +570,7 @@
   - name: Davis T. Weaver
   - name: Jeff Maltas
   - name: Rowan J Barker-Clarke
-  - name: Emily L. Dolson
+  - name: Emily Dolson
     lab: true
   - name: Jacob G. Scott
   year: 2025
@@ -592,7 +592,7 @@
   - name: Vincent R. Ragusa
   - name: Arend Hintze
   - name: Charles Ofria
-  - name: Emily L. Dolson
+  - name: Emily Dolson
     lab: true
   - name: Adami, Christoph
   year: 2025
@@ -614,7 +614,7 @@
   - name: Matthew Andres Moreno
   - name: Joseph Wagner
     lab: true
-  - name: Emily L. Dolson
+  - name: Emily Dolson
     lab: true
   - name: Luis Zaman
   - name: Vivaan Singhvi
@@ -641,7 +641,7 @@
     lab: true
   - name: Anya E. Vostinar
   - name: Alexander Lalejini
-  - name: Emily L. Dolson
+  - name: Emily Dolson
     lab: true
   year: 2025
   venue: Artificial Life Conference
@@ -661,7 +661,7 @@
     lab: true
   - name: Clifford Bohm
     lab: true
-  - name: Emily L. Dolson
+  - name: Emily Dolson
     lab: true
   year: 2025
   venue: IEEE Symposium on Computational Intelligence in Artificial Life and Cooperative Intelligent Systems (ALIFE-CIS)
@@ -679,7 +679,7 @@
   - name: Ankit Gupta
     lab: true
   - name: Christoph Adami
-  - name: Emily L. Dolson
+  - name: Emily Dolson
     lab: true
   year: 2025
   venue: arXiv (Cornell University)
@@ -698,7 +698,7 @@
   authors:
   - name: Matthew Andres Moreno
   - name: Anika Ranjan
-  - name: Emily L. Dolson
+  - name: Emily Dolson
     lab: true
   - name: Luis Zaman
   year: 2025
@@ -711,12 +711,13 @@
   kind: conference
   projects:
   - data-analysis-tools
+  pdf: /assets/pdfs/10-1109-alife-cis64968-2025-10979833.pdf
 
 - id: doi:10.48550/arxiv.2502.16778
   title: The Robustness of Structural Features in Species Interaction Networks
   authors:
   - name: Sanaz Hasanzadeh Fard
-  - name: Emily L. Dolson
+  - name: Emily Dolson
     lab: true
   year: 2025
   venue: arXiv (Cornell University)
@@ -735,9 +736,9 @@
   authors:
   - name: Sydney Leither
     lab: true
-  - name: Maximilian A.R. Strobl
+  - name: Maximilian Strobl
   - name: Jacob  Gardinier Scott
-  - name: Emily L. Dolson
+  - name: Emily Dolson
     lab: true
   year: 2025
   venue: bioRxiv (Cold Spring Harbor Laboratory)
@@ -756,7 +757,7 @@
   authors:
   - name: Matthew Andres Moreno
   - name: Anika Ranjan
-  - name: Emily L. Dolson
+  - name: Emily Dolson
     lab: true
   - name: Luis Zaman
   year: 2024
@@ -778,7 +779,7 @@
   authors:
   - name: Matthew Andres Moreno
   - name: Santiago Rodriguez Papa
-  - name: Emily L. Dolson
+  - name: Emily Dolson
     lab: true
   year: 2024
   venue: arXiv (Cornell University)
@@ -797,7 +798,7 @@
   authors:
   - name: Matthew Andres Moreno
   - name: Santiago Rodriguez Papa
-  - name: Emily L. Dolson
+  - name: Emily Dolson
     lab: true
   year: 2024
   venue: arXiv (Cornell University)
@@ -817,7 +818,7 @@
   - name: Clifford Bohm
     lab: true
   - name: Ivy Zhang
-  - name: Emily L. Dolson
+  - name: Emily Dolson
     lab: true
   year: 2024
   venue: Artificial Life Conference
@@ -836,7 +837,7 @@
   - name: Anya E. Vostinar
   - name: Alexander Lalejini
   - name: Charles Ofria
-  - name: Emily L. Dolson
+  - name: Emily Dolson
     lab: true
   - name: Matthew Andres Moreno
   year: 2024
@@ -858,7 +859,7 @@
     lab: true
   - name: Max Foreback
     lab: true
-  - name: Emily L. Dolson
+  - name: Emily Dolson
     lab: true
   - name: Alexander Lalejini
   year: 2024
@@ -879,7 +880,7 @@
   - name: Sydney Leither
     lab: true
   - name: Vincent R. Ragusa
-  - name: Emily L. Dolson
+  - name: Emily Dolson
     lab: true
   year: 2024
   venue: Genetic and Evolutionary Computation Conference Companion (GECCO Companion)
@@ -900,7 +901,7 @@
   - name: Kiara Johnson
     lab: true
   - name: Anya E. Vostinar
-  - name: Emily L. Dolson
+  - name: Emily Dolson
     lab: true
   year: 2024
   venue: Artificial Life Conference
@@ -918,7 +919,7 @@
   authors:
   - name: Shakiba Shahbandegan
     lab: true
-  - name: Emily L. Dolson
+  - name: Emily Dolson
     lab: true
   year: 2024
   venue: Genetic and Evolutionary Computation Conference (GECCO)
@@ -933,12 +934,12 @@
   pdf: /assets/pdfs/10-1145-3638529-3654215.pdf
 
 - id: doi:10.48550/arxiv.2306.03970
-  title: Phylogeny-informed fitness estimation
+  title: Phylogeny-Informed Fitness Estimation for Test-Based Parent Selection
   authors:
   - name: Alexander Lalejini
   - name: Matthew Andres Moreno
   - name: Jose Guadalupe Hernandez
-  - name: Emily L. Dolson
+  - name: Emily Dolson
     lab: true
   year: 2024
   venue: Genetic Programming in Theory and Practice XX
@@ -950,6 +951,7 @@
   kind: chapter
   projects:
   - evolutionary-computation
+  pdf: /assets/pdfs/10-48550-arxiv-2306-03970.pdf
 
 - id: doi:10.1007/978-981-99-8413-8_13
   title: Phylogeny-Informed Fitness Estimation for Test-Based Parent Selection
@@ -957,7 +959,7 @@
   - name: Alexander Lalejini
   - name: Matthew Andres Moreno
   - name: Jose Guadalupe Hernandez
-  - name: Emily L. Dolson
+  - name: Emily Dolson
     lab: true
   year: 2024
   venue: Genetic and evolutionary computation
@@ -974,7 +976,7 @@
 - id: doi:10.48550/arxiv.2405.09389
   title: 'Phylotrack: C++ and Python libraries for in silico phylogenetic tracking'
   authors:
-  - name: Emily L. Dolson
+  - name: Emily Dolson
     lab: true
   - name: Santiago Rodriguez Papa
   - name: Matthew Andres Moreno
@@ -994,7 +996,7 @@
   title: PhylotrackPy Profiling
   authors:
   - name: Matthew Andres Moreno
-  - name: Emily L. Dolson
+  - name: Emily Dolson
     lab: true
   year: 2024
   venue: OSF Preprints (OSF Preprints)
@@ -1010,7 +1012,7 @@
 - id: doi:10.1007/978-981-99-8413-8_15
   title: Reachability Analysis for Lexicase Selection via Community Assembly Graphs
   authors:
-  - name: Emily L. Dolson
+  - name: Emily Dolson
     lab: true
   - name: Alexander Lalejini
   year: 2024
@@ -1032,7 +1034,7 @@
   - name: Marcos Sanson
   - name: Jack Garbus
   - name: Matthew Andres Moreno
-  - name: Emily L. Dolson
+  - name: Emily Dolson
     lab: true
   year: 2024
   venue: Genetic and Evolutionary Computation Conference Companion (GECCO Companion)
@@ -1052,7 +1054,7 @@
   authors:
   - name: Matthew Andres Moreno
   - name: Luis Zaman
-  - name: Emily L. Dolson
+  - name: Emily Dolson
     lab: true
   year: 2024
   venue: arXiv (Cornell University)
@@ -1071,7 +1073,7 @@
   authors:
   - name: Matthew Andres Moreno
   - name: Connor Yang
-  - name: Emily L. Dolson
+  - name: Emily Dolson
     lab: true
   - name: Luis Zaman
   year: 2024
@@ -1091,7 +1093,7 @@
   authors:
   - name: Matthew Andres Moreno
   - name: Connor Yang
-  - name: Emily L. Dolson
+  - name: Emily Dolson
     lab: true
   - name: Luis Zaman
   year: 2024
@@ -1111,7 +1113,7 @@
 - id: doi:10.1145/3583131.3590356
   title: Calculating lexicase selection probabilities is NP-Hard
   authors:
-  - name: Emily L. Dolson
+  - name: Emily Dolson
     lab: true
   year: 2023
   venue: Genetic and Evolutionary Computation Conference (GECCO)
@@ -1133,7 +1135,7 @@
   - name: Max Foreback
     lab: true
   - name: David Baum
-  - name: Emily L. Dolson
+  - name: Emily Dolson
     lab: true
   year: 2023
   venue: Artificial Life Conference
@@ -1151,7 +1153,7 @@
   authors:
   - name: David Baum
   - name: Zhen Peng
-  - name: Emily L. Dolson
+  - name: Emily Dolson
     lab: true
   - name: Eric Smith
   - name: Alex M. Plum
@@ -1175,7 +1177,7 @@
   - name: Sydney Leither
     lab: true
   - name: David Baum
-  - name: Emily L. Dolson
+  - name: Emily Dolson
     lab: true
   year: 2023
   venue: Artificial Life Conference
@@ -1193,7 +1195,7 @@
   authors:
   - name: Shakiba Shahbandegan
     lab: true
-  - name: Emily L. Dolson
+  - name: Emily Dolson
     lab: true
   year: 2023
   venue: GECCO 2023 Companion
@@ -1209,7 +1211,7 @@
   title: Toward Phylogenetic Inference of Evolutionary Dynamics at Scale
   authors:
   - name: Matthew Andres Moreno
-  - name: Emily L. Dolson
+  - name: Emily Dolson
     lab: true
   - name: Santiago Rodriguez Papa
   year: 2023
@@ -1230,7 +1232,7 @@
     lab: true
   - name: Sydney Leither
     lab: true
-  - name: Emily L. Dolson
+  - name: Emily Dolson
     lab: true
   year: 2023
   venue: GECCO 2023 Companion
@@ -1250,7 +1252,7 @@
   - name: Mina N. Dinh
   - name: Bezhou Feng
   - name: Jeff Maltas
-  - name: Emily L. Dolson
+  - name: Emily Dolson
     lab: true
   - name: Masahiro Hitomi
   - name: Steph Owen
@@ -1270,7 +1272,7 @@
   title: 'Abstract B027: Modeling the emergence of therapy resistance with fitness seascapes'
   authors:
   - name: Eshan S. King
-  - name: Emily L. Dolson
+  - name: Emily Dolson
     lab: true
   - name: Jacob  Gardinier Scott
   year: 2022
@@ -1288,7 +1290,7 @@
   title: Artificial selection methods from evolutionary computing show promise for directed evolution of microbes
   authors:
   - name: Alexander Lalejini
-  - name: Emily L. Dolson
+  - name: Emily Dolson
     lab: true
   - name: Anya E. Vostinar
   - name: Luis Zaman
@@ -1308,7 +1310,7 @@
   title: 'Author response: Artificial selection methods from evolutionary computing show promise for directed evolution of microbes'
   authors:
   - name: Alexander Lalejini
-  - name: Emily L. Dolson
+  - name: Emily Dolson
     lab: true
   - name: Anya E. Vostinar
   - name: Luis Zaman
@@ -1326,7 +1328,7 @@
 - id: doi:10.1007/s10710-022-09443-x
   title: 'Book Review: the evolution of complexity'
   authors:
-  - name: Emily L. Dolson
+  - name: Emily Dolson
     lab: true
   year: 2022
   venue: Genetic Programming and Evolvable Machines
@@ -1344,7 +1346,7 @@
   - name: Kiara Johnson
     lab: true
   - name: Piper Welch
-  - name: Emily L. Dolson
+  - name: Emily Dolson
     lab: true
   - name: Anya E. Vostinar
   year: 2022
@@ -1367,7 +1369,7 @@
   - name: Zhen Ren
     lab: true
   - name: Anya E. Vostinar
-  - name: Emily L. Dolson
+  - name: Emily Dolson
     lab: true
   year: 2022
   venue: Artificial Life Conference
@@ -1388,11 +1390,11 @@
   - cancer
   hidden: true
 
-- id: doi:10.1145/3520304.3533937
+- id: doi:10.1162/isal_a_00550
   title: 'Hereditary stratigraphy: genome annotations to enable phylogenetic inference over distributed populations'
   authors:
   - name: Matthew Andres Moreno
-  - name: Emily L. Dolson
+  - name: Emily Dolson
     lab: true
   - name: Charles Ofria
   year: 2022
@@ -1409,7 +1411,7 @@
   title: 'hstrat: a Python Package for phylogenetic inference on distributed digital evolution populations'
   authors:
   - name: Matthew Andres Moreno
-  - name: Emily L. Dolson
+  - name: Emily Dolson
     lab: true
   - name: Charles Ofria
   year: 2022
@@ -1429,7 +1431,7 @@
   authors:
   - name: Jose Guadalupe Hernandez
   - name: Alexander Lalejini
-  - name: Emily L. Dolson
+  - name: Emily Dolson
     lab: true
   year: 2022
   venue: Genetic and Evolutionary Computation Conference Companion (GECCO Companion)
@@ -1447,7 +1449,7 @@
   title: Selection schemes from evolutionary computing show promise for directed evolution of microbes
   authors:
   - name: Alexander Lalejini
-  - name: Emily L. Dolson
+  - name: Emily Dolson
     lab: true
   - name: Anya E. Vostinar
   - name: Luis Zaman
@@ -1468,7 +1470,7 @@
     lab: true
   - name: Jose Guadalupe Hernandez
   - name: Alexander Lalejini
-  - name: Emily L. Dolson
+  - name: Emily Dolson
     lab: true
   year: 2022
   venue: Genetic and Evolutionary Computation Conference Companion (GECCO Companion)
@@ -1487,7 +1489,7 @@
   authors:
   - name: Jose Guadalupe Hernandez
   - name: Alexander Lalejini
-  - name: Emily L. Dolson
+  - name: Emily Dolson
     lab: true
   year: 2022
   venue: Genetic Programming in Theory and Practice XVIII
@@ -1504,7 +1506,7 @@
 - id: doi:10.3389/fevo.2021.750779
   title: 'Digital Evolution for Ecology Research: A Review'
   authors:
-  - name: Emily L. Dolson
+  - name: Emily Dolson
     lab: true
   - name: Charles Ofria
   year: 2021
@@ -1529,7 +1531,7 @@
   - name: Dena Crozier
   - name: Andrew Dhawan
   - name: Mina N. Dinh
-  - name: Emily L. Dolson
+  - name: Emily Dolson
     lab: true
   - name: Nathan Farrokhian
   - name: Masahiro Hitomi
@@ -1568,7 +1570,7 @@
   - name: Artem Kaznatcheev
   - name: Patrick Ellsworth
   - name: Masahiro Hitomi
-  - name: Emily L. Dolson
+  - name: Emily Dolson
     lab: true
   - name: Jacob G. Scott
   year: 2020
@@ -1585,7 +1587,7 @@
 - id: doi:10.1162/isal_a_00344
   title: An introduction to using counterdiabatic driving to eliminate genetic lag in changing environments
   authors:
-  - name: Emily L. Dolson
+  - name: Emily Dolson
     lab: true
   - name: Shamreen Iram
   - name: Joshua Chiel
@@ -1616,7 +1618,7 @@
   - name: Jose Guadalupe Hernandez
   - name: Daniel Junghans
   - name: Alexander Lalejini
-  - name: Emily L. Dolson
+  - name: Emily Dolson
     lab: true
   - name: Charles Ofria
   year: 2020
@@ -1634,7 +1636,7 @@
   title: Controlling the speed and trajectory of evolution with counterdiabatic driving
   authors:
   - name: Shamreen Iram
-  - name: Emily L. Dolson
+  - name: Emily Dolson
     lab: true
   - name: Joshua Chiel
   - name: Julia Pelesko
@@ -1660,7 +1662,7 @@
 - id: doi:10.1162/artl_a_00313
   title: 'Interpreting the Tape of Life: Ancestry-Based Analyses Provide Insights and Intuition about Evolutionary Dynamics'
   authors:
-  - name: Emily L. Dolson
+  - name: Emily Dolson
     lab: true
   - name: Alexander Lalejini
   - name: Steven Jorgensen
@@ -1683,7 +1685,7 @@
   - name: Davis T. Weaver
   - name: Vishhvaan Gopalakrishnan
   - name: Eshan S. King
-  - name: Emily L. Dolson
+  - name: Emily Dolson
     lab: true
   - name: Nikhil P. Krishnan
   - name: Julia Pelesko
@@ -1709,7 +1711,7 @@
   title: Data Standards for Artificial Life Software
   authors:
   - name: Alexander Lalejini
-  - name: Emily L. Dolson
+  - name: Emily Dolson
     lab: true
   - name: Clifford Bohm
     lab: true
@@ -1734,7 +1736,7 @@
   title: Data Standards for Artificial Life Software
   authors:
   - name: Alexander Lalejini
-  - name: Emily L. Dolson
+  - name: Emily Dolson
     lab: true
   - name: Clifford Bohm
     lab: true
@@ -1757,7 +1759,7 @@
 - id: doi:10.1007/978-3-030-04735-1_1
   title: Exploring Genetic Programming Systems with MAP-Elites
   authors:
-  - name: Emily L. Dolson
+  - name: Emily Dolson
     lab: true
   - name: Alexander Lalejini
   - name: Charles Ofria
@@ -1777,7 +1779,7 @@
   authors:
   - name: Jose Guadalupe Hernandez
   - name: Alexander Lalejini
-  - name: Emily L. Dolson
+  - name: Emily Dolson
     lab: true
   - name: Charles Ofria
   year: 2019
@@ -1795,7 +1797,7 @@
 - id: doi:10.1162/artl_a_00280
   title: 'The MODES Toolbox: Measurements of Open-Ended Dynamics in Evolving Systems'
   authors:
-  - name: Emily L. Dolson
+  - name: Emily Dolson
     lab: true
   - name: Anya E. Vostinar
   - name: Michael J. Wiser
@@ -1815,7 +1817,7 @@
 - id: doi:10.1007/978-3-319-90512-9_5
   title: Applying Ecological Principles to Genetic Programming
   authors:
-  - name: Emily L. Dolson
+  - name: Emily Dolson
     lab: true
   - name: Wolfgang Banzhaf
   - name: Charles Ofria
@@ -1833,7 +1835,7 @@
 - id: doi:10.1145/3205651.3205780
   title: Ecological theory provides insights about evolutionary computation
   authors:
-  - name: Emily L. Dolson
+  - name: Emily Dolson
     lab: true
   - name: Charles Ofria
   year: 2018
@@ -1851,7 +1853,7 @@
 - id: doi:10.7287/peerj.preprints.27315v1
   title: Ecological theory provides insights about evolutionary computation
   authors:
-  - name: Emily L. Dolson
+  - name: Emily Dolson
     lab: true
   - name: Wolfgang Banzhaf
   - name: Charles Ofria
@@ -1869,7 +1871,7 @@
 - id: doi:10.7287/peerj.preprints.27315
   title: Ecological theory provides insights about evolutionary computation
   authors:
-  - name: Emily L. Dolson
+  - name: Emily Dolson
     lab: true
   - name: Wolfgang Banzhaf
   - name: Charles Ofria
@@ -1887,7 +1889,7 @@
 - id: doi:10.7287/peerj.preprints.27154v1
   title: Exploring genetic programming systems with MAP-Elites
   authors:
-  - name: Emily L. Dolson
+  - name: Emily Dolson
     lab: true
   - name: Alexander Lalejini
   - name: Charles Ofria
@@ -1905,7 +1907,7 @@
 - id: doi:10.7287/peerj.preprints.27154
   title: Exploring genetic programming systems with MAP-Elites
   authors:
-  - name: Emily L. Dolson
+  - name: Emily Dolson
     lab: true
   - name: Alexander Lalejini
   - name: Charles Ofria
@@ -1923,7 +1925,7 @@
 - id: doi:10.1162/isal_a_00020
   title: 'Quantifying the Tape of Life: Ancestry-based Metrics Provide Insights and Intuition about Evolutionary Dynamics'
   authors:
-  - name: Emily L. Dolson
+  - name: Emily Dolson
     lab: true
   - name: Alexander Lalejini
   - name: Steven Jorgensen
@@ -1942,7 +1944,7 @@
 - id: doi:10.7287/peerj.preprints.26883
   title: 'Quantifying the tape of life: Ancestry-based metrics provide insights and intuition about evolutionary dynamics'
   authors:
-  - name: Emily L. Dolson
+  - name: Emily Dolson
     lab: true
   - name: Alexander Lalejini
   - name: Steven Jorgensen
@@ -1961,7 +1963,7 @@
 - id: doi:10.7287/peerj.preprints.26883v1
   title: 'Quantifying the tape of life: Ancestry-based metrics provide insights and intuition about evolutionary dynamics'
   authors:
-  - name: Emily L. Dolson
+  - name: Emily Dolson
     lab: true
   - name: Alexander Lalejini
   - name: Steven Jorgensen
@@ -1980,7 +1982,7 @@
 - id: doi:10.1162/isal_a_00091
   title: Synthesizing Research on the Generation and Maintenance of Population Diversity
   authors:
-  - name: Emily L. Dolson
+  - name: Emily Dolson
     lab: true
   - name: Charles Ofria
   year: 2018
@@ -1997,7 +1999,7 @@
   title: 'The Boundedness Illusion: Asymptotic projections from early evolution underestimate evolutionary potential'
   authors:
   - name: Michael J. Wiser
-  - name: Emily L. Dolson
+  - name: Emily Dolson
     lab: true
   - name: Anya E. Vostinar
   - name: Richard E. Lenski
@@ -2017,7 +2019,7 @@
   title: 'The Boundedness Illusion: Asymptotic projections from early evolution underestimate evolutionary potential'
   authors:
   - name: Michael J. Wiser
-  - name: Emily L. Dolson
+  - name: Emily Dolson
     lab: true
   - name: Anya E. Vostinar
   - name: Richard E. Lenski
@@ -2037,7 +2039,7 @@
   title: 'The Boundedness Illusion: Asymptotic projections from early evolution underestimate evolutionary potential'
   authors:
   - name: Michael J. Wiser
-  - name: Emily L. Dolson
+  - name: Emily Dolson
     lab: true
   - name: Anya E. Vostinar
   - name: Richard E. Lenski
@@ -2056,7 +2058,7 @@
 - id: doi:10.7287/peerj.preprints.27249v1
   title: 'The MODES toolbox: Measurements of Open-ended Dynamics in Evolving Systems'
   authors:
-  - name: Emily L. Dolson
+  - name: Emily Dolson
     lab: true
   - name: Anya E. Vostinar
   - name: Michael J. Wiser
@@ -2075,7 +2077,7 @@
 - id: doi:10.7287/peerj.preprints.27249
   title: 'The MODES toolbox: Measurements of Open-ended Dynamics in Evolving Systems'
   authors:
-  - name: Emily L. Dolson
+  - name: Emily Dolson
     lab: true
   - name: Anya E. Vostinar
   - name: Michael J. Wiser
@@ -2094,7 +2096,7 @@
 - id: doi:10.7287/peerj.preprints.27249v3
   title: 'The MODES toolbox: Measurements of Open-ended Dynamics in Evolving Systems'
   authors:
-  - name: Emily L. Dolson
+  - name: Emily Dolson
     lab: true
   - name: Anya E. Vostinar
   - name: Michael J. Wiser
@@ -2113,7 +2115,7 @@
 - id: doi:10.7287/peerj.preprints.27249v2
   title: 'The MODES toolbox: Measurements of Open-ended Dynamics in Evolving Systems'
   authors:
-  - name: Emily L. Dolson
+  - name: Emily Dolson
     lab: true
   - name: Anya E. Vostinar
   - name: Michael J. Wiser
@@ -2132,7 +2134,7 @@
 - id: doi:10.1145/3205651.3208301
   title: Visualizing the tape of life
   authors:
-  - name: Emily L. Dolson
+  - name: Emily Dolson
     lab: true
   - name: Charles Ofria
   year: 2018
@@ -2151,7 +2153,7 @@
 - id: doi:10.15200/winn.152418.86598
   title: What's holding artificial life back from open-ended evolution?
   authors:
-  - name: Emily L. Dolson
+  - name: Emily Dolson
     lab: true
   - name: Anya E. Vostinar
   - name: Charles Ofria
@@ -2169,7 +2171,7 @@
 - id: doi:10.7551/ecal_a_023
   title: Spatial resource heterogeneity creates local hotspots of evolutionary potential
   authors:
-  - name: Emily L. Dolson
+  - name: Emily Dolson
     lab: true
   - name: Charles Ofria
   year: 2017
@@ -2185,7 +2187,7 @@
 - id: doi:10.1162/isal_a_023
   title: Spatial resource heterogeneity creates local hotspots of evolutionary potential
   authors:
-  - name: Emily L. Dolson
+  - name: Emily Dolson
     lab: true
   - name: Ofria, Charles
   year: 2017
@@ -2202,7 +2204,7 @@
 - id: doi:10.1101/149302
   title: Spatial resource heterogeneity creates local hotspots of evolutionary potential
   authors:
-  - name: Emily L. Dolson
+  - name: Emily Dolson
     lab: true
   - name: Charles Ofria
   year: 2017
@@ -2220,7 +2222,7 @@
 - id: doi:10.1101/148973
   title: Spatial resource heterogeneity increases diversity and evolutionary potential
   authors:
-  - name: Emily L. Dolson
+  - name: Emily Dolson
     lab: true
   - name: Samuel G. Pérez
   - name: Randal S. Olson
@@ -2246,7 +2248,7 @@
   - name: David H. Ackley
   - name: Wolfgang Banzhaf
   - name: Guillaume Beslon
-  - name: Emily L. Dolson
+  - name: Emily Dolson
     lab: true
   - name: Tom Froese
   - name: Simon Hickinbotham
@@ -2274,7 +2276,7 @@
   - name: David H. Ackley
   - name: Wolfgang Banzhaf
   - name: Guillaume Beslon
-  - name: Emily L. Dolson
+  - name: Emily Dolson
     lab: true
   - name: Tom Froese
   - name: Simon Hickinbotham
@@ -2334,7 +2336,7 @@
   - name: Daniel Chen
   - name: Chung, Kathy
   - name: Gabriel A. Devenyi
-  - name: Emily L. Dolson
+  - name: Emily Dolson
     lab: true
   - name: Jonah M. Duckles
   - name: Rémi Emonet
@@ -2424,7 +2426,7 @@
 - id: doi:10.7551/978-0-262-33936-0-ch071
   title: The Effects of Evolution and Spatial Structure on Diversity in Biological Reserves
   authors:
-  - name: Emily L. Dolson
+  - name: Emily Dolson
     lab: true
   - name: Michael J. Wiser
   - name: Charles Ofria
@@ -2441,7 +2443,7 @@
 - id: doi:10.1101/043083
   title: The Effects of Evolution and Spatial Structure on Diversity in Biological Reserves
   authors:
-  - name: Emily L. Dolson
+  - name: Emily Dolson
     lab: true
   - name: Michael J. Wiser
   - name: Charles Ofria
@@ -2459,7 +2461,7 @@
 - id: doi:10.1162/978-0-262-33936-0-ch071
   title: The Effects of Evolution and Spatial Structure on Diversity in Biological Reserves
   authors:
-  - name: Emily L. Dolson
+  - name: Emily Dolson
     lab: true
   - name: Michael J. Wiser
   - name: Charles Ofria
@@ -2478,7 +2480,7 @@
   title: The Prisoners Dilemma, Memory, and the Early Evolution of Intelligence
   authors:
   - name: Mikaela Leas
-  - name: Emily L. Dolson
+  - name: Emily Dolson
     lab: true
   - name: Riley Annis
   - name: Joshua Nahum
