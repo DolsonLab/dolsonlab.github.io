@@ -712,6 +712,24 @@
   projects:
   - data-analysis-tools
 
+- id: doi:10.48550/arxiv.2502.16778
+  title: The Robustness of Structural Features in Species Interaction Networks
+  authors:
+  - name: Sanaz Hasanzadeh Fard
+  - name: Emily L. Dolson
+    lab: true
+  year: 2025
+  venue: arXiv (Cornell University)
+  doi: 10.48550/arxiv.2502.16778
+  url: https://doi.org/10.48550/arxiv.2502.16778
+  oa_url: https://arxiv.org/pdf/2502.16778
+  type: preprint
+  openalex: W4414844320
+  kind: preprint
+  projects:
+  - open-ended-evolution
+  hidden: true
+
 - id: doi:10.1101/2025.07.09.664005
   title: Using spatial statistics to infer game-theoretic interactions in an agent-based model of cancer cells
   authors:
