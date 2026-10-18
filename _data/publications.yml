@@ -361,6 +361,27 @@
   description: Using a naive algorithm to reconstruct phylogenies using our hstrat technique was intractably slow - the new algorithm presented in this paper is a massive speed-up
   pdf: /assets/pdfs/isal.a.890.pdf
 
+- id: doi:10.48550/arxiv.2508.15074
+  title: A Scalable Trie Building Algorithm for High-Throughput Phyloanalysis of Wafer-Scale Digital Evolution Experiments
+  authors:
+  - name: Vivaan Singhvi
+  - name: Wagner, Joey
+  - name: Emily L. Dolson
+    lab: true
+  - name: Luis Zaman
+  - name: Matthew Andres Moreno
+  year: 2025
+  venue: arXiv (Cornell University)
+  doi: 10.48550/arxiv.2508.15074
+  url: https://doi.org/10.48550/arxiv.2508.15074
+  oa_url: https://arxiv.org/pdf/2508.15074
+  type: preprint
+  openalex: W4416050505
+  kind: preprint
+  projects:
+  - data-analysis-tools
+  hidden: true
+
 - id: doi:10.17605/osf.io/wm659
   title: Data - Environmental change and mutation rate modulate the adaptive evolution of genetic modularity through gene segregation
   authors:
@@ -540,7 +561,6 @@
   projects:
   - data-analysis-tools
   hidden: true
-
 
 - id: doi:10.1126/sciadv.adv1268
   title: Fitness seascapes are necessary for realistic modeling of the evolutionary response to drug therapy
